@@ -1,15 +1,16 @@
-#ifndef EXPRESSION_H
-#define EXPRESSION_H
+#pragma once
 
 #include <iostream>
 #include <string>
 #include <memory>
+#include <cctype>
 
-#define AND "∧"
-#define OR "∨"
-#define NOT "¬"
-#define IMPLIES "→"
-#define IFF "↔"
+#define AND "&"
+#define OR "|"
+#define NOT "!"
+#define XOR "^"
+#define IMPLIES "->"
+#define IFF "<=>"
 #define OPEN "("
 #define CLOSE ")"
 #define TRUE "T"
@@ -21,11 +22,12 @@ class Expression
         Expression(std::string);
         Expression(std::string, std::shared_ptr<Expression>, std::shared_ptr<Expression>);
 
-        std::string getExpression();
+        std::string getValue();
 
         bool hasLeft();
         bool hasRight();
         bool isBinary();
+        bool isVar();
 
         std::shared_ptr<Expression> getLeft();
         std::shared_ptr<Expression> getRight();
@@ -34,10 +36,7 @@ class Expression
         void setRight(std::shared_ptr<Expression>);
     
     private:
-        std::string expression;
+        std::string value;
         std::shared_ptr<Expression> left;
         std::shared_ptr<Expression> right;
-
 };
-
-#endif
