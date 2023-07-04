@@ -37,6 +37,8 @@ class Expression
         void setRight(std::shared_ptr<Expression>);
 
         std::set<std::string> getVariables();
+
+        std::shared_ptr<Expression> clone();
     private:
         std::string value;
         std::shared_ptr<Expression> left;

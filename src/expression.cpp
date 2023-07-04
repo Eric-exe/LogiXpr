@@ -60,6 +60,16 @@ std::set<std::string> Expression::getVariables() {
         std::set<std::string> rightVariables = this->getRight()->getVariables();
         variables.insert(rightVariables.begin(), rightVariables.end());
     }
-    
+
     return variables;
+}
+
+std::shared_ptr<Expression> Expression::clone() {
+    std::shared_ptr<Expression> clonedExpression;
+    
+    if (isBinary()) clonedExpression = std::make_shared<Expression>(value, left->clone(), right->clone());
+    else if (hasLeft()) clonedExpression = std::make_shared<Expression>(value, left->clone(), nullptr);
+    else clonedExpression = std::make_shared<Expression>(value);
+    
+    return clonedExpression;
 }
