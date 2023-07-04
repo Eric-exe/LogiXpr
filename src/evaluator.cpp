@@ -22,12 +22,12 @@ std::vector<std::unordered_map<std::string, bool>> getTruthTableInputs(std::shar
 
 bool evaluateExpression(std::shared_ptr<Expression> expression, std::unordered_map<std::string, bool> inputs) {
     if (expression == nullptr) return false;
-    if (expression->isVar()) return inputs[expression->getValue()]; // leaf node
     
     std::string value = expression->getValue();
 
     if (value == TRUE) return true;
     if (value == FALSE) return false;
+    if (expression->isVar()) return inputs[expression->getValue()]; // leaf node
     if (value == AND) return evaluateExpression(expression->getLeft(), inputs) && evaluateExpression(expression->getRight(), inputs);
     if (value == OR) return evaluateExpression(expression->getLeft(), inputs) || evaluateExpression(expression->getRight(), inputs);
     if (value == NOT) return !evaluateExpression(expression->getLeft(), inputs);
