@@ -18,7 +18,7 @@ std::vector<std::string> tokenize(std::string expression) {
     return tokens;
 }
 
-int parse(std::string expression, std::shared_ptr<Expression> &root) {
+bool parse(std::string expression, std::shared_ptr<Expression> &root) {
     // implement the shunting yard algorithm to convert to abstract syntax tree
 
     std::stack<std::shared_ptr<Expression>> outputStack; // output queue
@@ -60,7 +60,7 @@ int parse(std::string expression, std::shared_ptr<Expression> &root) {
 
                 std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
 
-                if (outputStack.size() < 2) return 1;
+                if (outputStack.size() < 2) return false;
                 std::shared_ptr<Expression> right = outputStack.top();
                 outputStack.pop();
 
@@ -83,7 +83,7 @@ int parse(std::string expression, std::shared_ptr<Expression> &root) {
 
                 std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
 
-                if (outputStack.size() < 2) return 1;
+                if (outputStack.size() < 2) return false;
 
                 std::shared_ptr<Expression> right = outputStack.top();
                 outputStack.pop();
@@ -106,7 +106,7 @@ int parse(std::string expression, std::shared_ptr<Expression> &root) {
 
         std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
 
-        if (outputStack.size() < 1) return 1;
+        if (outputStack.size() < 1) return false;
         std::shared_ptr<Expression> right = outputStack.top();
         outputStack.pop();
         if (operatorStr == NOT) {
@@ -115,7 +115,7 @@ int parse(std::string expression, std::shared_ptr<Expression> &root) {
             continue;
         }
 
-        if (outputStack.size() < 1) return 1;
+        if (outputStack.size() < 1) return false;
         std::shared_ptr<Expression> left = outputStack.top();
         outputStack.pop();
 
@@ -126,7 +126,7 @@ int parse(std::string expression, std::shared_ptr<Expression> &root) {
     }
 
     // assuming the expression is valid, there should be only one element in the output stack
-    if (outputStack.size() != 1) return 1;
+    if (outputStack.size() != 1) return false;
     root = outputStack.top();
-    return 0;
+    return true;
 }

@@ -18,4 +18,4 @@ const static std::unordered_map<std::string, int> precedence = {
 };
 
 std::vector<std::string> tokenize(std::string);
-int parse(std::string, std::shared_ptr<Expression>&);
+bool parse(std::string, std::shared_ptr<Expression>&);

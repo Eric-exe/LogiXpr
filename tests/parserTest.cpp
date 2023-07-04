@@ -25,15 +25,15 @@ TEST(ParserTest, TokenizeMixedExpression) {
 TEST(ParserTest, ParseEmptyString) {
     std::string expression = "";
     std::shared_ptr<Expression> root;
-    int result = parse(expression, root);
-    EXPECT_EQ(1, result);
+    bool result = parse(expression, root);
+    EXPECT_FALSE(result);
 }
 
 TEST(ParserTest, ParseSingleVariable) {
     std::string expression = "p";
     std::shared_ptr<Expression> root;
     int result = parse(expression, root);
-    EXPECT_EQ(0, result);
+    EXPECT_TRUE(result);
     EXPECT_EQ("p", root->getValue());
 }
 
@@ -41,14 +41,14 @@ TEST(ParserTest, ParseSingleOperator) {
     std::string expression = "&";
     std::shared_ptr<Expression> root;
     int result = parse(expression, root);
-    EXPECT_EQ(1, result);
+    EXPECT_FALSE(result);
 }
 
 TEST(ParserTest, ParseUnaryOperator) {
     std::string expression = "!p";
     std::shared_ptr<Expression> root;
     int result = parse(expression, root);
-    EXPECT_EQ(0, result);
+    EXPECT_TRUE(result);
     EXPECT_EQ("!", root->getValue());
     EXPECT_EQ("p", root->getLeft()->getValue());
 }
@@ -57,7 +57,7 @@ TEST(ParserTest, ParseBinaryOperator) {
     std::string expression = "p & q";
     std::shared_ptr<Expression> root;
     int result = parse(expression, root);
-    EXPECT_EQ(0, result);
+    EXPECT_TRUE(result);
     EXPECT_EQ("&", root->getValue());
     EXPECT_EQ("p", root->getLeft()->getValue());
     EXPECT_EQ("q", root->getRight()->getValue());
@@ -67,7 +67,7 @@ TEST(ParserTest, ParseMixedExpression) {
     std::string expression = "p & !(q | r)";
     std::shared_ptr<Expression> root;
     int result = parse(expression, root);
-    EXPECT_EQ(0, result);
+    EXPECT_TRUE(result);
     EXPECT_EQ("&", root->getValue());
     EXPECT_EQ("p", root->getLeft()->getValue());
     EXPECT_EQ("!", root->getRight()->getValue());
@@ -81,11 +81,31 @@ TEST(ParserTest, ParsedMultipleNOTs) {
     std::shared_ptr<Expression> root;
 
     int result = parse(expression, root);
-    EXPECT_EQ(0, result);
+    EXPECT_TRUE(result);
 
     EXPECT_EQ("|", root->getValue());
     EXPECT_EQ("!", root->getLeft()->getValue());
     EXPECT_EQ("p", root->getLeft()->getLeft()->getValue());
     EXPECT_EQ("!", root->getRight()->getValue());
     EXPECT_EQ("q", root->getRight()->getLeft()->getValue());
+
+    std::string expression2 = "!!p";
+
+    int result2 = parse(expression2, root);
+    EXPECT_TRUE(result);
+
+    EXPECT_EQ("!", root->getValue());
+    EXPECT_EQ("!", root->getLeft()->getValue());
+    EXPECT_EQ("p", root->getLeft()->getLeft()->getValue());
+
+    std::string expression3 = "!!!(p & q)";
+    int result3 = parse(expression3, root);
+    EXPECT_TRUE(result);
+
+    EXPECT_EQ("!", root->getValue());
+    EXPECT_EQ("!", root->getLeft()->getValue());
+    EXPECT_EQ("!", root->getLeft()->getLeft()->getValue());
+    EXPECT_EQ("&", root->getLeft()->getLeft()->getLeft()->getValue());
+    EXPECT_EQ("p", root->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
+    EXPECT_EQ("q", root->getLeft()->getLeft()->getLeft()->getRight()->getValue());
 }
