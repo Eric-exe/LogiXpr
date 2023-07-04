@@ -1,17 +1,17 @@
 #include "../include/expression.h"
 
-Expression::Expression(std::string expression) {
-    this->expression = expression;
+Expression::Expression(std::string value) {
+    this->value = value;
 }
 
-Expression::Expression(std::string expression, std::shared_ptr<Expression> left, std::shared_ptr<Expression> right) {
-    this->expression = expression;
+Expression::Expression(std::string value, std::shared_ptr<Expression> left, std::shared_ptr<Expression> right) {
+    this->value = value;
     this->left = left;
     this->right = right;
 }
 
-std::string Expression::getExpression() {
-    return this->expression;
+std::string Expression::getValue() {
+    return this->value;
 }
 
 bool Expression::hasLeft() {
@@ -24,6 +24,11 @@ bool Expression::hasRight() {
 
 bool Expression::isBinary() {
     return this->hasLeft() && this->hasRight();
+}
+
+bool Expression::isVar() {
+    // if the expression is a variable, it will be a single character from a-z
+    return this->value.length() == 1 && std::islower(this->value[0]);
 }
 
 std::shared_ptr<Expression> Expression::getLeft() {
