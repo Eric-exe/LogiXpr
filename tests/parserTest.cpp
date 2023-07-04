@@ -75,3 +75,17 @@ TEST(ParserTest, ParseMixedExpression) {
     EXPECT_EQ("q", root->getRight()->getLeft()->getLeft()->getValue());
     EXPECT_EQ("r", root->getRight()->getLeft()->getRight()->getValue());
 }
+
+TEST(ParserTest, ParsedMultipleNOTs) {
+    std::string expression = "!p | !q";
+    std::shared_ptr<Expression> root;
+
+    int result = parse(expression, root);
+    EXPECT_EQ(0, result);
+
+    EXPECT_EQ("|", root->getValue());
+    EXPECT_EQ("!", root->getLeft()->getValue());
+    EXPECT_EQ("p", root->getLeft()->getLeft()->getValue());
+    EXPECT_EQ("!", root->getRight()->getValue());
+    EXPECT_EQ("q", root->getRight()->getLeft()->getValue());
+}

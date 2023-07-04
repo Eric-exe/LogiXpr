@@ -29,6 +29,19 @@ int parse(std::string expression, std::shared_ptr<Expression> &root) {
     for (auto token : tokens) {
         if (token.length() == 1 && islower(token[0]) || token == TRUE || token == FALSE) {
             // This is a leaf node. It is either a variable or a constant (True or False)
+
+            // special case - NOT
+            if (!operatorStack.empty() && operatorStack.top() == NOT) {
+                std::string operatorStr = operatorStack.top();
+                operatorStack.pop();
+
+                std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
+                std::shared_ptr<Expression> operand(new Expression(token));
+
+                operatorPtr->setLeft(operand);
+                outputStack.push(operatorPtr);
+                continue;
+            }
             std::shared_ptr<Expression> leaf(new Expression(token));
             outputStack.push(leaf);
         }
