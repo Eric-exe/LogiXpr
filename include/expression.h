@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <memory>
-#include <vector>
+#include <set>
 #include <cctype>
 
 #define AND "&"
@@ -36,7 +36,7 @@ class Expression
         void setLeft(std::shared_ptr<Expression>);
         void setRight(std::shared_ptr<Expression>);
 
-        std::vector<std::string> getVariables();
+        std::set<std::string> getVariables();
     private:
         std::string value;
         std::shared_ptr<Expression> left;

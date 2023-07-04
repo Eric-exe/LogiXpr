@@ -84,14 +84,14 @@ TEST(ExpressionTest, SetRight) {
 
 TEST(ExpressionTest, GetVariables) {
     std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
-    std::vector<std::string> expectedVars1 = {"p"};
+    std::set<std::string> expectedVars1 = {"p"};
     EXPECT_EQ(expectedVars1, expr1->getVariables());
 
     std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("&", std::make_shared<Expression>("p"), std::make_shared<Expression>("q"));
-    std::vector<std::string> expectedVars2 = {"p", "q"};
+    std::set<std::string> expectedVars2 = {"p", "q"};
     EXPECT_EQ(expectedVars2, expr2->getVariables());
 
     std::shared_ptr<Expression> expr3 = std::make_shared<Expression>("!", nullptr, std::make_shared<Expression>("p"));
-    std::vector<std::string> expectedVars3 = {"p"};
+    std::set<std::string> expectedVars3 = {"p"};
     EXPECT_EQ(expectedVars3, expr3->getVariables());
 }

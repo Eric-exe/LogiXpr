@@ -47,18 +47,19 @@ void Expression::setRight(std::shared_ptr<Expression> right) {
     this->right = right;
 }
 
-std::vector<std::string> Expression::getVariables() {
-    std::vector<std::string> variables;
-    if (this->isVar()) variables.push_back(this->value);
+std::set<std::string> Expression::getVariables() {
+    std::set<std::string> variables;
+    if (this->isVar()) variables.insert(this->value);
 
     if (this->hasLeft()) {
-        std::vector<std::string> leftVariables = this->getLeft()->getVariables();
-        variables.insert(variables.end(), leftVariables.begin(), leftVariables.end());
+        std::set<std::string> leftVariables = this->getLeft()->getVariables();
+        variables.insert(leftVariables.begin(), leftVariables.end());
     }
 
     if (this->hasRight()) {
-        std::vector<std::string> rightVariables = this->getRight()->getVariables();
-        variables.insert(variables.end(), rightVariables.begin(), rightVariables.end());
+        std::set<std::string> rightVariables = this->getRight()->getVariables();
+        variables.insert(rightVariables.begin(), rightVariables.end());
     }
+    
     return variables;
 }
