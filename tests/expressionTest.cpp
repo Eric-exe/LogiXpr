@@ -120,3 +120,35 @@ TEST(ExpressionTest, GetVariables) {
     std::set<std::string> expectedVars3 = {"p"};
     EXPECT_EQ(expectedVars3, expr3->getVariables());
 }
+
+TEST(ExpressionTest, Clone) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
+    std::shared_ptr<Expression> expr1Clone = expr1->clone();
+    EXPECT_EQ(expr1->getValue(), expr1Clone->getValue());
+
+    std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("&");
+    expr2->setLeft(std::make_shared<Expression>("p"), expr2);
+    expr2->setRight(std::make_shared<Expression>("q"), expr2);
+    std::shared_ptr<Expression> expr2Clone = expr2->clone();
+    EXPECT_EQ(expr2->getValue(), expr2Clone->getValue());
+    EXPECT_EQ(expr2->getLeft()->getValue(), expr2Clone->getLeft()->getValue());
+    EXPECT_EQ(expr2->getRight()->getValue(), expr2Clone->getRight()->getValue());
+}
+
+TEST(ExpressionTest, Compare) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
+    std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("p");
+    EXPECT_TRUE(expr1->compare(expr2));
+
+    std::shared_ptr<Expression> expr3 = std::make_shared<Expression>("p");
+    std::shared_ptr<Expression> expr4 = std::make_shared<Expression>("q");
+    EXPECT_FALSE(expr3->compare(expr4));
+
+    std::shared_ptr<Expression> expr5 = std::make_shared<Expression>("&");
+    expr5->setLeft(std::make_shared<Expression>("p"), expr5);
+    expr5->setRight(std::make_shared<Expression>("q"), expr5);
+    std::shared_ptr<Expression> expr6 = std::make_shared<Expression>("&");
+    expr6->setLeft(std::make_shared<Expression>("p"), expr6);
+    expr6->setRight(std::make_shared<Expression>("q"), expr6);
+    EXPECT_TRUE(expr5->compare(expr6));
+}

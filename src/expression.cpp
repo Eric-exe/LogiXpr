@@ -96,3 +96,27 @@ std::shared_ptr<Expression> Expression::clone()
 
     return clonedExpression;
 }
+
+bool Expression::compare(std::shared_ptr<Expression> other)
+{
+    // make sure the expressions don't have the same address
+    if (this == other.get())
+        return false;
+        
+    if (this->value != other->value)
+        return false;
+
+    if (this->hasLeft() != other->hasLeft())
+        return false;
+
+    if (this->hasRight() != other->hasRight())
+        return false;
+
+    if (this->hasLeft() && !this->getLeft()->compare(other->getLeft()))
+        return false;
+
+    if (this->hasRight() && !this->getRight()->compare(other->getRight()))
+        return false;
+
+    return true;
+}

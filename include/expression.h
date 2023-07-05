@@ -119,6 +119,15 @@ public:
      */
     std::shared_ptr<Expression> clone();
 
+    /**
+     * @brief Compare the current expression to another expression
+     * 
+     * @param other the other expression to compare to
+     * 
+     * @return bool of whether the current expression is equal to the other expression
+     */
+    bool compare(std::shared_ptr<Expression> other);
+
 private:
     /**
      * @brief The current expression
