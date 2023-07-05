@@ -108,4 +108,18 @@ TEST(ParserTest, ParsedMultipleNOTs) {
     EXPECT_EQ("&", root->getLeft()->getLeft()->getLeft()->getValue());
     EXPECT_EQ("p", root->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
     EXPECT_EQ("q", root->getLeft()->getLeft()->getLeft()->getRight()->getValue());
+
+    std::string expression4 = "(!(!!p & !!q))";
+    int result4 = parse(expression4, root);
+    EXPECT_TRUE(result);
+
+    EXPECT_EQ("!", root->getValue());
+    EXPECT_EQ("&", root->getLeft()->getValue());
+    EXPECT_EQ("!", root->getLeft()->getLeft()->getValue());
+    EXPECT_EQ("!", root->getLeft()->getRight()->getValue());
+    EXPECT_EQ("!", root->getLeft()->getLeft()->getLeft()->getValue());
+    EXPECT_EQ("p", root->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
+    EXPECT_EQ("!", root->getLeft()->getRight()->getLeft()->getValue());
+    EXPECT_EQ("q", root->getLeft()->getRight()->getLeft()->getLeft()->getValue());
+
 }

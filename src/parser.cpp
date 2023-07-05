@@ -27,23 +27,29 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
     std::vector<std::string> tokens = tokenize(expression);
 
     for (auto token : tokens) {
+        std::cout << token << std::endl;
         if (token.length() == 1 && islower(token[0]) || token == TRUE || token == FALSE) {
             // This is a leaf node. It is either a variable or a constant (True or False)
 
-            // special case - NOT
-            if (!operatorStack.empty() && operatorStack.top() == NOT) {
-                std::string operatorStr = operatorStack.top();
-                operatorStack.pop();
-
-                std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
-                std::shared_ptr<Expression> operand(new Expression(token));
-
-                operatorPtr->setLeft(operand);
-                outputStack.push(operatorPtr);
-                continue;
-            }
             std::shared_ptr<Expression> leaf(new Expression(token));
             outputStack.push(leaf);
+
+            // special case - NOT
+            if (!operatorStack.empty() && operatorStack.top() == NOT) {
+                while (!operatorStack.empty() && operatorStack.top() == NOT) {
+                    std::string operatorStr = operatorStack.top();
+                    operatorStack.pop();
+
+                    std::shared_ptr<Expression> operand = outputStack.top();
+                    outputStack.pop();
+
+                    std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
+
+                    operatorPtr->setLeft(operand);
+                    outputStack.push(operatorPtr);
+                }
+                continue;
+            }
         }
         else if (token == NOT) {
             // Operator
@@ -83,11 +89,16 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
 
                 std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
 
-                if (outputStack.size() < 2) return false;
-
+                if (outputStack.size() < 1) return false;
                 std::shared_ptr<Expression> right = outputStack.top();
                 outputStack.pop();
+                if (operatorStr == NOT) {
+                    operatorPtr->setLeft(right);
+                    outputStack.push(operatorPtr);
+                    continue;
+                }
 
+                if (outputStack.size() < 1) return false;
                 std::shared_ptr<Expression> left = outputStack.top();
                 outputStack.pop();
 
@@ -99,7 +110,6 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
             operatorStack.pop();
         }
     }
-
     while (!operatorStack.empty()) {
         std::string operatorStr = operatorStack.top();
         operatorStack.pop();
