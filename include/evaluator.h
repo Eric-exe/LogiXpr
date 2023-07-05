@@ -11,7 +11,7 @@
 
 /**
  * @brief Get the Truth Table Inputs object
- * 
+ *
  * @param lhs pointer to left hand side expression
  * @param rhs pointer to right hand side expression
  * @return vector of maps of input variables
@@ -20,20 +20,20 @@ std::vector<std::unordered_map<std::string, bool>> getTruthTableInputs(std::shar
 
 /**
  * @brief Evaluate the expression with the given inputs
- * 
+ *
  * @param expression pointer to expression to evaluate
  * @param inputs map of variable inputs
- * 
+ *
  * @return bool of whether the expression is true or false
  */
 bool evaluateExpression(std::shared_ptr<Expression> expression, std::unordered_map<std::string, bool> inputs);
 
 /**
  * @brief Check if two expressions are equivalent
- * 
+ *
  * @param lhs pointer to left hand side expression
  * @param rhs pointer to right hand side expression
- * 
- * @return bool of whether the expressions are equivalent 
+ *
+ * @return bool of whether the expressions are equivalent
  */
 bool isEquivalent(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs);
