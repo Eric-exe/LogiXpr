@@ -7,6 +7,9 @@
 
 #include "expression.h"
 
+/**
+ * @brief Class that handles equivalence laws
+ */
 class EquivLaws
 {
 public:

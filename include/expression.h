@@ -22,6 +22,9 @@
 #define TRUE "T"
 #define FALSE "F"
 
+/**
+ * @brief Expression class in the form of an abstract syntax tree
+ */
 class Expression
 {
 public:
