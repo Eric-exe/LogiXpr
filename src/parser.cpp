@@ -1,3 +1,8 @@
+/**
+ * @file parser.cpp
+ * @brief Implementation file for parser functions
+ */
+
 #include "../include/parser.h"
 
 std::vector<std::string> tokenize(std::string expression) {
@@ -45,7 +50,7 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
 
                     std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
 
-                    operatorPtr->setLeft(operand);
+                    operatorPtr->setLeft(operand, operatorPtr);
                     outputStack.push(operatorPtr);
                 }
                 continue;
@@ -73,8 +78,8 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
                 std::shared_ptr<Expression> left = outputStack.top();
                 outputStack.pop();
 
-                operatorPtr->setLeft(left);
-                operatorPtr->setRight(right);
+                operatorPtr->setLeft(left, operatorPtr);
+                operatorPtr->setRight(right, operatorPtr);
 
                 outputStack.push(operatorPtr);
             }
@@ -93,7 +98,7 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
                 std::shared_ptr<Expression> right = outputStack.top();
                 outputStack.pop();
                 if (operatorStr == NOT) {
-                    operatorPtr->setLeft(right);
+                    operatorPtr->setLeft(right, operatorPtr);
                     outputStack.push(operatorPtr);
                     continue;
                 }
@@ -102,8 +107,8 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
                 std::shared_ptr<Expression> left = outputStack.top();
                 outputStack.pop();
 
-                operatorPtr->setLeft(left);
-                operatorPtr->setRight(right);
+                operatorPtr->setLeft(left, operatorPtr);
+                operatorPtr->setRight(right, operatorPtr);
 
                 outputStack.push(operatorPtr);
             }
@@ -120,7 +125,7 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
         std::shared_ptr<Expression> right = outputStack.top();
         outputStack.pop();
         if (operatorStr == NOT) {
-            operatorPtr->setLeft(right);
+            operatorPtr->setLeft(right, operatorPtr);
             outputStack.push(operatorPtr);
             continue;
         }
@@ -129,8 +134,8 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root) {
         std::shared_ptr<Expression> left = outputStack.top();
         outputStack.pop();
 
-        operatorPtr->setLeft(left);
-        operatorPtr->setRight(right);
+        operatorPtr->setLeft(left, operatorPtr);
+        operatorPtr->setRight(right, operatorPtr);
 
         outputStack.push(operatorPtr);
     }

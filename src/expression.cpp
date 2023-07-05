@@ -1,13 +1,12 @@
+/**
+ * @file expression.cpp
+ * @brief Implementation file for expression class
+ */
+
 #include "../include/expression.h"
 
 Expression::Expression(std::string value) {
     this->value = value;
-}
-
-Expression::Expression(std::string value, std::shared_ptr<Expression> left, std::shared_ptr<Expression> right) {
-    this->value = value;
-    this->left = left;
-    this->right = right;
 }
 
 std::string Expression::getValue() {
@@ -31,6 +30,10 @@ bool Expression::isVar() {
     return this->value.length() == 1 && std::islower(this->value[0]);
 }
 
+std::shared_ptr<Expression> Expression::getParent() {
+    return this->parent;
+}
+
 std::shared_ptr<Expression> Expression::getLeft() {
     return this->left;
 }
@@ -39,12 +42,14 @@ std::shared_ptr<Expression> Expression::getRight() {
     return this->right;
 }
 
-void Expression::setLeft(std::shared_ptr<Expression> left) {
+void Expression::setLeft(std::shared_ptr<Expression> left, std::shared_ptr<Expression> parent) {
     this->left = left;
+    this->left->parent = parent;
 }
 
-void Expression::setRight(std::shared_ptr<Expression> right) {
+void Expression::setRight(std::shared_ptr<Expression> right, std::shared_ptr<Expression> parent) {
     this->right = right;
+    this->right->parent = parent;
 }
 
 std::set<std::string> Expression::getVariables() {
@@ -66,10 +71,10 @@ std::set<std::string> Expression::getVariables() {
 
 std::shared_ptr<Expression> Expression::clone() {
     std::shared_ptr<Expression> clonedExpression;
-    
-    if (isBinary()) clonedExpression = std::make_shared<Expression>(value, left->clone(), right->clone());
-    else if (hasLeft()) clonedExpression = std::make_shared<Expression>(value, left->clone(), nullptr);
-    else clonedExpression = std::make_shared<Expression>(value);
+
+    clonedExpression = std::make_shared<Expression>(this->value);
+    if (this->hasLeft()) clonedExpression->setLeft(this->getLeft()->clone(), clonedExpression);
+    if (this->hasRight()) clonedExpression->setRight(this->getRight()->clone(), clonedExpression);
     
     return clonedExpression;
 }
