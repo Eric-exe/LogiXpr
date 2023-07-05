@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_156',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['hasleft_128',['hasLeft',['../classExpression.html#aee9013ecd9657f95cb221a78bcb6f582',1,'Expression']]],
+  ['hasright_129',['hasRight',['../classExpression.html#a81c99d55807d6c9cd8eda4a02782519f',1,'Expression']]]
 ];

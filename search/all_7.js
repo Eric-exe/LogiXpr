@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['left_67',['left',['../classExpression.html#a77cb37b491d271a0e61f6144fb81e382',1,'Expression']]]
+  ['hasleft_38',['hasLeft',['../classExpression.html#aee9013ecd9657f95cb221a78bcb6f582',1,'Expression']]],
+  ['hasright_39',['hasRight',['../classExpression.html#a81c99d55807d6c9cd8eda4a02782519f',1,'Expression']]]
 ];

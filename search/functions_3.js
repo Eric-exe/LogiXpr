@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['getleft_145',['getLeft',['../classExpression.html#a3aae7dd9a4460265763aaf02c2e355b3',1,'Expression']]],
-  ['getparent_146',['getParent',['../classExpression.html#a7d7722f90807eea2b7069992deb291cb',1,'Expression']]],
-  ['getright_147',['getRight',['../classExpression.html#a58f70e5003920d8ec6ca9daa70310c30',1,'Expression']]],
-  ['gettruthtableinputs_148',['getTruthTableInputs',['../evaluator_8cpp.html#ae354885c3af5e15f264ce34d6b1ea967',1,'getTruthTableInputs(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs):&#160;evaluator.cpp'],['../evaluator_8h.html#ae354885c3af5e15f264ce34d6b1ea967',1,'getTruthTableInputs(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs):&#160;evaluator.cpp']]],
-  ['getvalue_149',['getValue',['../classExpression.html#a260676a1e4334bc7b7bb90df1a67737b',1,'Expression']]],
-  ['getvariables_150',['getVariables',['../classExpression.html#a3bba0cd7622afd1e705c1c589d7f3064',1,'Expression']]]
+  ['demorgan_114',['deMorgan',['../classEquivLaws.html#ab00a44fcec2de67d1a94dc212bee65fa',1,'EquivLaws']]],
+  ['demorganreversed_115',['deMorganReversed',['../classEquivLaws.html#a2a45c70f7fdab9411addc43c715d2c65',1,'EquivLaws']]],
+  ['distributive_116',['distributive',['../classEquivLaws.html#accb55051456627da41e46189a2e2f007',1,'EquivLaws']]],
+  ['distributivereversed_117',['distributiveReversed',['../classEquivLaws.html#a42bd9567781a6505d999e786c5087232',1,'EquivLaws']]],
+  ['domination_118',['domination',['../classEquivLaws.html#a5357a2d613db637e8ccd1f1740d7135b',1,'EquivLaws']]],
+  ['doublenegation_119',['doubleNegation',['../classEquivLaws.html#a2df45ef6a04b2b6f524c302dc7b8ee77',1,'EquivLaws']]]
 ];

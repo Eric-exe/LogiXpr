@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['parent_73',['parent',['../classExpression.html#afcbaac896b3d7619794c9e3eefd8d4e2',1,'Expression']]],
-  ['parse_74',['parse',['../parser_8cpp.html#a31d1a69dc8ed9d81edfffba6d280a5a0',1,'parse(std::string expression, std::shared_ptr&lt; Expression &gt; &amp;root):&#160;parser.cpp'],['../parser_8h.html#a81719fcb4383225339cdca6e07e8d9c3',1,'parse(std::string, std::shared_ptr&lt; Expression &gt; &amp;):&#160;parser.cpp']]],
-  ['parser_2ecpp_75',['parser.cpp',['../parser_8cpp.html',1,'']]],
-  ['parser_2eh_76',['parser.h',['../parser_8h.html',1,'']]]
+  ['negation_68',['negation',['../classEquivLaws.html#a6e714be3fcf200dce50c2a1731efabb7',1,'EquivLaws']]],
+  ['not_69',['NOT',['../expression_8h.html#ad3e9fe0ec59d2dbb3982ababa042720c',1,'expression.h']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['readme_2emd_77',['README.md',['../README_8md.html',1,'']]],
-  ['right_78',['right',['../classExpression.html#a0156954da1ef8ecbde7994ba001fc265',1,'Expression']]]
+  ['open_70',['OPEN',['../expression_8h.html#a1354b70ac6803a06beebe84f61b5f95b',1,'expression.h']]],
+  ['or_71',['OR',['../expression_8h.html#a3363ca4d6d3cc0230b2804280591c991',1,'expression.h']]]
 ];
