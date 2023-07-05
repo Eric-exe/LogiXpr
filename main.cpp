@@ -1,3 +1,8 @@
+/**
+ * @file main.cpp
+ * @brief Main file
+ */
+
 #include <iostream>
 #include <string>
 
@@ -7,8 +12,9 @@
 
 int main() {
 
-    std::string lhsStr = "!p";
-    std::string rhsStr = "(p -> r)";
+    std::string lhsStr = "(!(!!p & !!q))";
+    std::shared_ptr<Expression> lhs;
+    std::cout << parse(lhsStr, lhs) << std::endl;
 
     return 0;
 }

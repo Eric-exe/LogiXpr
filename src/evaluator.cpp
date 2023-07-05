@@ -1,3 +1,8 @@
+/**
+ * @file evaluator.cpp
+ * @brief Implementation file for evaluator functions
+ */
+
 #include "../include/evaluator.h"
 
 std::vector<std::unordered_map<std::string, bool>> getTruthTableInputs(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs) {
