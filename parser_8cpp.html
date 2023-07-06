@@ -80,88 +80,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8432bd0a0fa24dbd96290cbefd1ad628"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8cpp.html#a8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a> (std::string expression)</td></tr>
-<tr class="memdesc:a8432bd0a0fa24dbd96290cbefd1ad628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize the expression.  <a href="parser_8cpp.html#a8432bd0a0fa24dbd96290cbefd1ad628">More...</a><br /></td></tr>
-<tr class="separator:a8432bd0a0fa24dbd96290cbefd1ad628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31d1a69dc8ed9d81edfffba6d280a5a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8cpp.html#a31d1a69dc8ed9d81edfffba6d280a5a0">parse</a> (std::string expression, std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;root)</td></tr>
-<tr class="memdesc:a31d1a69dc8ed9d81edfffba6d280a5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the expression and convert it to an abstract syntax tree.  <a href="parser_8cpp.html#a31d1a69dc8ed9d81edfffba6d280a5a0">More...</a><br /></td></tr>
-<tr class="separator:a31d1a69dc8ed9d81edfffba6d280a5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8432bd0a0fa24dbd96290cbefd1ad628"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a> (std::string expression)</td></tr>
+<tr class="memdesc:ga8432bd0a0fa24dbd96290cbefd1ad628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize the expression.  <a href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">More...</a><br /></td></tr>
+<tr class="separator:ga8432bd0a0fa24dbd96290cbefd1ad628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga31d1a69dc8ed9d81edfffba6d280a5a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a> (std::string expression, std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;root)</td></tr>
+<tr class="memdesc:ga31d1a69dc8ed9d81edfffba6d280a5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the expression and convert it to an abstract syntax tree.  <a href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">More...</a><br /></td></tr>
+<tr class="separator:ga31d1a69dc8ed9d81edfffba6d280a5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation file for parser functions. </p>
 
 <p class="definition">Definition in file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a id="a31d1a69dc8ed9d81edfffba6d280a5a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31d1a69dc8ed9d81edfffba6d280a5a0">&#9670;&nbsp;</a></span>parse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool parse </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>expression</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>root</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Parse the expression and convert it to an abstract syntax tree. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">expression</td><td>expression to be parsed </td></tr>
-    <tr><td class="paramname">root</td><td>to the root of the abstract syntax tree</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>bool of whether the expression was parsed successfully </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00031">31</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a8432bd0a0fa24dbd96290cbefd1ad628"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8432bd0a0fa24dbd96290cbefd1ad628">&#9670;&nbsp;</a></span>tokenize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::string&gt; tokenize </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>expression</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Tokenize the expression. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">expression</td><td>expression to be tokenized</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>string vector of tokens </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="parser_8cpp_source.html#l00008">8</a> of file <a class="el" href="parser_8cpp_source.html">parser.cpp</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
