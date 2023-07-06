@@ -2,7 +2,7 @@ var searchData=
 [
   ['idempotent_41',['idempotent',['../classEquivLaws.html#a6c775a7ad9ef0112bde9310c0b3f816c',1,'EquivLaws']]],
   ['identity_42',['identity',['../classEquivLaws.html#aa958ef68733e755352500b3797ad5b72',1,'EquivLaws']]],
-  ['iff_43',['IFF',['../expression_8h.html#a2683dde5ae950c9c69ec580cff66f359',1,'expression.h']]],
+  ['iff_43',['IFF',['../group__stringExpressions.html#ga2683dde5ae950c9c69ec580cff66f359',1,'expression.h']]],
   ['implication0_44',['implication0',['../classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c',1,'EquivLaws']]],
   ['implication0reversed_45',['implication0Reversed',['../classEquivLaws.html#a4b5cfd12754d50e7a7e2bfe8367bebbd',1,'EquivLaws']]],
   ['implication1_46',['implication1',['../classEquivLaws.html#a71b924ea01234a15280bf5948b938501',1,'EquivLaws']]],
@@ -21,7 +21,7 @@ var searchData=
   ['implication7reversed_59',['implication7Reversed',['../classEquivLaws.html#a9305cf9bc21c077c680e1167d5dafe61',1,'EquivLaws']]],
   ['implication8_60',['implication8',['../classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04',1,'EquivLaws']]],
   ['implication8reversed_61',['implication8Reversed',['../classEquivLaws.html#a2ef503b8c4fba3034403252ccc6573cb',1,'EquivLaws']]],
-  ['implies_62',['IMPLIES',['../expression_8h.html#a1808f02db684c7a519229793dc893405',1,'expression.h']]],
+  ['implies_62',['IMPLIES',['../group__stringExpressions.html#ga1808f02db684c7a519229793dc893405',1,'expression.h']]],
   ['isbinary_63',['isBinary',['../classExpression.html#a8c0c6af86336d8ba7c6039684d710fc8',1,'Expression']]],
   ['isequivalent_64',['isEquivalent',['../evaluator_8cpp.html#ab79b552763289fa4a9c806705e27c669',1,'isEquivalent(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs):&#160;evaluator.cpp'],['../evaluator_8h.html#ab79b552763289fa4a9c806705e27c669',1,'isEquivalent(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs):&#160;evaluator.cpp']]],
   ['isvar_65',['isVar',['../classExpression.html#aa78af69351d79716af4c81bb7ffa48b9',1,'Expression']]]

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xor_87',['XOR',['../expression_8h.html#a45cd11034d1a7d86c3a88d36f5e7f1ab',1,'expression.h']]]
+  ['xor_88',['XOR',['../group__stringExpressions.html#ga45cd11034d1a7d86c3a88d36f5e7f1ab',1,'expression.h']]]
 ];

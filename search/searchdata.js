@@ -5,7 +5,7 @@ var indexSectionsWithContent =
   2: "emprs",
   3: "abcdeghimnprst",
   4: "lprv",
-  5: "acfinotx"
+  5: "s"
 };
 
 var indexSectionNames =
@@ -15,7 +15,7 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "defines"
+  5: "groups"
 };
 
 var indexSectionLabels =
@@ -25,6 +25,6 @@ var indexSectionLabels =
   2: "Files",
   3: "Functions",
   4: "Variables",
-  5: "Macros"
+  5: "Modules"
 };
 
