@@ -5,10 +5,11 @@
 
 #include "../include/equivLaws.h"
 
-void EquivLaws::replace(std::shared_ptr<Expression>& expression, std::shared_ptr<Expression> newExpression)
+void EquivLaws::replace(std::shared_ptr<Expression> &expression, std::shared_ptr<Expression> newExpression)
 {
     std::shared_ptr<Expression> parent = expression->getParent();
-    if (parent == nullptr) {
+    if (parent == nullptr)
+    {
         // if the parent is null, then the current expression is the root
         // set the new expression as the root
         expression = newExpression;
@@ -23,7 +24,7 @@ void EquivLaws::replace(std::shared_ptr<Expression>& expression, std::shared_ptr
         parent->setRight(newExpression, parent);
 }
 
-bool EquivLaws::identity(std::shared_ptr<Expression>& expression)
+bool EquivLaws::identity(std::shared_ptr<Expression> &expression)
 {
     if (expression->getValue() == AND && expression->getRight()->getValue() == TRUE)
     {
@@ -46,7 +47,7 @@ bool EquivLaws::identity(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::domination(std::shared_ptr<Expression>& expression)
+bool EquivLaws::domination(std::shared_ptr<Expression> &expression)
 {
     // p & F = F, p | T = T
     if (expression->getValue() == AND && expression->getRight()->getValue() == FALSE)
@@ -72,7 +73,7 @@ bool EquivLaws::domination(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::idempotent(std::shared_ptr<Expression>& expression)
+bool EquivLaws::idempotent(std::shared_ptr<Expression> &expression)
 {
     if (expression->getValue() == AND || expression->getValue() == OR)
     {
@@ -94,7 +95,7 @@ bool EquivLaws::idempotent(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::doubleNegation(std::shared_ptr<Expression>& expression)
+bool EquivLaws::doubleNegation(std::shared_ptr<Expression> &expression)
 {
     // !!p = p
     if (expression->getValue() == NOT && expression->getLeft()->getValue() == NOT)
@@ -110,7 +111,7 @@ bool EquivLaws::doubleNegation(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::commutative(std::shared_ptr<Expression>& expression)
+bool EquivLaws::commutative(std::shared_ptr<Expression> &expression)
 {
     if (expression->getValue() == AND || expression->getValue() == OR)
     {
@@ -130,7 +131,7 @@ bool EquivLaws::commutative(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::associative(std::shared_ptr<Expression>& expression)
+bool EquivLaws::associative(std::shared_ptr<Expression> &expression)
 {
     // (p | q) | r = p | (q | r), (p & q) & r = p & (q & r)
     if (expression->getValue() == AND || expression->getValue() == OR && expression->getLeft()->getValue() == expression->getValue())
@@ -153,7 +154,7 @@ bool EquivLaws::associative(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::associativeReversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::associativeReversed(std::shared_ptr<Expression> &expression)
 {
     // p | (q | r) = (p | q) | r, p & (q & r) = (p & q) & r
     if (expression->getValue() == AND || expression->getValue() == OR && expression->getRight()->getValue() == expression->getValue())
@@ -176,7 +177,7 @@ bool EquivLaws::associativeReversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::distributive(std::shared_ptr<Expression>& expression)
+bool EquivLaws::distributive(std::shared_ptr<Expression> &expression)
 {
     // p | (q & r) = (p | q) & (p | r), p & (q | r) = (p & q) | (p & r)
     if (expression->getValue() == AND && expression->getRight()->getValue() == OR)
@@ -220,7 +221,57 @@ bool EquivLaws::distributive(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::deMorgan(std::shared_ptr<Expression>& expression)
+bool EquivLaws::distributiveReversed(std::shared_ptr<Expression> &expression)
+{
+    // (p | q) & (p | r) = p | (q & r), (p & q) | (p & r) = p & (q | r)
+    if (expression->getValue() == AND && expression->getLeft()->getValue() == OR && expression->getRight()->getValue() == OR)
+    {
+        std::shared_ptr<Expression> left1 = expression->getLeft()->getLeft();
+        std::shared_ptr<Expression> left2 = expression->getLeft()->getRight();
+        std::shared_ptr<Expression> right1 = expression->getRight()->getLeft();
+        std::shared_ptr<Expression> right2 = expression->getRight()->getRight();
+
+        // check if left1 == right1
+        if (!left1->compare(right1))
+            return false;
+
+        // create a new expression
+        std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(OR);
+        newExpression->setLeft(left1, newExpression);
+        newExpression->setRight(std::make_shared<Expression>(AND), newExpression);
+        newExpression->getRight()->setLeft(left2, newExpression->getRight());
+        newExpression->getRight()->setRight(right2, newExpression->getRight());
+
+        replace(expression, newExpression);
+
+        return true;
+    }
+    else if (expression->getValue() == OR && expression->getLeft()->getValue() == AND && expression->getRight()->getValue() == AND)
+    {
+        std::shared_ptr<Expression> left1 = expression->getLeft()->getLeft();
+        std::shared_ptr<Expression> left2 = expression->getLeft()->getRight();
+        std::shared_ptr<Expression> right1 = expression->getRight()->getLeft();
+        std::shared_ptr<Expression> right2 = expression->getRight()->getRight();
+
+        // check if left1 == right1
+        if (!left1->compare(right1))
+            return false;
+
+        // create a new expression
+        std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(AND);
+        newExpression->setLeft(left1, newExpression);
+        newExpression->setRight(std::make_shared<Expression>(OR), newExpression);
+        newExpression->getRight()->setLeft(left2, newExpression->getRight());
+        newExpression->getRight()->setRight(right2, newExpression->getRight());
+
+        replace(expression, newExpression);
+
+        return true;
+    }
+    return false;
+}
+
+bool EquivLaws::deMorgan(std::shared_ptr<Expression> &expression)
 {
     // !(p | q) = !p & !q, !(p & q) = !p | !q
     if (expression->getValue() == NOT)
@@ -261,49 +312,43 @@ bool EquivLaws::deMorgan(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::deMorganReversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::deMorganReversed(std::shared_ptr<Expression> &expression)
 {
     // !p & !q = !(p | q), !p | !q = !(p & q)
-    if (expression->getValue() == AND)
+    if (expression->getValue() == AND && expression->getLeft()->getValue() == NOT && expression->getRight()->getValue() == NOT)
     {
-        if (expression->getLeft()->getValue() == NOT && expression->getRight()->getValue() == NOT)
-        {
-            std::shared_ptr<Expression> left = expression->getLeft()->getLeft();
-            std::shared_ptr<Expression> right = expression->getRight()->getLeft();
+        std::shared_ptr<Expression> left = expression->getLeft()->getLeft();
+        std::shared_ptr<Expression> right = expression->getRight()->getLeft();
 
-            // create a new expression
-            std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(NOT);
-            newExpression->setLeft(std::make_shared<Expression>(OR), newExpression);
-            newExpression->getLeft()->setLeft(left, newExpression->getLeft());
-            newExpression->getLeft()->setRight(right, newExpression->getLeft());
+        // create a new expression
+        std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(NOT);
+        newExpression->setLeft(std::make_shared<Expression>(OR), newExpression);
+        newExpression->getLeft()->setLeft(left, newExpression->getLeft());
+        newExpression->getLeft()->setRight(right, newExpression->getLeft());
 
-            replace(expression, newExpression);
+        replace(expression, newExpression);
 
-            return true;
-        }
+        return true;
     }
-    else if (expression->getValue() == OR)
+    else if (expression->getValue() == OR && expression->getLeft()->getValue() == NOT && expression->getRight()->getValue() == NOT)
     {
-        if (expression->getLeft()->getValue() == NOT && expression->getRight()->getValue() == NOT)
-        {
-            std::shared_ptr<Expression> left = expression->getLeft()->getLeft();
-            std::shared_ptr<Expression> right = expression->getRight()->getLeft();
+        std::shared_ptr<Expression> left = expression->getLeft()->getLeft();
+        std::shared_ptr<Expression> right = expression->getRight()->getLeft();
 
-            // create a new expression
-            std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(NOT);
-            newExpression->setLeft(std::make_shared<Expression>(AND), newExpression);
-            newExpression->getLeft()->setLeft(left, newExpression->getLeft());
-            newExpression->getLeft()->setRight(right, newExpression->getLeft());
+        // create a new expression
+        std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(NOT);
+        newExpression->setLeft(std::make_shared<Expression>(AND), newExpression);
+        newExpression->getLeft()->setLeft(left, newExpression->getLeft());
+        newExpression->getLeft()->setRight(right, newExpression->getLeft());
 
-            replace(expression, newExpression);
+        replace(expression, newExpression);
 
-            return true;
-        }
+        return true;
     }
     return false;
 }
 
-bool EquivLaws::absorption(std::shared_ptr<Expression>& expression)
+bool EquivLaws::absorption(std::shared_ptr<Expression> &expression)
 {
     // p | (p & q) = p & (p | q) = p
     if (expression->getValue() == OR && expression->getRight()->getValue() == AND || expression->getValue() == AND && expression->getRight()->getValue() == OR)
@@ -316,7 +361,7 @@ bool EquivLaws::absorption(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::negation(std::shared_ptr<Expression>& expression)
+bool EquivLaws::negation(std::shared_ptr<Expression> &expression)
 {
     // p | !p = T, p & !p = F
     if (expression->getValue() == OR && expression->getRight()->getValue() == NOT)
@@ -346,7 +391,7 @@ bool EquivLaws::negation(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication0(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication0(std::shared_ptr<Expression> &expression)
 {
     // p -> q = !p | q
     if (expression->getValue() == IMPLIES)
@@ -367,7 +412,7 @@ bool EquivLaws::implication0(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication0Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication0Reversed(std::shared_ptr<Expression> &expression)
 {
     // !p | q = p -> q
     if (expression->getValue() == OR && expression->getLeft()->getValue() == NOT)
@@ -387,7 +432,7 @@ bool EquivLaws::implication0Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication1(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication1(std::shared_ptr<Expression> &expression)
 {
     // p -> q = !q -> !p
     if (expression->getValue() == IMPLIES)
@@ -409,7 +454,7 @@ bool EquivLaws::implication1(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication1Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication1Reversed(std::shared_ptr<Expression> &expression)
 {
     // !q -> !p = p -> q
     if (expression->getValue() == IMPLIES && expression->getLeft()->getValue() == NOT && expression->getRight()->getValue() == NOT)
@@ -429,14 +474,14 @@ bool EquivLaws::implication1Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication2(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication2(std::shared_ptr<Expression> &expression)
 {
     // p | q = !p -> q
     if (expression->getValue() == OR)
     {
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right = expression->getRight();
-        
+
         // create a new expression
         std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(IMPLIES);
         newExpression->setLeft(std::make_shared<Expression>(NOT), newExpression);
@@ -450,7 +495,7 @@ bool EquivLaws::implication2(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication2Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication2Reversed(std::shared_ptr<Expression> &expression)
 {
     // !p -> q = p | q
     if (expression->getValue() == IMPLIES && expression->getLeft()->getValue() == NOT)
@@ -470,7 +515,7 @@ bool EquivLaws::implication2Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication3(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication3(std::shared_ptr<Expression> &expression)
 {
     // p & q = !(p -> !q)
     if (expression->getValue() == AND)
@@ -492,7 +537,7 @@ bool EquivLaws::implication3(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication3Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication3Reversed(std::shared_ptr<Expression> &expression)
 {
     // !(p -> !q) = p & q
     if (expression->getValue() == NOT && expression->getLeft()->getValue() == IMPLIES && expression->getLeft()->getRight()->getValue() == NOT)
@@ -512,7 +557,7 @@ bool EquivLaws::implication3Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication4(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication4(std::shared_ptr<Expression> &expression)
 {
     // !(p -> q) = p & !q
     if (expression->getValue() == NOT && expression->getLeft()->getValue() == IMPLIES)
@@ -533,7 +578,7 @@ bool EquivLaws::implication4(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication4Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication4Reversed(std::shared_ptr<Expression> &expression)
 {
     // p & !q = !(p -> q)
     if (expression->getValue() == AND && expression->getRight()->getValue() == NOT)
@@ -554,7 +599,7 @@ bool EquivLaws::implication4Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication5(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication5(std::shared_ptr<Expression> &expression)
 {
     // (p -> q) & (p -> r) = p -> (q & r)
     if (expression->getValue() == AND && expression->getLeft()->getValue() == IMPLIES && expression->getRight()->getValue() == IMPLIES)
@@ -582,7 +627,7 @@ bool EquivLaws::implication5(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication5Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication5Reversed(std::shared_ptr<Expression> &expression)
 {
     // p -> (q & r) = (p -> q) & (p -> r)
     if (expression->getValue() == IMPLIES && expression->getRight()->getValue() == AND)
@@ -590,7 +635,7 @@ bool EquivLaws::implication5Reversed(std::shared_ptr<Expression>& expression)
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right1 = expression->getRight()->getLeft();
         std::shared_ptr<Expression> right2 = expression->getRight()->getRight();
-        
+
         // create a new expression
         std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(AND);
         newExpression->setLeft(std::make_shared<Expression>(IMPLIES), newExpression);
@@ -607,7 +652,7 @@ bool EquivLaws::implication5Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication6(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication6(std::shared_ptr<Expression> &expression)
 {
     // (p -> q) & (q -> r) = (p | q) -> r
     if (expression->getValue() == AND && expression->getLeft()->getValue() == IMPLIES && expression->getRight()->getValue() == IMPLIES)
@@ -635,7 +680,7 @@ bool EquivLaws::implication6(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication6Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication6Reversed(std::shared_ptr<Expression> &expression)
 {
     // (p | q) -> r = (p -> q) & (q -> r)
     if (expression->getValue() == IMPLIES && expression->getLeft()->getValue() == OR)
@@ -660,7 +705,7 @@ bool EquivLaws::implication6Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication7(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication7(std::shared_ptr<Expression> &expression)
 {
     // (p -> q) | (p -> r) = p -> (q | r)
     if (expression->getValue() == OR && expression->getLeft()->getValue() == IMPLIES && expression->getRight()->getValue() == IMPLIES)
@@ -688,7 +733,7 @@ bool EquivLaws::implication7(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication7Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication7Reversed(std::shared_ptr<Expression> &expression)
 {
     // p -> (q | r) = (p -> q) | (p -> r)
     if (expression->getValue() == IMPLIES && expression->getRight()->getValue() == OR)
@@ -713,7 +758,7 @@ bool EquivLaws::implication7Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication8(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication8(std::shared_ptr<Expression> &expression)
 {
     // (p -> q) | (q -> r) = (p & q) -> r
     if (expression->getValue() == OR && expression->getLeft()->getValue() == IMPLIES && expression->getRight()->getValue() == IMPLIES)
@@ -726,7 +771,7 @@ bool EquivLaws::implication8(std::shared_ptr<Expression>& expression)
         // check if the q's are the same
         if (!left2->compare(right1))
             return false;
-        
+
         // create a new expression
         std::shared_ptr<Expression> newExpression = std::make_shared<Expression>(IMPLIES);
         newExpression->setLeft(std::make_shared<Expression>(AND), newExpression);
@@ -741,7 +786,7 @@ bool EquivLaws::implication8(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::implication8Reversed(std::shared_ptr<Expression>& expression)
+bool EquivLaws::implication8Reversed(std::shared_ptr<Expression> &expression)
 {
     // (p & q) -> r = (p -> q) | (q -> r)
     if (expression->getValue() == IMPLIES && expression->getLeft()->getValue() == AND)
@@ -766,9 +811,11 @@ bool EquivLaws::implication8Reversed(std::shared_ptr<Expression>& expression)
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication0(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication0(std::shared_ptr<Expression> &expression)
+{
     // p <-> q = (p -> q) & (q -> p)
-    if (expression->getValue() == IFF) {
+    if (expression->getValue() == IFF)
+    {
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right = expression->getRight();
 
@@ -788,9 +835,11 @@ bool EquivLaws::bidirectionalImplication0(std::shared_ptr<Expression>& expressio
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication0Reversed(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication0Reversed(std::shared_ptr<Expression> &expression)
+{
     // (p -> q) & (q -> p) = p <-> q
-    if (expression->getValue() == AND && expression->getLeft()->getValue() == IMPLIES && expression->getRight()->getValue() == IMPLIES) {
+    if (expression->getValue() == AND && expression->getLeft()->getValue() == IMPLIES && expression->getRight()->getValue() == IMPLIES)
+    {
         std::shared_ptr<Expression> left1 = expression->getLeft()->getLeft();
         std::shared_ptr<Expression> left2 = expression->getLeft()->getRight();
         std::shared_ptr<Expression> right1 = expression->getRight()->getLeft();
@@ -812,9 +861,11 @@ bool EquivLaws::bidirectionalImplication0Reversed(std::shared_ptr<Expression>& e
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication1(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication1(std::shared_ptr<Expression> &expression)
+{
     // p <-> q = q <-> p
-    if (expression->getValue() == IFF) {
+    if (expression->getValue() == IFF)
+    {
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right = expression->getRight();
 
@@ -830,9 +881,11 @@ bool EquivLaws::bidirectionalImplication1(std::shared_ptr<Expression>& expressio
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication2(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication2(std::shared_ptr<Expression> &expression)
+{
     // p <-> q = !p <-> !q
-    if (expression->getValue() == IFF) {
+    if (expression->getValue() == IFF)
+    {
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right = expression->getRight();
 
@@ -850,9 +903,11 @@ bool EquivLaws::bidirectionalImplication2(std::shared_ptr<Expression>& expressio
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication2Reversed(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication2Reversed(std::shared_ptr<Expression> &expression)
+{
     // !p <-> !q = p <-> q
-    if (expression->getValue() == IFF && expression->getLeft()->getValue() == NOT && expression->getRight()->getValue() == NOT) {
+    if (expression->getValue() == IFF && expression->getLeft()->getValue() == NOT && expression->getRight()->getValue() == NOT)
+    {
         std::shared_ptr<Expression> left = expression->getLeft()->getLeft();
         std::shared_ptr<Expression> right = expression->getRight()->getLeft();
 
@@ -868,9 +923,11 @@ bool EquivLaws::bidirectionalImplication2Reversed(std::shared_ptr<Expression>& e
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication3(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication3(std::shared_ptr<Expression> &expression)
+{
     // p <-> q = (p & q) | (!p & !q)
-    if (expression->getValue() == IFF) {
+    if (expression->getValue() == IFF)
+    {
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right = expression->getRight();
 
@@ -892,9 +949,11 @@ bool EquivLaws::bidirectionalImplication3(std::shared_ptr<Expression>& expressio
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication3Reversed(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication3Reversed(std::shared_ptr<Expression> &expression)
+{
     // (p & q) | (!p & !q) = p <-> q
-    if (expression->getValue() == OR && expression->getLeft()->getValue() == AND && expression->getRight()->getValue() == AND) {
+    if (expression->getValue() == OR && expression->getLeft()->getValue() == AND && expression->getRight()->getValue() == AND)
+    {
         std::shared_ptr<Expression> left1 = expression->getLeft()->getLeft();
         std::shared_ptr<Expression> left2 = expression->getLeft()->getRight();
         std::shared_ptr<Expression> right1 = expression->getRight()->getLeft()->getLeft();
@@ -912,9 +971,11 @@ bool EquivLaws::bidirectionalImplication3Reversed(std::shared_ptr<Expression>& e
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication4(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication4(std::shared_ptr<Expression> &expression)
+{
     // !(p <-> q) = p <-> !q
-    if (expression->getValue() == NOT && expression->getLeft()->getValue() == IFF) {
+    if (expression->getValue() == NOT && expression->getLeft()->getValue() == IFF)
+    {
         std::shared_ptr<Expression> left = expression->getLeft()->getLeft();
         std::shared_ptr<Expression> right = expression->getLeft()->getRight();
 
@@ -931,9 +992,11 @@ bool EquivLaws::bidirectionalImplication4(std::shared_ptr<Expression>& expressio
     return false;
 }
 
-bool EquivLaws::bidirectionalImplication4Reversed(std::shared_ptr<Expression>& expression) {
+bool EquivLaws::bidirectionalImplication4Reversed(std::shared_ptr<Expression> &expression)
+{
     // p <-> !q = !(p <-> q)
-    if (expression->getValue() == IFF && expression->getRight()->getValue() == NOT) {
+    if (expression->getValue() == IFF && expression->getRight()->getValue() == NOT)
+    {
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right = expression->getRight()->getLeft();
 
