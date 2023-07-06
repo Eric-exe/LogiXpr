@@ -16,10 +16,11 @@
  */
 
 /**
- * @brief Get the Truth Table Inputs object
+ * @brief Generate the truth table inputs for the given expressions
  *
  * @param lhs pointer to left hand side expression
  * @param rhs pointer to right hand side expression
+ * 
  * @return vector of maps of input variables
  */
 std::vector<std::unordered_map<std::string, bool>> getTruthTableInputs(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs);
