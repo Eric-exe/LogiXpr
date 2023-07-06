@@ -132,6 +132,27 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root)
                 outputStack.push(operatorPtr);
             }
             operatorStack.pop();
+
+            // special case - NOT
+            if (!operatorStack.empty() && operatorStack.top() == NOT)
+            {
+                while (!operatorStack.empty() && operatorStack.top() == NOT)
+                {
+                    std::string operatorStr = operatorStack.top();
+                    operatorStack.pop();
+
+                    if (outputStack.size() < 1)
+                        return false;
+                    
+                    std::shared_ptr<Expression> operand = outputStack.top();
+                    outputStack.pop();
+
+                    std::shared_ptr<Expression> operatorPtr(new Expression(operatorStr));
+
+                    operatorPtr->setLeft(operand, operatorPtr);
+                    outputStack.push(operatorPtr);
+                }
+            }
         }
     }
     while (!operatorStack.empty())
