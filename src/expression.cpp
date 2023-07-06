@@ -54,13 +54,18 @@ std::shared_ptr<Expression> Expression::getRight()
 void Expression::setLeft(std::shared_ptr<Expression> left, std::shared_ptr<Expression> parent)
 {
     this->left = left;
-    this->left->parent = parent;
+    this->left->setParent(parent);
 }
 
 void Expression::setRight(std::shared_ptr<Expression> right, std::shared_ptr<Expression> parent)
 {
     this->right = right;
-    this->right->parent = parent;
+    this->right->setParent(parent);
+}
+
+void Expression::setParent(std::shared_ptr<Expression> parent)
+{
+    this->parent = parent;
 }
 
 std::set<std::string> Expression::getVariables()
@@ -102,7 +107,7 @@ bool Expression::compare(std::shared_ptr<Expression> other)
     // make sure the expressions don't have the same address
     if (this == other.get())
         return false;
-        
+
     if (this->value != other->value)
         return false;
 
@@ -117,6 +122,6 @@ bool Expression::compare(std::shared_ptr<Expression> other)
 
     if (this->hasRight() && !this->getRight()->compare(other->getRight()))
         return false;
-
+        
     return true;
 }
