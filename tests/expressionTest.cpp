@@ -104,6 +104,14 @@ TEST(ExpressionTest, SetRight) {
     EXPECT_EQ("q", expr1->getRight()->getValue());
 }
 
+TEST(ExpressionTest, SetParent) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("&");
+    EXPECT_EQ(nullptr, expr1->getParent());
+
+    expr1->setParent(std::make_shared<Expression>("p"));
+    EXPECT_EQ("p", expr1->getParent()->getValue());
+}
+
 TEST(ExpressionTest, GetVariables) {
     std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
     std::set<std::string> expectedVars1 = {"p"};
