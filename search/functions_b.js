@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['setleft_158',['setLeft',['../classExpression.html#afa65e7451f6b17779c2a44e7c388dd00',1,'Expression']]],
-  ['setright_159',['setRight',['../classExpression.html#a475e30b6c83e8b4ee7f5e761431d51d0',1,'Expression']]]
+  ['replace_159',['replace',['../classEquivLaws.html#a464b315e2ce4946447041066e69d1e05',1,'EquivLaws']]]
 ];

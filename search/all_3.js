@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['demorgan_17',['deMorgan',['../classEquivLaws.html#ab00a44fcec2de67d1a94dc212bee65fa',1,'EquivLaws']]],
-  ['demorganreversed_18',['deMorganReversed',['../classEquivLaws.html#a2a45c70f7fdab9411addc43c715d2c65',1,'EquivLaws']]],
-  ['distributive_19',['distributive',['../classEquivLaws.html#accb55051456627da41e46189a2e2f007',1,'EquivLaws']]],
-  ['distributivereversed_20',['distributiveReversed',['../classEquivLaws.html#a42bd9567781a6505d999e786c5087232',1,'EquivLaws']]],
-  ['domination_21',['domination',['../classEquivLaws.html#a5357a2d613db637e8ccd1f1740d7135b',1,'EquivLaws']]],
-  ['doublenegation_22',['doubleNegation',['../classEquivLaws.html#a2df45ef6a04b2b6f524c302dc7b8ee77',1,'EquivLaws']]]
+  ['demorgan_17',['deMorgan',['../classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889',1,'EquivLaws']]],
+  ['demorganreversed_18',['deMorganReversed',['../classEquivLaws.html#aae3cff16cab37a2203cd9c91ff9a119c',1,'EquivLaws']]],
+  ['distributive_19',['distributive',['../classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5',1,'EquivLaws']]],
+  ['distributivereversed_20',['distributiveReversed',['../classEquivLaws.html#afe12345c6170a4a3ac9dac002d788300',1,'EquivLaws']]],
+  ['domination_21',['domination',['../classEquivLaws.html#a411e741a9c5b20c3be9e3ae5b6a235ce',1,'EquivLaws']]],
+  ['doublenegation_22',['doubleNegation',['../classEquivLaws.html#afe97f1d782ffda7851bec85d041e5c8f',1,'EquivLaws']]]
 ];

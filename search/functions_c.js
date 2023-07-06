@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tokenize_160',['tokenize',['../parser_8cpp.html#a8432bd0a0fa24dbd96290cbefd1ad628',1,'tokenize(std::string expression):&#160;parser.cpp'],['../parser_8h.html#a8432bd0a0fa24dbd96290cbefd1ad628',1,'tokenize(std::string expression):&#160;parser.cpp']]]
+  ['setleft_160',['setLeft',['../classExpression.html#afa65e7451f6b17779c2a44e7c388dd00',1,'Expression']]],
+  ['setright_161',['setRight',['../classExpression.html#a475e30b6c83e8b4ee7f5e761431d51d0',1,'Expression']]]
 ];

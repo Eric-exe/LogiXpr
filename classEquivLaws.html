@@ -76,160 +76,163 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ab09446fbb81a2425924627e4b66e449c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ab09446fbb81a2425924627e4b66e449c">identity</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:ab09446fbb81a2425924627e4b66e449c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the identity law. <br  />
-(p &amp; T) = p, (p | F) = p.  <a href="classEquivLaws.html#ab09446fbb81a2425924627e4b66e449c">More...</a><br /></td></tr>
-<tr class="separator:ab09446fbb81a2425924627e4b66e449c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5357a2d613db637e8ccd1f1740d7135b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a5357a2d613db637e8ccd1f1740d7135b">domination</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a5357a2d613db637e8ccd1f1740d7135b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the domination law. <br  />
-(p | T) = T, (p &amp; F) = F.  <a href="classEquivLaws.html#a5357a2d613db637e8ccd1f1740d7135b">More...</a><br /></td></tr>
-<tr class="separator:a5357a2d613db637e8ccd1f1740d7135b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e0726808e2a874a5073cbce06b3b53"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a07e0726808e2a874a5073cbce06b3b53">idempotence</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a07e0726808e2a874a5073cbce06b3b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the idempotence law. <br  />
-(p | p) = p, (p &amp; p) = p.  <a href="classEquivLaws.html#a07e0726808e2a874a5073cbce06b3b53">More...</a><br /></td></tr>
-<tr class="separator:a07e0726808e2a874a5073cbce06b3b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2df45ef6a04b2b6f524c302dc7b8ee77"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2df45ef6a04b2b6f524c302dc7b8ee77">doubleNegation</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a2df45ef6a04b2b6f524c302dc7b8ee77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the double negation law. <br  />
-!!p = p.  <a href="classEquivLaws.html#a2df45ef6a04b2b6f524c302dc7b8ee77">More...</a><br /></td></tr>
-<tr class="separator:a2df45ef6a04b2b6f524c302dc7b8ee77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab115d8b1fdaad2e6fc25c59e003234f1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ab115d8b1fdaad2e6fc25c59e003234f1">commutative</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:ab115d8b1fdaad2e6fc25c59e003234f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the commutative law. <br  />
-(p | q) = (q | p), (p &amp; q) = (q &amp; p)  <a href="classEquivLaws.html#ab115d8b1fdaad2e6fc25c59e003234f1">More...</a><br /></td></tr>
-<tr class="separator:ab115d8b1fdaad2e6fc25c59e003234f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7929e33b5ce04074d24c2ed44bbe1ce6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a7929e33b5ce04074d24c2ed44bbe1ce6">associative</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a7929e33b5ce04074d24c2ed44bbe1ce6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the associative law. <br  />
-(p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)  <a href="classEquivLaws.html#a7929e33b5ce04074d24c2ed44bbe1ce6">More...</a><br /></td></tr>
-<tr class="separator:a7929e33b5ce04074d24c2ed44bbe1ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32059455b730d8a76bd2a4fdc344d9a1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a32059455b730d8a76bd2a4fdc344d9a1">associativeReversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a32059455b730d8a76bd2a4fdc344d9a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a7929e33b5ce04074d24c2ed44bbe1ce6" title="Applies the associative law.  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)">associative()</a> but reversed. <br  />
-p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r.  <a href="classEquivLaws.html#a32059455b730d8a76bd2a4fdc344d9a1">More...</a><br /></td></tr>
-<tr class="separator:a32059455b730d8a76bd2a4fdc344d9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accb55051456627da41e46189a2e2f007"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#accb55051456627da41e46189a2e2f007">distributive</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:accb55051456627da41e46189a2e2f007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies distributive law. <br  />
-p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)  <a href="classEquivLaws.html#accb55051456627da41e46189a2e2f007">More...</a><br /></td></tr>
-<tr class="separator:accb55051456627da41e46189a2e2f007"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42bd9567781a6505d999e786c5087232"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a42bd9567781a6505d999e786c5087232">distributiveReversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a42bd9567781a6505d999e786c5087232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#accb55051456627da41e46189a2e2f007" title="Applies distributive law.  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)">distributive()</a> but reversed. <br  />
-(p | q) &amp; (p | r) = p | (q &amp; r), (p &amp; q) | (p &amp; r) = p &amp; (q | r)  <a href="classEquivLaws.html#a42bd9567781a6505d999e786c5087232">More...</a><br /></td></tr>
-<tr class="separator:a42bd9567781a6505d999e786c5087232"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab00a44fcec2de67d1a94dc212bee65fa"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ab00a44fcec2de67d1a94dc212bee65fa">deMorgan</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:ab00a44fcec2de67d1a94dc212bee65fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies De Morgan's law. <br  />
-!(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.  <a href="classEquivLaws.html#ab00a44fcec2de67d1a94dc212bee65fa">More...</a><br /></td></tr>
-<tr class="separator:ab00a44fcec2de67d1a94dc212bee65fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a45c70f7fdab9411addc43c715d2c65"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2a45c70f7fdab9411addc43c715d2c65">deMorganReversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a2a45c70f7fdab9411addc43c715d2c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#ab00a44fcec2de67d1a94dc212bee65fa" title="Applies De Morgan&#39;s law.  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.">deMorgan()</a> but reversed. <br  />
-!p &amp; !q = !(p | q), !p | !q = !(p &amp; q)  <a href="classEquivLaws.html#a2a45c70f7fdab9411addc43c715d2c65">More...</a><br /></td></tr>
-<tr class="separator:a2a45c70f7fdab9411addc43c715d2c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad108a0cfebbc915a7f63a27b10691f8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aad108a0cfebbc915a7f63a27b10691f8">absorption</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:aad108a0cfebbc915a7f63a27b10691f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the absorption law. <br  />
-p | (p &amp; q) = p, p &amp; (p | q) = p.  <a href="classEquivLaws.html#aad108a0cfebbc915a7f63a27b10691f8">More...</a><br /></td></tr>
-<tr class="separator:aad108a0cfebbc915a7f63a27b10691f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e714be3fcf200dce50c2a1731efabb7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a6e714be3fcf200dce50c2a1731efabb7">negation</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a6e714be3fcf200dce50c2a1731efabb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the negation law. <br  />
-p | !p = T, p &amp; !p = F.  <a href="classEquivLaws.html#a6e714be3fcf200dce50c2a1731efabb7">More...</a><br /></td></tr>
-<tr class="separator:a6e714be3fcf200dce50c2a1731efabb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73aa6c2c689d882a8a2b2fdab189d381"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a73aa6c2c689d882a8a2b2fdab189d381">implication0</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a73aa6c2c689d882a8a2b2fdab189d381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p -&gt; q = !p | q.  <a href="classEquivLaws.html#a73aa6c2c689d882a8a2b2fdab189d381">More...</a><br /></td></tr>
-<tr class="separator:a73aa6c2c689d882a8a2b2fdab189d381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aced6363ee16b019e3bc171d81275512a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aced6363ee16b019e3bc171d81275512a">implication0Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:aced6363ee16b019e3bc171d81275512a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a73aa6c2c689d882a8a2b2fdab189d381" title="Applies implication: p -&gt; q = !p | q.">implication0()</a> but reversed. <br  />
-!p | q = p -&gt; q.  <a href="classEquivLaws.html#aced6363ee16b019e3bc171d81275512a">More...</a><br /></td></tr>
-<tr class="separator:aced6363ee16b019e3bc171d81275512a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bb0a4cc3cbc79b377bcb80d651ed9d5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2bb0a4cc3cbc79b377bcb80d651ed9d5">implication1</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a2bb0a4cc3cbc79b377bcb80d651ed9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p -&gt; q = !q -&gt; !p.  <a href="classEquivLaws.html#a2bb0a4cc3cbc79b377bcb80d651ed9d5">More...</a><br /></td></tr>
-<tr class="separator:a2bb0a4cc3cbc79b377bcb80d651ed9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3deb6f7a2039620379972f14070736f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ab3deb6f7a2039620379972f14070736f">implication1Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:ab3deb6f7a2039620379972f14070736f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a2bb0a4cc3cbc79b377bcb80d651ed9d5" title="Applies implication: p -&gt; q = !q -&gt; !p.">implication1()</a> but reversed. <br  />
-!q -&gt; !p = p -&gt; q.  <a href="classEquivLaws.html#ab3deb6f7a2039620379972f14070736f">More...</a><br /></td></tr>
-<tr class="separator:ab3deb6f7a2039620379972f14070736f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee1f1ba369031d192de8981b986cde10"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aee1f1ba369031d192de8981b986cde10">implication2</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:aee1f1ba369031d192de8981b986cde10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p | q = !p -&gt; q.  <a href="classEquivLaws.html#aee1f1ba369031d192de8981b986cde10">More...</a><br /></td></tr>
-<tr class="separator:aee1f1ba369031d192de8981b986cde10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bfc5c243bf25e60cc3b1e0184d1a390"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a3bfc5c243bf25e60cc3b1e0184d1a390">implication2Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a3bfc5c243bf25e60cc3b1e0184d1a390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#aee1f1ba369031d192de8981b986cde10" title="Applies implication: p | q = !p -&gt; q.">implication2()</a> but reversed. <br  />
-!p -&gt; q = p | q.  <a href="classEquivLaws.html#a3bfc5c243bf25e60cc3b1e0184d1a390">More...</a><br /></td></tr>
-<tr class="separator:a3bfc5c243bf25e60cc3b1e0184d1a390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee800ceeb4b90b2ead87e47607efa69b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aee800ceeb4b90b2ead87e47607efa69b">implication3</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:aee800ceeb4b90b2ead87e47607efa69b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p &amp; q = !(p -&gt; !q)  <a href="classEquivLaws.html#aee800ceeb4b90b2ead87e47607efa69b">More...</a><br /></td></tr>
-<tr class="separator:aee800ceeb4b90b2ead87e47607efa69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaee1ec75bcbe4188866d8be9c143075"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#abaee1ec75bcbe4188866d8be9c143075">implication3Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:abaee1ec75bcbe4188866d8be9c143075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#aee800ceeb4b90b2ead87e47607efa69b" title="Applies implication: p &amp; q = !(p -&gt; !q)">implication3()</a> but reversed. <br  />
-!(p -&gt; !q) = p &amp; q.  <a href="classEquivLaws.html#abaee1ec75bcbe4188866d8be9c143075">More...</a><br /></td></tr>
-<tr class="separator:abaee1ec75bcbe4188866d8be9c143075"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9b8a59bddc399040aa6aef9b1cb0a81"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ad9b8a59bddc399040aa6aef9b1cb0a81">implication4</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:ad9b8a59bddc399040aa6aef9b1cb0a81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: !(p -&gt; q) = p &amp; !q.  <a href="classEquivLaws.html#ad9b8a59bddc399040aa6aef9b1cb0a81">More...</a><br /></td></tr>
-<tr class="separator:ad9b8a59bddc399040aa6aef9b1cb0a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe35bbcc609437931972f43da6abffff"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#abe35bbcc609437931972f43da6abffff">implication4Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:abe35bbcc609437931972f43da6abffff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#ad9b8a59bddc399040aa6aef9b1cb0a81" title="Applies implication: !(p -&gt; q) = p &amp; !q.">implication4()</a> but reversed. <br  />
-p &amp; !q = !(p -&gt; q)  <a href="classEquivLaws.html#abe35bbcc609437931972f43da6abffff">More...</a><br /></td></tr>
-<tr class="separator:abe35bbcc609437931972f43da6abffff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f1de42843658b451a8feba171b4ba02"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a1f1de42843658b451a8feba171b4ba02">implication5</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a1f1de42843658b451a8feba171b4ba02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)  <a href="classEquivLaws.html#a1f1de42843658b451a8feba171b4ba02">More...</a><br /></td></tr>
-<tr class="separator:a1f1de42843658b451a8feba171b4ba02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a093440ab75ae6b0dec94db151deec446"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a093440ab75ae6b0dec94db151deec446">implication5Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a093440ab75ae6b0dec94db151deec446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a1f1de42843658b451a8feba171b4ba02" title="Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)">implication5()</a> but reversed. <br  />
-p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r)  <a href="classEquivLaws.html#a093440ab75ae6b0dec94db151deec446">More...</a><br /></td></tr>
-<tr class="separator:a093440ab75ae6b0dec94db151deec446"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9b12291075f795c2c331763ec86a229"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#af9b12291075f795c2c331763ec86a229">implication6</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:af9b12291075f795c2c331763ec86a229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.  <a href="classEquivLaws.html#af9b12291075f795c2c331763ec86a229">More...</a><br /></td></tr>
-<tr class="separator:af9b12291075f795c2c331763ec86a229"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a725cd7de929c8ac645ab72029edb34d9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a725cd7de929c8ac645ab72029edb34d9">implication6Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a725cd7de929c8ac645ab72029edb34d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#af9b12291075f795c2c331763ec86a229" title="Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.">implication6()</a> but reversed. <br  />
-(p | q) -&gt; r = (p -&gt; q) &amp; (q -&gt; r)  <a href="classEquivLaws.html#a725cd7de929c8ac645ab72029edb34d9">More...</a><br /></td></tr>
-<tr class="separator:a725cd7de929c8ac645ab72029edb34d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86c007857c71205bede28f9689f449ed"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a86c007857c71205bede28f9689f449ed">implication7</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a86c007857c71205bede28f9689f449ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)  <a href="classEquivLaws.html#a86c007857c71205bede28f9689f449ed">More...</a><br /></td></tr>
-<tr class="separator:a86c007857c71205bede28f9689f449ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a865647d4205e82c5398a3d88b350c070"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a865647d4205e82c5398a3d88b350c070">implication7Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a865647d4205e82c5398a3d88b350c070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a86c007857c71205bede28f9689f449ed" title="Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)">implication7()</a> but reversed. <br  />
-p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r)  <a href="classEquivLaws.html#a865647d4205e82c5398a3d88b350c070">More...</a><br /></td></tr>
-<tr class="separator:a865647d4205e82c5398a3d88b350c070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa936b98ef8e535b20752b3b6177fd6d5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aa936b98ef8e535b20752b3b6177fd6d5">implication8</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:aa936b98ef8e535b20752b3b6177fd6d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) | (r -&gt; q) = (p &amp; r) -&gt; q.  <a href="classEquivLaws.html#aa936b98ef8e535b20752b3b6177fd6d5">More...</a><br /></td></tr>
-<tr class="separator:aa936b98ef8e535b20752b3b6177fd6d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dfec658d7240b5e8daecebacfc8ca3f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2dfec658d7240b5e8daecebacfc8ca3f">implication8Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a2dfec658d7240b5e8daecebacfc8ca3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#aa936b98ef8e535b20752b3b6177fd6d5" title="Applies implication: (p -&gt; q) | (r -&gt; q) = (p &amp; r) -&gt; q.">implication8()</a> but reversed. <br  />
-(p &amp; r) -&gt; q = (p -&gt; q) | (r -&gt; q)  <a href="classEquivLaws.html#a2dfec658d7240b5e8daecebacfc8ca3f">More...</a><br /></td></tr>
-<tr class="separator:a2dfec658d7240b5e8daecebacfc8ca3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeb86f7c9b1fe3e1c0358c9737ba941e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#adeb86f7c9b1fe3e1c0358c9737ba941e">bidirectionalImplication0</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:adeb86f7c9b1fe3e1c0358c9737ba941e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)  <a href="classEquivLaws.html#adeb86f7c9b1fe3e1c0358c9737ba941e">More...</a><br /></td></tr>
-<tr class="separator:adeb86f7c9b1fe3e1c0358c9737ba941e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17d327993c369235bd21516672be30bc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a17d327993c369235bd21516672be30bc">bidirectionalImplication0Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a17d327993c369235bd21516672be30bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#adeb86f7c9b1fe3e1c0358c9737ba941e" title="Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)">bidirectionalImplication0()</a> but reversed. <br  />
-(p -&gt; q) &amp; (q -&gt; p) = p &lt;-&gt; q.  <a href="classEquivLaws.html#a17d327993c369235bd21516672be30bc">More...</a><br /></td></tr>
-<tr class="separator:a17d327993c369235bd21516672be30bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad27ff723e260faca832622767c8d19ba"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ad27ff723e260faca832622767c8d19ba">bidirectionalImplication1</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:ad27ff723e260faca832622767c8d19ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = q &lt;-&gt; p.  <a href="classEquivLaws.html#ad27ff723e260faca832622767c8d19ba">More...</a><br /></td></tr>
-<tr class="separator:ad27ff723e260faca832622767c8d19ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d091f784abd12dfe833ec5991ca5d67"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a3d091f784abd12dfe833ec5991ca5d67">bidirectionalImplication2</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a3d091f784abd12dfe833ec5991ca5d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.  <a href="classEquivLaws.html#a3d091f784abd12dfe833ec5991ca5d67">More...</a><br /></td></tr>
-<tr class="separator:a3d091f784abd12dfe833ec5991ca5d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05fe1f9f65a0e113c3cf256dc7593c2c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a05fe1f9f65a0e113c3cf256dc7593c2c">bidirectionalImplication2Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a05fe1f9f65a0e113c3cf256dc7593c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a3d091f784abd12dfe833ec5991ca5d67" title="Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.">bidirectionalImplication2()</a> but reversed. <br  />
-!p &lt;-&gt; !q = p &lt;-&gt; q.  <a href="classEquivLaws.html#a05fe1f9f65a0e113c3cf256dc7593c2c">More...</a><br /></td></tr>
-<tr class="separator:a05fe1f9f65a0e113c3cf256dc7593c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09554fe2d2e098f1fa2688b143d76867"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a09554fe2d2e098f1fa2688b143d76867">bidirectionalImplication3</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a09554fe2d2e098f1fa2688b143d76867"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)  <a href="classEquivLaws.html#a09554fe2d2e098f1fa2688b143d76867">More...</a><br /></td></tr>
-<tr class="separator:a09554fe2d2e098f1fa2688b143d76867"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8084e6130ad384c49a3be7197065ecc4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a8084e6130ad384c49a3be7197065ecc4">bidirectionalImplication3Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a8084e6130ad384c49a3be7197065ecc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a09554fe2d2e098f1fa2688b143d76867" title="Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)">bidirectionalImplication3()</a> but reversed. <br  />
-(p &amp; q) | (!p &amp; !q) = p &lt;-&gt; q.  <a href="classEquivLaws.html#a8084e6130ad384c49a3be7197065ecc4">More...</a><br /></td></tr>
-<tr class="separator:a8084e6130ad384c49a3be7197065ecc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a736bf42a54a72554e1ffbf1e078f9bde"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a736bf42a54a72554e1ffbf1e078f9bde">bidirectionalImplication4</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a736bf42a54a72554e1ffbf1e078f9bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.  <a href="classEquivLaws.html#a736bf42a54a72554e1ffbf1e078f9bde">More...</a><br /></td></tr>
-<tr class="separator:a736bf42a54a72554e1ffbf1e078f9bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a399787c638419fdb6fc9da5f875a7a8e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a399787c638419fdb6fc9da5f875a7a8e">bidirectionalImplication4Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expression)</td></tr>
-<tr class="memdesc:a399787c638419fdb6fc9da5f875a7a8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a736bf42a54a72554e1ffbf1e078f9bde" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> but reversed. <br  />
-p &lt;-&gt; !q = !(p &lt;-&gt; q)  <a href="classEquivLaws.html#a399787c638419fdb6fc9da5f875a7a8e">More...</a><br /></td></tr>
-<tr class="separator:a399787c638419fdb6fc9da5f875a7a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a464b315e2ce4946447041066e69d1e05"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a464b315e2ce4946447041066e69d1e05">replace</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression, std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; newExpression)</td></tr>
+<tr class="memdesc:a464b315e2ce4946447041066e69d1e05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the current expression with the new expression.  <a href="classEquivLaws.html#a464b315e2ce4946447041066e69d1e05">More...</a><br /></td></tr>
+<tr class="separator:a464b315e2ce4946447041066e69d1e05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa958ef68733e755352500b3797ad5b72"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aa958ef68733e755352500b3797ad5b72">identity</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:aa958ef68733e755352500b3797ad5b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the identity law. <br  />
+(p &amp; T) = p, (p | F) = p.  <a href="classEquivLaws.html#aa958ef68733e755352500b3797ad5b72">More...</a><br /></td></tr>
+<tr class="separator:aa958ef68733e755352500b3797ad5b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411e741a9c5b20c3be9e3ae5b6a235ce"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a411e741a9c5b20c3be9e3ae5b6a235ce">domination</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a411e741a9c5b20c3be9e3ae5b6a235ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the domination law. <br  />
+(p | T) = T, (p &amp; F) = F.  <a href="classEquivLaws.html#a411e741a9c5b20c3be9e3ae5b6a235ce">More...</a><br /></td></tr>
+<tr class="separator:a411e741a9c5b20c3be9e3ae5b6a235ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c775a7ad9ef0112bde9310c0b3f816c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a6c775a7ad9ef0112bde9310c0b3f816c">idempotent</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a6c775a7ad9ef0112bde9310c0b3f816c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the idempotent law. <br  />
+(p | p) = p, (p &amp; p) = p.  <a href="classEquivLaws.html#a6c775a7ad9ef0112bde9310c0b3f816c">More...</a><br /></td></tr>
+<tr class="separator:a6c775a7ad9ef0112bde9310c0b3f816c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe97f1d782ffda7851bec85d041e5c8f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#afe97f1d782ffda7851bec85d041e5c8f">doubleNegation</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:afe97f1d782ffda7851bec85d041e5c8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the double negation law. <br  />
+!!p = p.  <a href="classEquivLaws.html#afe97f1d782ffda7851bec85d041e5c8f">More...</a><br /></td></tr>
+<tr class="separator:afe97f1d782ffda7851bec85d041e5c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a8514b3383a434a5586075c07166e1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a39a8514b3383a434a5586075c07166e1">commutative</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a39a8514b3383a434a5586075c07166e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the commutative law. <br  />
+(p | q) = (q | p), (p &amp; q) = (q &amp; p)  <a href="classEquivLaws.html#a39a8514b3383a434a5586075c07166e1">More...</a><br /></td></tr>
+<tr class="separator:a39a8514b3383a434a5586075c07166e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49aed8dae1a6e850bd976c02873401bc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc">associative</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a49aed8dae1a6e850bd976c02873401bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the associative law. <br  />
+(p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)  <a href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc">More...</a><br /></td></tr>
+<tr class="separator:a49aed8dae1a6e850bd976c02873401bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ac59b7e474af1558614859a423c162"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ab3ac59b7e474af1558614859a423c162">associativeReversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ab3ac59b7e474af1558614859a423c162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc" title="Applies the associative law.  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)">associative()</a> but reversed. <br  />
+p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r.  <a href="classEquivLaws.html#ab3ac59b7e474af1558614859a423c162">More...</a><br /></td></tr>
+<tr class="separator:ab3ac59b7e474af1558614859a423c162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a307508c734eadb5d9bcfb936818b0bb5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5">distributive</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a307508c734eadb5d9bcfb936818b0bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies distributive law. <br  />
+p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)  <a href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5">More...</a><br /></td></tr>
+<tr class="separator:a307508c734eadb5d9bcfb936818b0bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe12345c6170a4a3ac9dac002d788300"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#afe12345c6170a4a3ac9dac002d788300">distributiveReversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:afe12345c6170a4a3ac9dac002d788300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5" title="Applies distributive law.  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)">distributive()</a> but reversed. <br  />
+(p | q) &amp; (p | r) = p | (q &amp; r), (p &amp; q) | (p &amp; r) = p &amp; (q | r)  <a href="classEquivLaws.html#afe12345c6170a4a3ac9dac002d788300">More...</a><br /></td></tr>
+<tr class="separator:afe12345c6170a4a3ac9dac002d788300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14007b64daf53cbbb86f2ec11364889"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889">deMorgan</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ad14007b64daf53cbbb86f2ec11364889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies De Morgan's law. <br  />
+!(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.  <a href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889">More...</a><br /></td></tr>
+<tr class="separator:ad14007b64daf53cbbb86f2ec11364889"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae3cff16cab37a2203cd9c91ff9a119c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aae3cff16cab37a2203cd9c91ff9a119c">deMorganReversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:aae3cff16cab37a2203cd9c91ff9a119c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889" title="Applies De Morgan&#39;s law.  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.">deMorgan()</a> but reversed. <br  />
+!p &amp; !q = !(p | q), !p | !q = !(p &amp; q)  <a href="classEquivLaws.html#aae3cff16cab37a2203cd9c91ff9a119c">More...</a><br /></td></tr>
+<tr class="separator:aae3cff16cab37a2203cd9c91ff9a119c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a688085551abdc907ade11ca45da406cb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a688085551abdc907ade11ca45da406cb">absorption</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a688085551abdc907ade11ca45da406cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the absorption law. <br  />
+p | (p &amp; q) = p, p &amp; (p | q) = p.  <a href="classEquivLaws.html#a688085551abdc907ade11ca45da406cb">More...</a><br /></td></tr>
+<tr class="separator:a688085551abdc907ade11ca45da406cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98580eb9e0a31f095de0c32d8413437"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ad98580eb9e0a31f095de0c32d8413437">negation</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ad98580eb9e0a31f095de0c32d8413437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the negation law. <br  />
+p | !p = T, p &amp; !p = F.  <a href="classEquivLaws.html#ad98580eb9e0a31f095de0c32d8413437">More...</a><br /></td></tr>
+<tr class="separator:ad98580eb9e0a31f095de0c32d8413437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d05eb35e2b70dd9b65881977ca17c1c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c">implication0</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a4d05eb35e2b70dd9b65881977ca17c1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p -&gt; q = !p | q.  <a href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c">More...</a><br /></td></tr>
+<tr class="separator:a4d05eb35e2b70dd9b65881977ca17c1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5cfd12754d50e7a7e2bfe8367bebbd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a4b5cfd12754d50e7a7e2bfe8367bebbd">implication0Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a4b5cfd12754d50e7a7e2bfe8367bebbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c" title="Applies implication: p -&gt; q = !p | q.">implication0()</a> but reversed. <br  />
+!p | q = p -&gt; q.  <a href="classEquivLaws.html#a4b5cfd12754d50e7a7e2bfe8367bebbd">More...</a><br /></td></tr>
+<tr class="separator:a4b5cfd12754d50e7a7e2bfe8367bebbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b924ea01234a15280bf5948b938501"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a71b924ea01234a15280bf5948b938501">implication1</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a71b924ea01234a15280bf5948b938501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p -&gt; q = !q -&gt; !p.  <a href="classEquivLaws.html#a71b924ea01234a15280bf5948b938501">More...</a><br /></td></tr>
+<tr class="separator:a71b924ea01234a15280bf5948b938501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad48c77875ad72dd01bfd5a31c9b55a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aaad48c77875ad72dd01bfd5a31c9b55a">implication1Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:aaad48c77875ad72dd01bfd5a31c9b55a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a71b924ea01234a15280bf5948b938501" title="Applies implication: p -&gt; q = !q -&gt; !p.">implication1()</a> but reversed. <br  />
+!q -&gt; !p = p -&gt; q.  <a href="classEquivLaws.html#aaad48c77875ad72dd01bfd5a31c9b55a">More...</a><br /></td></tr>
+<tr class="separator:aaad48c77875ad72dd01bfd5a31c9b55a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa767b0e1e5b451ea8ffd34f5b0d2bfbe"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe">implication2</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:aa767b0e1e5b451ea8ffd34f5b0d2bfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p | q = !p -&gt; q.  <a href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe">More...</a><br /></td></tr>
+<tr class="separator:aa767b0e1e5b451ea8ffd34f5b0d2bfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfc0d93a740d6c9b63bd456f18180dd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a0dfc0d93a740d6c9b63bd456f18180dd">implication2Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a0dfc0d93a740d6c9b63bd456f18180dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe" title="Applies implication: p | q = !p -&gt; q.">implication2()</a> but reversed. <br  />
+!p -&gt; q = p | q.  <a href="classEquivLaws.html#a0dfc0d93a740d6c9b63bd456f18180dd">More...</a><br /></td></tr>
+<tr class="separator:a0dfc0d93a740d6c9b63bd456f18180dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f066c8379b7d5292635729f50ceb84"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84">implication3</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a86f066c8379b7d5292635729f50ceb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: p &amp; q = !(p -&gt; !q)  <a href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84">More...</a><br /></td></tr>
+<tr class="separator:a86f066c8379b7d5292635729f50ceb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e61c5201c539dc4de6bbe475c2c356"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a19e61c5201c539dc4de6bbe475c2c356">implication3Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a19e61c5201c539dc4de6bbe475c2c356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84" title="Applies implication: p &amp; q = !(p -&gt; !q)">implication3()</a> but reversed. <br  />
+!(p -&gt; !q) = p &amp; q.  <a href="classEquivLaws.html#a19e61c5201c539dc4de6bbe475c2c356">More...</a><br /></td></tr>
+<tr class="separator:a19e61c5201c539dc4de6bbe475c2c356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab991de51dfa047cd1a7b286d12ea557a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a">implication4</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ab991de51dfa047cd1a7b286d12ea557a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: !(p -&gt; q) = p &amp; !q.  <a href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a">More...</a><br /></td></tr>
+<tr class="separator:ab991de51dfa047cd1a7b286d12ea557a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ee3fd4eea23e696b921d2b4cef2480"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ab3ee3fd4eea23e696b921d2b4cef2480">implication4Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ab3ee3fd4eea23e696b921d2b4cef2480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a" title="Applies implication: !(p -&gt; q) = p &amp; !q.">implication4()</a> but reversed. <br  />
+p &amp; !q = !(p -&gt; q)  <a href="classEquivLaws.html#ab3ee3fd4eea23e696b921d2b4cef2480">More...</a><br /></td></tr>
+<tr class="separator:ab3ee3fd4eea23e696b921d2b4cef2480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a550b101e4f8db9304fb68d80c75eae15"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15">implication5</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a550b101e4f8db9304fb68d80c75eae15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)  <a href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15">More...</a><br /></td></tr>
+<tr class="separator:a550b101e4f8db9304fb68d80c75eae15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf24ebc09788086fc15a193f460cd01e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aaf24ebc09788086fc15a193f460cd01e">implication5Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:aaf24ebc09788086fc15a193f460cd01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15" title="Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)">implication5()</a> but reversed. <br  />
+p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r)  <a href="classEquivLaws.html#aaf24ebc09788086fc15a193f460cd01e">More...</a><br /></td></tr>
+<tr class="separator:aaf24ebc09788086fc15a193f460cd01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a091c224a0cc483e3613c48f0e4a3b74a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a">implication6</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a091c224a0cc483e3613c48f0e4a3b74a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.  <a href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a">More...</a><br /></td></tr>
+<tr class="separator:a091c224a0cc483e3613c48f0e4a3b74a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55d21a8f2f6a62d87d968cb5c8919641"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a55d21a8f2f6a62d87d968cb5c8919641">implication6Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a55d21a8f2f6a62d87d968cb5c8919641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a" title="Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.">implication6()</a> but reversed. <br  />
+(p | q) -&gt; r = (p -&gt; q) &amp; (q -&gt; r)  <a href="classEquivLaws.html#a55d21a8f2f6a62d87d968cb5c8919641">More...</a><br /></td></tr>
+<tr class="separator:a55d21a8f2f6a62d87d968cb5c8919641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35aa6b370d187bf59dcad977cc890543"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543">implication7</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a35aa6b370d187bf59dcad977cc890543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)  <a href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543">More...</a><br /></td></tr>
+<tr class="separator:a35aa6b370d187bf59dcad977cc890543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9305cf9bc21c077c680e1167d5dafe61"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a9305cf9bc21c077c680e1167d5dafe61">implication7Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a9305cf9bc21c077c680e1167d5dafe61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543" title="Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)">implication7()</a> but reversed. <br  />
+p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r)  <a href="classEquivLaws.html#a9305cf9bc21c077c680e1167d5dafe61">More...</a><br /></td></tr>
+<tr class="separator:a9305cf9bc21c077c680e1167d5dafe61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad84c2226a9998c6380b595180e9cca04"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04">implication8</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ad84c2226a9998c6380b595180e9cca04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies implication: (p -&gt; q) | (q -&gt; r) = (p &amp; q) -&gt; r.  <a href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04">More...</a><br /></td></tr>
+<tr class="separator:ad84c2226a9998c6380b595180e9cca04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ef503b8c4fba3034403252ccc6573cb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2ef503b8c4fba3034403252ccc6573cb">implication8Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a2ef503b8c4fba3034403252ccc6573cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04" title="Applies implication: (p -&gt; q) | (q -&gt; r) = (p &amp; q) -&gt; r.">implication8()</a> but reversed. <br  />
+(p &amp; q) -&gt; r = (p -&gt; q) | (q -&gt; r)  <a href="classEquivLaws.html#a2ef503b8c4fba3034403252ccc6573cb">More...</a><br /></td></tr>
+<tr class="separator:a2ef503b8c4fba3034403252ccc6573cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a674a082136e812b2534a6dc41e3b2b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b">bidirectionalImplication0</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a0a674a082136e812b2534a6dc41e3b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)  <a href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b">More...</a><br /></td></tr>
+<tr class="separator:a0a674a082136e812b2534a6dc41e3b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae478888f9d88af1e7a332ec094b50240"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ae478888f9d88af1e7a332ec094b50240">bidirectionalImplication0Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ae478888f9d88af1e7a332ec094b50240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b" title="Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)">bidirectionalImplication0()</a> but reversed. <br  />
+(p -&gt; q) &amp; (q -&gt; p) = p &lt;-&gt; q.  <a href="classEquivLaws.html#ae478888f9d88af1e7a332ec094b50240">More...</a><br /></td></tr>
+<tr class="separator:ae478888f9d88af1e7a332ec094b50240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac215fdf1005eb0e68e02aec0a944f9e2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ac215fdf1005eb0e68e02aec0a944f9e2">bidirectionalImplication1</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ac215fdf1005eb0e68e02aec0a944f9e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = q &lt;-&gt; p.  <a href="classEquivLaws.html#ac215fdf1005eb0e68e02aec0a944f9e2">More...</a><br /></td></tr>
+<tr class="separator:ac215fdf1005eb0e68e02aec0a944f9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d89920dfe378458c815f9984b917ce5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5">bidirectionalImplication2</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a8d89920dfe378458c815f9984b917ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.  <a href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5">More...</a><br /></td></tr>
+<tr class="separator:a8d89920dfe378458c815f9984b917ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4f6a5c6ef8b0a77a9db644e3f5a5dc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2d4f6a5c6ef8b0a77a9db644e3f5a5dc">bidirectionalImplication2Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a2d4f6a5c6ef8b0a77a9db644e3f5a5dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5" title="Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.">bidirectionalImplication2()</a> but reversed. <br  />
+!p &lt;-&gt; !q = p &lt;-&gt; q.  <a href="classEquivLaws.html#a2d4f6a5c6ef8b0a77a9db644e3f5a5dc">More...</a><br /></td></tr>
+<tr class="separator:a2d4f6a5c6ef8b0a77a9db644e3f5a5dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b060a607ed9ce4fd1bedbf9eba2774d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d">bidirectionalImplication3</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:a2b060a607ed9ce4fd1bedbf9eba2774d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)  <a href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d">More...</a><br /></td></tr>
+<tr class="separator:a2b060a607ed9ce4fd1bedbf9eba2774d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adda0d2f3195397f28b85c8e8b7a2fd46"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#adda0d2f3195397f28b85c8e8b7a2fd46">bidirectionalImplication3Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:adda0d2f3195397f28b85c8e8b7a2fd46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d" title="Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)">bidirectionalImplication3()</a> but reversed. <br  />
+(p &amp; q) | (!p &amp; !q) = p &lt;-&gt; q.  <a href="classEquivLaws.html#adda0d2f3195397f28b85c8e8b7a2fd46">More...</a><br /></td></tr>
+<tr class="separator:adda0d2f3195397f28b85c8e8b7a2fd46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a98182da383e73e51d32cecd92fedc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc">bidirectionalImplication4</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:af6a98182da383e73e51d32cecd92fedc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.  <a href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc">More...</a><br /></td></tr>
+<tr class="separator:af6a98182da383e73e51d32cecd92fedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b31f5118e554eb3232314806d45d90"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ac9b31f5118e554eb3232314806d45d90">bidirectionalImplication4Reversed</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression)</td></tr>
+<tr class="memdesc:ac9b31f5118e554eb3232314806d45d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> but reversed. <br  />
+p &lt;-&gt; !q = !(p &lt;-&gt; q)  <a href="classEquivLaws.html#ac9b31f5118e554eb3232314806d45d90">More...</a><br /></td></tr>
+<tr class="separator:ac9b31f5118e554eb3232314806d45d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that handles equivalence laws. </p>
 
 <p class="definition">Definition at line <a class="el" href="equivLaws_8h_source.html#l00013">13</a> of file <a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aad108a0cfebbc915a7f63a27b10691f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad108a0cfebbc915a7f63a27b10691f8">&#9670;&nbsp;</a></span>absorption()</h2>
+<a id="a688085551abdc907ade11ca45da406cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a688085551abdc907ade11ca45da406cb">&#9670;&nbsp;</a></span>absorption()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,9 +241,9 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q)  <a href="classEquivLaws.html#a399787c638419fd
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::absorption </td>
+          <td class="memname">bool EquivLaws::absorption </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -262,10 +265,12 @@ p | (p &amp; q) = p, p &amp; (p | q) = p. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the absorption law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00305">305</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a7929e33b5ce04074d24c2ed44bbe1ce6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7929e33b5ce04074d24c2ed44bbe1ce6">&#9670;&nbsp;</a></span>associative()</h2>
+<a id="a49aed8dae1a6e850bd976c02873401bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49aed8dae1a6e850bd976c02873401bc">&#9670;&nbsp;</a></span>associative()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,9 +279,9 @@ p | (p &amp; q) = p, p &amp; (p | q) = p. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::associative </td>
+          <td class="memname">bool EquivLaws::associative </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -298,10 +303,12 @@ p | (p &amp; q) = p, p &amp; (p | q) = p. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the associative law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00132">132</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a32059455b730d8a76bd2a4fdc344d9a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32059455b730d8a76bd2a4fdc344d9a1">&#9670;&nbsp;</a></span>associativeReversed()</h2>
+<a id="ab3ac59b7e474af1558614859a423c162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3ac59b7e474af1558614859a423c162">&#9670;&nbsp;</a></span>associativeReversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,9 +317,9 @@ p | (p &amp; q) = p, p &amp; (p | q) = p. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::associativeReversed </td>
+          <td class="memname">bool EquivLaws::associativeReversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -324,7 +331,7 @@ p | (p &amp; q) = p, p &amp; (p | q) = p. </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a7929e33b5ce04074d24c2ed44bbe1ce6" title="Applies the associative law.  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)">associative()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc" title="Applies the associative law.  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)">associative()</a> but reversed. <br  />
 p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -333,12 +340,14 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the associative law was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a7929e33b5ce04074d24c2ed44bbe1ce6" title="Applies the associative law.  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)">associative()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc" title="Applies the associative law.  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)">associative()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00155">155</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="adeb86f7c9b1fe3e1c0358c9737ba941e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeb86f7c9b1fe3e1c0358c9737ba941e">&#9670;&nbsp;</a></span>bidirectionalImplication0()</h2>
+<a id="a0a674a082136e812b2534a6dc41e3b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a674a082136e812b2534a6dc41e3b2b">&#9670;&nbsp;</a></span>bidirectionalImplication0()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,9 +356,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication0 </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication0 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -370,10 +379,12 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00768">768</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a17d327993c369235bd21516672be30bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17d327993c369235bd21516672be30bc">&#9670;&nbsp;</a></span>bidirectionalImplication0Reversed()</h2>
+<a id="ae478888f9d88af1e7a332ec094b50240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae478888f9d88af1e7a332ec094b50240">&#9670;&nbsp;</a></span>bidirectionalImplication0Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -382,9 +393,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication0Reversed </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication0Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -396,7 +407,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#adeb86f7c9b1fe3e1c0358c9737ba941e" title="Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)">bidirectionalImplication0()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b" title="Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)">bidirectionalImplication0()</a> but reversed. <br  />
 (p -&gt; q) &amp; (q -&gt; p) = p &lt;-&gt; q. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -405,12 +416,14 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#adeb86f7c9b1fe3e1c0358c9737ba941e" title="Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)">bidirectionalImplication0()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b" title="Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)">bidirectionalImplication0()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00790">790</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ad27ff723e260faca832622767c8d19ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad27ff723e260faca832622767c8d19ba">&#9670;&nbsp;</a></span>bidirectionalImplication1()</h2>
+<a id="ac215fdf1005eb0e68e02aec0a944f9e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac215fdf1005eb0e68e02aec0a944f9e2">&#9670;&nbsp;</a></span>bidirectionalImplication1()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -419,9 +432,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication1 </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication1 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -442,10 +455,12 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00814">814</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a3d091f784abd12dfe833ec5991ca5d67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d091f784abd12dfe833ec5991ca5d67">&#9670;&nbsp;</a></span>bidirectionalImplication2()</h2>
+<a id="a8d89920dfe378458c815f9984b917ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d89920dfe378458c815f9984b917ce5">&#9670;&nbsp;</a></span>bidirectionalImplication2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,9 +469,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication2 </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication2 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -477,10 +492,12 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00832">832</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a05fe1f9f65a0e113c3cf256dc7593c2c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05fe1f9f65a0e113c3cf256dc7593c2c">&#9670;&nbsp;</a></span>bidirectionalImplication2Reversed()</h2>
+<a id="a2d4f6a5c6ef8b0a77a9db644e3f5a5dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d4f6a5c6ef8b0a77a9db644e3f5a5dc">&#9670;&nbsp;</a></span>bidirectionalImplication2Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,9 +506,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication2Reversed </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication2Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -503,7 +520,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a3d091f784abd12dfe833ec5991ca5d67" title="Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.">bidirectionalImplication2()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5" title="Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.">bidirectionalImplication2()</a> but reversed. <br  />
 !p &lt;-&gt; !q = p &lt;-&gt; q. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -512,12 +529,14 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a3d091f784abd12dfe833ec5991ca5d67" title="Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.">bidirectionalImplication2()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5" title="Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.">bidirectionalImplication2()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00852">852</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a09554fe2d2e098f1fa2688b143d76867"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09554fe2d2e098f1fa2688b143d76867">&#9670;&nbsp;</a></span>bidirectionalImplication3()</h2>
+<a id="a2b060a607ed9ce4fd1bedbf9eba2774d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b060a607ed9ce4fd1bedbf9eba2774d">&#9670;&nbsp;</a></span>bidirectionalImplication3()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,9 +545,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication3 </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication3 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -549,10 +568,12 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00870">870</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a8084e6130ad384c49a3be7197065ecc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8084e6130ad384c49a3be7197065ecc4">&#9670;&nbsp;</a></span>bidirectionalImplication3Reversed()</h2>
+<a id="adda0d2f3195397f28b85c8e8b7a2fd46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adda0d2f3195397f28b85c8e8b7a2fd46">&#9670;&nbsp;</a></span>bidirectionalImplication3Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -561,9 +582,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication3Reversed </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication3Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -575,7 +596,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a09554fe2d2e098f1fa2688b143d76867" title="Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)">bidirectionalImplication3()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d" title="Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)">bidirectionalImplication3()</a> but reversed. <br  />
 (p &amp; q) | (!p &amp; !q) = p &lt;-&gt; q. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -584,12 +605,14 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a09554fe2d2e098f1fa2688b143d76867" title="Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)">bidirectionalImplication3()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d" title="Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)">bidirectionalImplication3()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00894">894</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a736bf42a54a72554e1ffbf1e078f9bde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a736bf42a54a72554e1ffbf1e078f9bde">&#9670;&nbsp;</a></span>bidirectionalImplication4()</h2>
+<a id="af6a98182da383e73e51d32cecd92fedc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a98182da383e73e51d32cecd92fedc">&#9670;&nbsp;</a></span>bidirectionalImplication4()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -598,9 +621,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication4 </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication4 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -621,10 +644,12 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00914">914</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a399787c638419fdb6fc9da5f875a7a8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a399787c638419fdb6fc9da5f875a7a8e">&#9670;&nbsp;</a></span>bidirectionalImplication4Reversed()</h2>
+<a id="ac9b31f5118e554eb3232314806d45d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b31f5118e554eb3232314806d45d90">&#9670;&nbsp;</a></span>bidirectionalImplication4Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -633,9 +658,9 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::bidirectionalImplication4Reversed </td>
+          <td class="memname">bool EquivLaws::bidirectionalImplication4Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -647,7 +672,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a736bf42a54a72554e1ffbf1e078f9bde" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> but reversed. <br  />
 p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -656,12 +681,14 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a736bf42a54a72554e1ffbf1e078f9bde" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00933">933</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab115d8b1fdaad2e6fc25c59e003234f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab115d8b1fdaad2e6fc25c59e003234f1">&#9670;&nbsp;</a></span>commutative()</h2>
+<a id="a39a8514b3383a434a5586075c07166e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39a8514b3383a434a5586075c07166e1">&#9670;&nbsp;</a></span>commutative()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -670,9 +697,9 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::commutative </td>
+          <td class="memname">bool EquivLaws::commutative </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -694,10 +721,12 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the commutative law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00112">112</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="ab00a44fcec2de67d1a94dc212bee65fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab00a44fcec2de67d1a94dc212bee65fa">&#9670;&nbsp;</a></span>deMorgan()</h2>
+<a id="ad14007b64daf53cbbb86f2ec11364889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad14007b64daf53cbbb86f2ec11364889">&#9670;&nbsp;</a></span>deMorgan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -706,9 +735,9 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::deMorgan </td>
+          <td class="memname">bool EquivLaws::deMorgan </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -730,10 +759,12 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether De Morgan's law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00222">222</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a2a45c70f7fdab9411addc43c715d2c65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a45c70f7fdab9411addc43c715d2c65">&#9670;&nbsp;</a></span>deMorganReversed()</h2>
+<a id="aae3cff16cab37a2203cd9c91ff9a119c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae3cff16cab37a2203cd9c91ff9a119c">&#9670;&nbsp;</a></span>deMorganReversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -742,9 +773,9 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::deMorganReversed </td>
+          <td class="memname">bool EquivLaws::deMorganReversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -756,7 +787,7 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#ab00a44fcec2de67d1a94dc212bee65fa" title="Applies De Morgan&#39;s law.  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.">deMorgan()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889" title="Applies De Morgan&#39;s law.  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.">deMorgan()</a> but reversed. <br  />
 !p &amp; !q = !(p | q), !p | !q = !(p &amp; q) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -765,12 +796,14 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether De Morgan's law was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ab00a44fcec2de67d1a94dc212bee65fa" title="Applies De Morgan&#39;s law.  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.">deMorgan()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889" title="Applies De Morgan&#39;s law.  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.">deMorgan()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00263">263</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="accb55051456627da41e46189a2e2f007"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accb55051456627da41e46189a2e2f007">&#9670;&nbsp;</a></span>distributive()</h2>
+<a id="a307508c734eadb5d9bcfb936818b0bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a307508c734eadb5d9bcfb936818b0bb5">&#9670;&nbsp;</a></span>distributive()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -779,9 +812,9 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::distributive </td>
+          <td class="memname">bool EquivLaws::distributive </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -803,10 +836,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the distributive law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00178">178</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a42bd9567781a6505d999e786c5087232"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42bd9567781a6505d999e786c5087232">&#9670;&nbsp;</a></span>distributiveReversed()</h2>
+<a id="afe12345c6170a4a3ac9dac002d788300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe12345c6170a4a3ac9dac002d788300">&#9670;&nbsp;</a></span>distributiveReversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -817,7 +852,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
         <tr>
           <td class="memname">static bool EquivLaws::distributiveReversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -829,7 +864,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#accb55051456627da41e46189a2e2f007" title="Applies distributive law.  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)">distributive()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5" title="Applies distributive law.  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)">distributive()</a> but reversed. <br  />
 (p | q) &amp; (p | r) = p | (q &amp; r), (p &amp; q) | (p &amp; r) = p &amp; (q | r) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -838,12 +873,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the distributive law was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#accb55051456627da41e46189a2e2f007" title="Applies distributive law.  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)">distributive()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5" title="Applies distributive law.  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)">distributive()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a5357a2d613db637e8ccd1f1740d7135b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5357a2d613db637e8ccd1f1740d7135b">&#9670;&nbsp;</a></span>domination()</h2>
+<a id="a411e741a9c5b20c3be9e3ae5b6a235ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411e741a9c5b20c3be9e3ae5b6a235ce">&#9670;&nbsp;</a></span>domination()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -852,9 +887,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::domination </td>
+          <td class="memname">bool EquivLaws::domination </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -876,10 +911,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the domination law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00048">48</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a2df45ef6a04b2b6f524c302dc7b8ee77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2df45ef6a04b2b6f524c302dc7b8ee77">&#9670;&nbsp;</a></span>doubleNegation()</h2>
+<a id="afe97f1d782ffda7851bec85d041e5c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe97f1d782ffda7851bec85d041e5c8f">&#9670;&nbsp;</a></span>doubleNegation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -888,9 +925,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::doubleNegation </td>
+          <td class="memname">bool EquivLaws::doubleNegation </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -912,10 +949,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the double negation law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00096">96</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a07e0726808e2a874a5073cbce06b3b53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07e0726808e2a874a5073cbce06b3b53">&#9670;&nbsp;</a></span>idempotence()</h2>
+<a id="a6c775a7ad9ef0112bde9310c0b3f816c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c775a7ad9ef0112bde9310c0b3f816c">&#9670;&nbsp;</a></span>idempotent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -924,9 +963,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::idempotence </td>
+          <td class="memname">bool EquivLaws::idempotent </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -938,7 +977,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </table>
 </div><div class="memdoc">
 
-<p>Applies the idempotence law. <br  />
+<p>Applies the idempotent law. <br  />
 (p | p) = p, (p &amp; p) = p. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -948,10 +987,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the idempotence law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00074">74</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="ab09446fbb81a2425924627e4b66e449c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab09446fbb81a2425924627e4b66e449c">&#9670;&nbsp;</a></span>identity()</h2>
+<a id="aa958ef68733e755352500b3797ad5b72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa958ef68733e755352500b3797ad5b72">&#9670;&nbsp;</a></span>identity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -960,9 +1001,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::identity </td>
+          <td class="memname">bool EquivLaws::identity </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -984,10 +1025,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the identity law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00025">25</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a73aa6c2c689d882a8a2b2fdab189d381"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73aa6c2c689d882a8a2b2fdab189d381">&#9670;&nbsp;</a></span>implication0()</h2>
+<a id="a4d05eb35e2b70dd9b65881977ca17c1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d05eb35e2b70dd9b65881977ca17c1c">&#9670;&nbsp;</a></span>implication0()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -996,9 +1039,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication0 </td>
+          <td class="memname">bool EquivLaws::implication0 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1019,10 +1062,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00348">348</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="aced6363ee16b019e3bc171d81275512a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aced6363ee16b019e3bc171d81275512a">&#9670;&nbsp;</a></span>implication0Reversed()</h2>
+<a id="a4b5cfd12754d50e7a7e2bfe8367bebbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b5cfd12754d50e7a7e2bfe8367bebbd">&#9670;&nbsp;</a></span>implication0Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1031,9 +1076,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication0Reversed </td>
+          <td class="memname">bool EquivLaws::implication0Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1045,7 +1090,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a73aa6c2c689d882a8a2b2fdab189d381" title="Applies implication: p -&gt; q = !p | q.">implication0()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c" title="Applies implication: p -&gt; q = !p | q.">implication0()</a> but reversed. <br  />
 !p | q = p -&gt; q. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1054,12 +1099,14 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a73aa6c2c689d882a8a2b2fdab189d381" title="Applies implication: p -&gt; q = !p | q.">implication0()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c" title="Applies implication: p -&gt; q = !p | q.">implication0()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00369">369</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a2bb0a4cc3cbc79b377bcb80d651ed9d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bb0a4cc3cbc79b377bcb80d651ed9d5">&#9670;&nbsp;</a></span>implication1()</h2>
+<a id="a71b924ea01234a15280bf5948b938501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71b924ea01234a15280bf5948b938501">&#9670;&nbsp;</a></span>implication1()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1068,9 +1115,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication1 </td>
+          <td class="memname">bool EquivLaws::implication1 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1091,10 +1138,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00389">389</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="ab3deb6f7a2039620379972f14070736f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3deb6f7a2039620379972f14070736f">&#9670;&nbsp;</a></span>implication1Reversed()</h2>
+<a id="aaad48c77875ad72dd01bfd5a31c9b55a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad48c77875ad72dd01bfd5a31c9b55a">&#9670;&nbsp;</a></span>implication1Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1103,9 +1152,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication1Reversed </td>
+          <td class="memname">bool EquivLaws::implication1Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1117,7 +1166,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a2bb0a4cc3cbc79b377bcb80d651ed9d5" title="Applies implication: p -&gt; q = !q -&gt; !p.">implication1()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a71b924ea01234a15280bf5948b938501" title="Applies implication: p -&gt; q = !q -&gt; !p.">implication1()</a> but reversed. <br  />
 !q -&gt; !p = p -&gt; q. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1127,10 +1176,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00411">411</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="aee1f1ba369031d192de8981b986cde10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee1f1ba369031d192de8981b986cde10">&#9670;&nbsp;</a></span>implication2()</h2>
+<a id="aa767b0e1e5b451ea8ffd34f5b0d2bfbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa767b0e1e5b451ea8ffd34f5b0d2bfbe">&#9670;&nbsp;</a></span>implication2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1139,9 +1190,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication2 </td>
+          <td class="memname">bool EquivLaws::implication2 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1162,10 +1213,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00431">431</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a3bfc5c243bf25e60cc3b1e0184d1a390"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bfc5c243bf25e60cc3b1e0184d1a390">&#9670;&nbsp;</a></span>implication2Reversed()</h2>
+<a id="a0dfc0d93a740d6c9b63bd456f18180dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfc0d93a740d6c9b63bd456f18180dd">&#9670;&nbsp;</a></span>implication2Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1174,9 +1227,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication2Reversed </td>
+          <td class="memname">bool EquivLaws::implication2Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1188,7 +1241,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#aee1f1ba369031d192de8981b986cde10" title="Applies implication: p | q = !p -&gt; q.">implication2()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe" title="Applies implication: p | q = !p -&gt; q.">implication2()</a> but reversed. <br  />
 !p -&gt; q = p | q. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1197,12 +1250,14 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#aee1f1ba369031d192de8981b986cde10" title="Applies implication: p | q = !p -&gt; q.">implication2()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe" title="Applies implication: p | q = !p -&gt; q.">implication2()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00452">452</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aee800ceeb4b90b2ead87e47607efa69b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee800ceeb4b90b2ead87e47607efa69b">&#9670;&nbsp;</a></span>implication3()</h2>
+<a id="a86f066c8379b7d5292635729f50ceb84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f066c8379b7d5292635729f50ceb84">&#9670;&nbsp;</a></span>implication3()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1211,9 +1266,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication3 </td>
+          <td class="memname">bool EquivLaws::implication3 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1234,10 +1289,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00472">472</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="abaee1ec75bcbe4188866d8be9c143075"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abaee1ec75bcbe4188866d8be9c143075">&#9670;&nbsp;</a></span>implication3Reversed()</h2>
+<a id="a19e61c5201c539dc4de6bbe475c2c356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19e61c5201c539dc4de6bbe475c2c356">&#9670;&nbsp;</a></span>implication3Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1246,9 +1303,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication3Reversed </td>
+          <td class="memname">bool EquivLaws::implication3Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1260,7 +1317,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#aee800ceeb4b90b2ead87e47607efa69b" title="Applies implication: p &amp; q = !(p -&gt; !q)">implication3()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84" title="Applies implication: p &amp; q = !(p -&gt; !q)">implication3()</a> but reversed. <br  />
 !(p -&gt; !q) = p &amp; q. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1269,12 +1326,14 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#aee800ceeb4b90b2ead87e47607efa69b" title="Applies implication: p &amp; q = !(p -&gt; !q)">implication3()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84" title="Applies implication: p &amp; q = !(p -&gt; !q)">implication3()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00494">494</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ad9b8a59bddc399040aa6aef9b1cb0a81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9b8a59bddc399040aa6aef9b1cb0a81">&#9670;&nbsp;</a></span>implication4()</h2>
+<a id="ab991de51dfa047cd1a7b286d12ea557a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab991de51dfa047cd1a7b286d12ea557a">&#9670;&nbsp;</a></span>implication4()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1283,9 +1342,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication4 </td>
+          <td class="memname">bool EquivLaws::implication4 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1306,10 +1365,12 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00514">514</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="abe35bbcc609437931972f43da6abffff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe35bbcc609437931972f43da6abffff">&#9670;&nbsp;</a></span>implication4Reversed()</h2>
+<a id="ab3ee3fd4eea23e696b921d2b4cef2480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3ee3fd4eea23e696b921d2b4cef2480">&#9670;&nbsp;</a></span>implication4Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1318,9 +1379,9 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication4Reversed </td>
+          <td class="memname">bool EquivLaws::implication4Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1332,7 +1393,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#ad9b8a59bddc399040aa6aef9b1cb0a81" title="Applies implication: !(p -&gt; q) = p &amp; !q.">implication4()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a" title="Applies implication: !(p -&gt; q) = p &amp; !q.">implication4()</a> but reversed. <br  />
 p &amp; !q = !(p -&gt; q) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1341,12 +1402,14 @@ p &amp; !q = !(p -&gt; q) </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ad9b8a59bddc399040aa6aef9b1cb0a81" title="Applies implication: !(p -&gt; q) = p &amp; !q.">implication4()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a" title="Applies implication: !(p -&gt; q) = p &amp; !q.">implication4()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00535">535</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a1f1de42843658b451a8feba171b4ba02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f1de42843658b451a8feba171b4ba02">&#9670;&nbsp;</a></span>implication5()</h2>
+<a id="a550b101e4f8db9304fb68d80c75eae15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a550b101e4f8db9304fb68d80c75eae15">&#9670;&nbsp;</a></span>implication5()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1355,9 +1418,9 @@ p &amp; !q = !(p -&gt; q) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication5 </td>
+          <td class="memname">bool EquivLaws::implication5 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1378,10 +1441,12 @@ p &amp; !q = !(p -&gt; q) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00556">556</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a093440ab75ae6b0dec94db151deec446"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a093440ab75ae6b0dec94db151deec446">&#9670;&nbsp;</a></span>implication5Reversed()</h2>
+<a id="aaf24ebc09788086fc15a193f460cd01e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf24ebc09788086fc15a193f460cd01e">&#9670;&nbsp;</a></span>implication5Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1390,9 +1455,9 @@ p &amp; !q = !(p -&gt; q) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication5Reversed </td>
+          <td class="memname">bool EquivLaws::implication5Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1404,7 +1469,7 @@ p &amp; !q = !(p -&gt; q) </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a1f1de42843658b451a8feba171b4ba02" title="Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)">implication5()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15" title="Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)">implication5()</a> but reversed. <br  />
 p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1413,12 +1478,14 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a1f1de42843658b451a8feba171b4ba02" title="Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)">implication5()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15" title="Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)">implication5()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00584">584</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="af9b12291075f795c2c331763ec86a229"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9b12291075f795c2c331763ec86a229">&#9670;&nbsp;</a></span>implication6()</h2>
+<a id="a091c224a0cc483e3613c48f0e4a3b74a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a091c224a0cc483e3613c48f0e4a3b74a">&#9670;&nbsp;</a></span>implication6()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1427,9 +1494,9 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication6 </td>
+          <td class="memname">bool EquivLaws::implication6 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1450,10 +1517,12 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00609">609</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a725cd7de929c8ac645ab72029edb34d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a725cd7de929c8ac645ab72029edb34d9">&#9670;&nbsp;</a></span>implication6Reversed()</h2>
+<a id="a55d21a8f2f6a62d87d968cb5c8919641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d21a8f2f6a62d87d968cb5c8919641">&#9670;&nbsp;</a></span>implication6Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1462,9 +1531,9 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication6Reversed </td>
+          <td class="memname">bool EquivLaws::implication6Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1476,7 +1545,7 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#af9b12291075f795c2c331763ec86a229" title="Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.">implication6()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a" title="Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.">implication6()</a> but reversed. <br  />
 (p | q) -&gt; r = (p -&gt; q) &amp; (q -&gt; r) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1485,12 +1554,14 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#af9b12291075f795c2c331763ec86a229" title="Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.">implication6()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a" title="Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.">implication6()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00637">637</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a86c007857c71205bede28f9689f449ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86c007857c71205bede28f9689f449ed">&#9670;&nbsp;</a></span>implication7()</h2>
+<a id="a35aa6b370d187bf59dcad977cc890543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35aa6b370d187bf59dcad977cc890543">&#9670;&nbsp;</a></span>implication7()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1499,9 +1570,9 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication7 </td>
+          <td class="memname">bool EquivLaws::implication7 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1522,10 +1593,12 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00662">662</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a865647d4205e82c5398a3d88b350c070"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a865647d4205e82c5398a3d88b350c070">&#9670;&nbsp;</a></span>implication7Reversed()</h2>
+<a id="a9305cf9bc21c077c680e1167d5dafe61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9305cf9bc21c077c680e1167d5dafe61">&#9670;&nbsp;</a></span>implication7Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1534,9 +1607,9 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication7Reversed </td>
+          <td class="memname">bool EquivLaws::implication7Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1548,7 +1621,7 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#a86c007857c71205bede28f9689f449ed" title="Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)">implication7()</a> but reversed. <br  />
+<p>Applies <a class="el" href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543" title="Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)">implication7()</a> but reversed. <br  />
 p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1557,12 +1630,14 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a86c007857c71205bede28f9689f449ed" title="Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)">implication7()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543" title="Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)">implication7()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00690">690</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aa936b98ef8e535b20752b3b6177fd6d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa936b98ef8e535b20752b3b6177fd6d5">&#9670;&nbsp;</a></span>implication8()</h2>
+<a id="ad84c2226a9998c6380b595180e9cca04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84c2226a9998c6380b595180e9cca04">&#9670;&nbsp;</a></span>implication8()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1571,9 +1646,9 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication8 </td>
+          <td class="memname">bool EquivLaws::implication8 </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1585,7 +1660,7 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies implication: (p -&gt; q) | (r -&gt; q) = (p &amp; r) -&gt; q. </p>
+<p>Applies implication: (p -&gt; q) | (q -&gt; r) = (p &amp; q) -&gt; r. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">expression</td><td>pointer to the current expression</td></tr>
@@ -1594,10 +1669,12 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00715">715</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<a id="a2dfec658d7240b5e8daecebacfc8ca3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dfec658d7240b5e8daecebacfc8ca3f">&#9670;&nbsp;</a></span>implication8Reversed()</h2>
+<a id="a2ef503b8c4fba3034403252ccc6573cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ef503b8c4fba3034403252ccc6573cb">&#9670;&nbsp;</a></span>implication8Reversed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1606,9 +1683,9 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::implication8Reversed </td>
+          <td class="memname">bool EquivLaws::implication8Reversed </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1620,8 +1697,8 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
 </table>
 </div><div class="memdoc">
 
-<p>Applies <a class="el" href="classEquivLaws.html#aa936b98ef8e535b20752b3b6177fd6d5" title="Applies implication: (p -&gt; q) | (r -&gt; q) = (p &amp; r) -&gt; q.">implication8()</a> but reversed. <br  />
-(p &amp; r) -&gt; q = (p -&gt; q) | (r -&gt; q) </p>
+<p>Applies <a class="el" href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04" title="Applies implication: (p -&gt; q) | (q -&gt; r) = (p &amp; q) -&gt; r.">implication8()</a> but reversed. <br  />
+(p &amp; q) -&gt; r = (p -&gt; q) | (q -&gt; r) </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">expression</td><td>pointer to the current expression</td></tr>
@@ -1629,12 +1706,14 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#aa936b98ef8e535b20752b3b6177fd6d5" title="Applies implication: (p -&gt; q) | (r -&gt; q) = (p &amp; r) -&gt; q.">implication8()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04" title="Applies implication: (p -&gt; q) | (q -&gt; r) = (p &amp; q) -&gt; r.">implication8()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00743">743</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a6e714be3fcf200dce50c2a1731efabb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e714be3fcf200dce50c2a1731efabb7">&#9670;&nbsp;</a></span>negation()</h2>
+<a id="ad98580eb9e0a31f095de0c32d8413437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98580eb9e0a31f095de0c32d8413437">&#9670;&nbsp;</a></span>negation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1643,9 +1722,9 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool EquivLaws::negation </td>
+          <td class="memname">bool EquivLaws::negation </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>expression</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1667,10 +1746,60 @@ p | !p = T, p &amp; !p = F. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the negation law was applied </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00318">318</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a464b315e2ce4946447041066e69d1e05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a464b315e2ce4946447041066e69d1e05">&#9670;&nbsp;</a></span>replace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EquivLaws::replace </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>expression</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td>
+          <td class="paramname"><em>newExpression</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replace the current expression with the new expression. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expression</td><td>original expression </td></tr>
+    <tr><td class="paramname">newExpression</td><td>expression to replace with </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00008">8</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>include/<a class="el" href="equivLaws_8h_source.html">equivLaws.h</a></li>
+<li>src/<a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
