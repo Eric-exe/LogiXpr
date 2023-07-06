@@ -12,6 +12,7 @@ void EquivLaws::replace(std::shared_ptr<Expression>& expression, std::shared_ptr
         // if the parent is null, then the current expression is the root
         // set the new expression as the root
         expression = newExpression;
+        expression->setParent(nullptr);
         return;
     }
 
