@@ -12,7 +12,7 @@
 #include <cctype>
 
 /**
- * @defgroup stringExpressions String constants for expressions and operators
+ * @defgroup stringExpressions Macros for string expressions
  * @{
  */
 #define AND "&"

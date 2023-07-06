@@ -14,6 +14,11 @@
 #include "expression.h"
 
 /**
+ * @defgroup parser Parser functions
+ * @{
+ */
+
+/**
  * @brief Precedence of the operators
  */
 const static std::unordered_map<std::string, int> precedence = {
@@ -42,3 +47,5 @@ std::vector<std::string> tokenize(std::string expression);
  * @return bool of whether the expression was parsed successfully
  */
 bool parse(std::string expression, std::shared_ptr<Expression> &root);
+
+/** @} */

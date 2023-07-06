@@ -10,6 +10,11 @@
 #include "expression.h"
 
 /**
+ * @defgroup evaluator Evaluator functions
+ * @{
+ */
+
+/**
  * @brief Get the Truth Table Inputs object
  *
  * @param lhs pointer to left hand side expression
@@ -37,3 +42,5 @@ bool evaluateExpression(std::shared_ptr<Expression> expression, std::unordered_m
  * @return bool of whether the expressions are equivalent
  */
 bool isEquivalent(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs);
+
+/** @} */
