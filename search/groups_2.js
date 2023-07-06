@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['parser_20functions_173',['Parser functions',['../group__parser.html',1,'']]]
+  ['solver_20functions_175',['Solver functions',['../group__solver.html',1,'']]],
+  ['string_20macros_176',['String macros',['../group__stringMacros.html',1,'']]]
 ];

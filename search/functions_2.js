@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['clone_118',['clone',['../classExpression.html#ad307c4a066b114d506a53ad61bc1691d',1,'Expression']]],
-  ['commutative_119',['commutative',['../classEquivLaws.html#a39a8514b3383a434a5586075c07166e1',1,'EquivLaws']]],
-  ['compare_120',['compare',['../classExpression.html#a3aca4814f95328919d9d0be996ba0010',1,'Expression']]]
+  ['clone_119',['clone',['../classExpression.html#ad307c4a066b114d506a53ad61bc1691d',1,'Expression']]],
+  ['commutative_120',['commutative',['../classEquivLaws.html#a39a8514b3383a434a5586075c07166e1',1,'EquivLaws']]],
+  ['compare_121',['compare',['../classExpression.html#a3aca4814f95328919d9d0be996ba0010',1,'Expression']]]
 ];

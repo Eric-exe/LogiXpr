@@ -72,35 +72,32 @@ $(function() {
 <a href="parser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;cctype&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="expression_8h.html">expression.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">const</span> <span class="keyword">static</span> std::unordered_map&lt;std::string, int&gt; precedence = {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {<a class="code" href="group__String.html#gad3e9fe0ec59d2dbb3982ababa042720c">NOT</a>, 5},</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {<a class="code" href="group__String.html#gacd1b97556dfbbac61063a63031d2f91d">AND</a>, 4},</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {<a class="code" href="group__String.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a>, 3},</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {<a class="code" href="group__String.html#ga45cd11034d1a7d86c3a88d36f5e7f1ab">XOR</a>, 2},</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {<a class="code" href="group__String.html#ga1808f02db684c7a519229793dc893405">IMPLIES</a>, 1},</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {<a class="code" href="group__String.html#ga2683dde5ae950c9c69ec580cff66f359">IFF</a>, 0}};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;std::vector&lt;std::string&gt; <a class="code" href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a>(std::string expression);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a>(std::string expression, std::shared_ptr&lt;Expression&gt; &amp;root);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stack&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="expression_8h.html">expression.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">const</span> <span class="keyword">static</span> std::unordered_map&lt;std::string, int&gt; precedence = {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {<a class="code" href="group__stringMacros.html#gad3e9fe0ec59d2dbb3982ababa042720c">NOT</a>, 5},</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {<a class="code" href="group__stringMacros.html#gacd1b97556dfbbac61063a63031d2f91d">AND</a>, 4},</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {<a class="code" href="group__stringMacros.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a>, 3},</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {<a class="code" href="group__stringMacros.html#ga45cd11034d1a7d86c3a88d36f5e7f1ab">XOR</a>, 2},</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {<a class="code" href="group__stringMacros.html#ga1808f02db684c7a519229793dc893405">IMPLIES</a>, 1},</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {<a class="code" href="group__stringMacros.html#ga2683dde5ae950c9c69ec580cff66f359">IFF</a>, 0}};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;std::vector&lt;std::string&gt; <a class="code" href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a>(std::string expression);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a>(std::string expression, std::shared_ptr&lt;Expression&gt; &amp;root);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="ttc" id="aexpression_8h_html"><div class="ttname"><a href="expression_8h.html">expression.h</a></div><div class="ttdoc">Header file for expression class.</div></div>
-<div class="ttc" id="agroup__String_html_ga1808f02db684c7a519229793dc893405"><div class="ttname"><a href="group__String.html#ga1808f02db684c7a519229793dc893405">IMPLIES</a></div><div class="ttdeci">#define IMPLIES</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00023">expression.h:23</a></div></div>
-<div class="ttc" id="agroup__String_html_ga2683dde5ae950c9c69ec580cff66f359"><div class="ttname"><a href="group__String.html#ga2683dde5ae950c9c69ec580cff66f359">IFF</a></div><div class="ttdeci">#define IFF</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00024">expression.h:24</a></div></div>
-<div class="ttc" id="agroup__String_html_ga3363ca4d6d3cc0230b2804280591c991"><div class="ttname"><a href="group__String.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a></div><div class="ttdeci">#define OR</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00020">expression.h:20</a></div></div>
-<div class="ttc" id="agroup__String_html_ga45cd11034d1a7d86c3a88d36f5e7f1ab"><div class="ttname"><a href="group__String.html#ga45cd11034d1a7d86c3a88d36f5e7f1ab">XOR</a></div><div class="ttdeci">#define XOR</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00022">expression.h:22</a></div></div>
-<div class="ttc" id="agroup__String_html_gacd1b97556dfbbac61063a63031d2f91d"><div class="ttname"><a href="group__String.html#gacd1b97556dfbbac61063a63031d2f91d">AND</a></div><div class="ttdeci">#define AND</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00019">expression.h:19</a></div></div>
-<div class="ttc" id="agroup__String_html_gad3e9fe0ec59d2dbb3982ababa042720c"><div class="ttname"><a href="group__String.html#gad3e9fe0ec59d2dbb3982ababa042720c">NOT</a></div><div class="ttdeci">#define NOT</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00021">expression.h:21</a></div></div>
 <div class="ttc" id="agroup__parser_html_ga31d1a69dc8ed9d81edfffba6d280a5a0"><div class="ttname"><a href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a></div><div class="ttdeci">bool parse(std::string expression, std::shared_ptr&lt; Expression &gt; &amp;root)</div><div class="ttdoc">Parse the expression and convert it to an abstract syntax tree.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8cpp_source.html#l00031">parser.cpp:31</a></div></div>
 <div class="ttc" id="agroup__parser_html_ga8432bd0a0fa24dbd96290cbefd1ad628"><div class="ttname"><a href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a></div><div class="ttdeci">std::vector&lt; std::string &gt; tokenize(std::string expression)</div><div class="ttdoc">Tokenize the expression.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8cpp_source.html#l00008">parser.cpp:8</a></div></div>
+<div class="ttc" id="agroup__stringMacros_html_ga1808f02db684c7a519229793dc893405"><div class="ttname"><a href="group__stringMacros.html#ga1808f02db684c7a519229793dc893405">IMPLIES</a></div><div class="ttdeci">#define IMPLIES</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00023">expression.h:23</a></div></div>
+<div class="ttc" id="agroup__stringMacros_html_ga2683dde5ae950c9c69ec580cff66f359"><div class="ttname"><a href="group__stringMacros.html#ga2683dde5ae950c9c69ec580cff66f359">IFF</a></div><div class="ttdeci">#define IFF</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00024">expression.h:24</a></div></div>
+<div class="ttc" id="agroup__stringMacros_html_ga3363ca4d6d3cc0230b2804280591c991"><div class="ttname"><a href="group__stringMacros.html#ga3363ca4d6d3cc0230b2804280591c991">OR</a></div><div class="ttdeci">#define OR</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00020">expression.h:20</a></div></div>
+<div class="ttc" id="agroup__stringMacros_html_ga45cd11034d1a7d86c3a88d36f5e7f1ab"><div class="ttname"><a href="group__stringMacros.html#ga45cd11034d1a7d86c3a88d36f5e7f1ab">XOR</a></div><div class="ttdeci">#define XOR</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00022">expression.h:22</a></div></div>
+<div class="ttc" id="agroup__stringMacros_html_gacd1b97556dfbbac61063a63031d2f91d"><div class="ttname"><a href="group__stringMacros.html#gacd1b97556dfbbac61063a63031d2f91d">AND</a></div><div class="ttdeci">#define AND</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00019">expression.h:19</a></div></div>
+<div class="ttc" id="agroup__stringMacros_html_gad3e9fe0ec59d2dbb3982ababa042720c"><div class="ttname"><a href="group__stringMacros.html#gad3e9fe0ec59d2dbb3982ababa042720c">NOT</a></div><div class="ttdeci">#define NOT</div><div class="ttdef"><b>Definition:</b> <a href="expression_8h_source.html#l00021">expression.h:21</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
