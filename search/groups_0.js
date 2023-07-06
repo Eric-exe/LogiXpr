@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stringexpressions_168',['StringExpressions',['../group__stringExpressions.html',1,'']]]
+  ['string_20constants_20for_20expressions_20and_20operators_168',['String constants for expressions and operators',['../group__stringExpressions.html',1,'']]]
 ];
