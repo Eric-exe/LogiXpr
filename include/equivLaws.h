@@ -16,12 +16,13 @@ public:
     /**
      * @brief Replace the current expression with the new expression
      * 
-     * @param expression original expression
-     * @param newExpression expression to replace with
+     * @param expression pointer to original expression
+     * @param newExpression pointer to expression to replace with
      */
     static void replace(std::shared_ptr<Expression>& expression, std::shared_ptr<Expression> newExpression);
+    
     /**
-     * @brief Applies the identity law. \n
+     * @brief Applies the identity law \n
      * (p & T) = p, (p | F) = p
      *
      * @param expression pointer to the current expression
@@ -31,7 +32,7 @@ public:
     static bool identity(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies the domination law. \n
+     * @brief Applies the domination law \n
      * (p | T) = T, (p & F) = F
      *
      * @param expression pointer to the current expression
@@ -41,7 +42,7 @@ public:
     static bool domination(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies the idempotent law. \n
+     * @brief Applies the idempotent law \n
      * (p | p) = p, (p & p) = p
      *
      * @param expression pointer to the current expression
@@ -51,7 +52,7 @@ public:
     static bool idempotent(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies the double negation law. \n
+     * @brief Applies the double negation law \n
      * !!p = p
      *
      * @param expression pointer to the current expression
@@ -61,7 +62,7 @@ public:
     static bool doubleNegation(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies the commutative law. \n
+     * @brief Applies the commutative law \n
      * (p | q) = (q | p), (p & q) = (q & p)
      *
      * @param expression pointer to the current expression
@@ -71,7 +72,7 @@ public:
     static bool commutative(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies the associative law. \n
+     * @brief Applies the associative law \n
      * (p | q) | r = p | (q | r), (p & q) & r = p & (q & r)
      *
      * @param expression pointer to the current expression
@@ -81,7 +82,7 @@ public:
     static bool associative(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies associative() but reversed. \n
+     * @brief Applies associative() but reversed \n
      * p | (q | r) = (p | q) | r, p & (q & r) = (p & q) & r
      *
      * @param expression pointer to the current expression
@@ -93,7 +94,7 @@ public:
     static bool associativeReversed(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies distributive law. \n
+     * @brief Applies distributive law \n
      * p | (q & r) = (p | q) & (p | r), p & (q | r) = (p & q) | (p & r)
      *
      * @param expression pointer to the current expression
@@ -103,7 +104,7 @@ public:
     static bool distributive(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies distributive() but reversed. \n
+     * @brief Applies distributive() but reversed \n
      * (p | q) & (p | r) = p | (q & r), (p & q) | (p & r) = p & (q | r)
      *
      * @param expression pointer to the current expression
@@ -115,7 +116,7 @@ public:
     static bool distributiveReversed(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies De Morgan's law. \n
+     * @brief Applies De Morgan's law \n
      * !(p | q) = !p & !q, !(p & q) = !p | !q
      *
      * @param expression pointer to the current expression
@@ -125,7 +126,7 @@ public:
     static bool deMorgan(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies deMorgan() but reversed. \n
+     * @brief Applies deMorgan() but reversed \n
      * !p & !q = !(p | q), !p | !q = !(p & q)
      *
      * @param expression pointer to the current expression
@@ -137,7 +138,7 @@ public:
     static bool deMorganReversed(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies the absorption law. \n
+     * @brief Applies the absorption law \n
      * p | (p & q) = p, p & (p | q) = p
      *
      * @param expression pointer to the current expression
@@ -147,7 +148,7 @@ public:
     static bool absorption(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies the negation law. \n
+     * @brief Applies the negation law \n
      * p | !p = T, p & !p = F
      *
      * @param expression pointer to the current expression
@@ -166,7 +167,7 @@ public:
     static bool implication0(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication0() but reversed. \n
+     * @brief Applies implication0() but reversed \n
      * !p | q = p -> q
      *
      * @param expression pointer to the current expression
@@ -187,7 +188,7 @@ public:
     static bool implication1(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication1() but reversed. \n
+     * @brief Applies implication1() but reversed \n
      * !q -> !p = p -> q
      *
      * @param expression pointer to the current expression
@@ -206,7 +207,7 @@ public:
     static bool implication2(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication2() but reversed. \n
+     * @brief Applies implication2() but reversed \n
      * !p -> q = p | q
      *
      * @param expression pointer to the current expression
@@ -227,7 +228,7 @@ public:
     static bool implication3(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication3() but reversed. \n
+     * @brief Applies implication3() but reversed \n
      * !(p -> !q) = p & q
      *
      * @param expression pointer to the current expression
@@ -248,7 +249,7 @@ public:
     static bool implication4(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication4() but reversed. \n
+     * @brief Applies implication4() but reversed \n
      * p & !q = !(p -> q)
      *
      * @param expression pointer to the current expression
@@ -269,7 +270,7 @@ public:
     static bool implication5(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication5() but reversed. \n
+     * @brief Applies implication5() but reversed \n
      * p -> (q & r) = (p -> q) & (p -> r)
      *
      * @param expression pointer to the current expression
@@ -290,7 +291,7 @@ public:
     static bool implication6(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication6() but reversed. \n
+     * @brief Applies implication6() but reversed \n
      * (p | q) -> r = (p -> q) & (q -> r)
      *
      * @param expression pointer to the current expression
@@ -311,7 +312,7 @@ public:
     static bool implication7(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication7() but reversed. \n
+     * @brief Applies implication7() but reversed \n
      * p -> (q | r) = (p -> q) | (p -> r)
      *
      * @param expression pointer to the current expression
@@ -332,7 +333,7 @@ public:
     static bool implication8(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies implication8() but reversed. \n
+     * @brief Applies implication8() but reversed \n
      * (p & q) -> r = (p -> q) | (q -> r)
      *
      * @param expression pointer to the current expression
@@ -353,7 +354,7 @@ public:
     static bool bidirectionalImplication0(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies bidirectionalImplication0() but reversed. \n
+     * @brief Applies bidirectionalImplication0() but reversed \n
      * (p -> q) & (q -> p) = p <-> q
      *
      * @param expression pointer to the current expression
@@ -383,7 +384,7 @@ public:
     static bool bidirectionalImplication2(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies bidirectionalImplication2() but reversed. \n
+     * @brief Applies bidirectionalImplication2() but reversed \n
      * !p <-> !q = p <-> q
      *
      * @param expression pointer to the current expression
@@ -404,7 +405,7 @@ public:
     static bool bidirectionalImplication3(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies bidirectionalImplication3() but reversed. \n
+     * @brief Applies bidirectionalImplication3() but reversed \n
      * (p & q) | (!p & !q) = p <-> q
      *
      * @param expression pointer to the current expression
@@ -425,7 +426,7 @@ public:
     static bool bidirectionalImplication4(std::shared_ptr<Expression>& expression);
 
     /**
-     * @brief Applies bidirectionalImplication4() but reversed. \n
+     * @brief Applies bidirectionalImplication4() but reversed \n
      * p <-> !q = !(p <-> q)
      *
      * @param expression pointer to the current expression

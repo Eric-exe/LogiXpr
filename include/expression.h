@@ -12,7 +12,7 @@
 #include <cctype>
 
 /**
- * @defgroup String Macros
+ * @defgroup stringMacros String macros
  * @brief Macros for string expressions and operators
  * @{
  */
@@ -79,37 +79,45 @@ public:
     /**
      * @brief Get the parent expression of the current expression
      *
-     * @return pointer to the parent expression
+     * @return pointer to parent expression
      */
     std::shared_ptr<Expression> getParent();
 
     /**
      * @brief Get the left subexpression of the current expression
      *
-     * @return pointer to the left subexpression
+     * @return pointer to left subexpression
      */
     std::shared_ptr<Expression> getLeft();
 
     /**
      * @brief Get the right subexpression of the current expression
      *
-     * @return pointer to the right subexpression
+     * @return pointer to right subexpression
      */
     std::shared_ptr<Expression> getRight();
 
     /**
-     * @brief Sets the left child expression of this expression.
-     * @param left the expression to be set as the left child
-     * @param parent the current expression
+     * @brief Sets the left child expression of this expression
+     * 
+     * @param left pointer to expression to be set as the left child
+     * @param parent pointer to current expression
      */
     void setLeft(std::shared_ptr<Expression> left, std::shared_ptr<Expression> parent);
 
     /**
-    Sets the right child expression of this expression.
-    @param right the expression to be set as the right child
-    @param parent the current expression
+    @brief Sets the right child expression of this expression
+    @param right pointer to expression to be set as the right child
+    @param parent pointer to current expression
     */
     void setRight(std::shared_ptr<Expression> right, std::shared_ptr<Expression> parent);
+
+    /**
+     * @brief Sets the parent node expression of this expression
+     * 
+     * @param parent pointer to expression to be set as the parent
+     */
+    void setParent(std::shared_ptr<Expression> parent);
 
     /**
      * @brief Get all the variables in the current expression and subexpressions
@@ -121,14 +129,14 @@ public:
     /**
      * @brief Create a clone of the current expression and subexpressions
      *
-     * @return pointer to the cloned expression
+     * @return pointer to cloned expression
      */
     std::shared_ptr<Expression> clone();
 
     /**
      * @brief Compare the current expression to another expression
      * 
-     * @param other the other expression to compare to
+     * @param other pointer to other expression to compare to
      * 
      * @return bool of whether the current expression is equal to the other expression
      */
@@ -141,17 +149,17 @@ private:
     std::string value;
 
     /**
-     * @brief The parent expression
+     * @brief pointer to parent expression
      */
     std::shared_ptr<Expression> parent;
 
     /**
-     * @brief The left subexpression
+     * @brief pointer to left subexpression
      */
     std::shared_ptr<Expression> left;
 
     /**
-     * @brief The right subexpression
+     * @brief pointer to right subexpression
      */
     std::shared_ptr<Expression> right;
 };

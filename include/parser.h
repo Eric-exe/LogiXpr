@@ -5,11 +5,8 @@
 
 #pragma once
 
-#include <iostream>
-#include <string>
-#include <cctype>
-#include <memory>
 #include <stack>
+#include <vector>
 #include <unordered_map>
 #include "expression.h"
 
