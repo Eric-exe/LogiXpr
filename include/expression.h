@@ -149,17 +149,17 @@ private:
     std::string value;
 
     /**
-     * @brief pointer to parent expression
+     * @brief Pointer to parent expression
      */
     std::shared_ptr<Expression> parent;
 
     /**
-     * @brief pointer to left subexpression
+     * @brief Pointer to left subexpression
      */
     std::shared_ptr<Expression> left;
 
     /**
-     * @brief pointer to right subexpression
+     * @brief Pointer to right subexpression
      */
     std::shared_ptr<Expression> right;
 };
