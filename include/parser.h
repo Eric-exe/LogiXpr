@@ -15,6 +15,7 @@
 
 /**
  * @defgroup parser Parser functions
+ * @brief Functions for parsing expressions
  * @{
  */
 

@@ -12,7 +12,8 @@
 #include <cctype>
 
 /**
- * @defgroup stringExpressions Macros for string expressions
+ * @defgroup String Macros
+ * @brief Macros for string expressions and operators
  * @{
  */
 #define AND "&"

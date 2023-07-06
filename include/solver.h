@@ -5,6 +5,7 @@
 
 /**
  * @defgroup solver Solver functions
+ * @brief Functions for solving expressions
  * @{
  */
 

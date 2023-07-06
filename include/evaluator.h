@@ -11,6 +11,7 @@
 
 /**
  * @defgroup evaluator Evaluator functions
+ * @brief Functions for evaluating expressions
  * @{
  */
 
