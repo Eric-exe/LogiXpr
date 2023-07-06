@@ -11,6 +11,11 @@
 #include <set>
 #include <cctype>
 
+/**
+ * @defgroup stringExpressions
+ * @brief String constants for expressions and operators
+ * @{
+ */
 #define AND "&"
 #define OR "|"
 #define NOT "!"
@@ -21,9 +26,10 @@
 #define CLOSE ")"
 #define TRUE "T"
 #define FALSE "F"
+/** @} */
 
 /**
- * @brief Expression class in the form of an abstract syntax tree
+ * @brief Abstract syntax tree for logic expressions
  */
 class Expression
 {
