@@ -39,7 +39,6 @@ bool parse(std::string expression, std::shared_ptr<Expression> &root)
 
     for (auto token : tokens)
     {
-        std::cout << token << std::endl;
         if (token.length() == 1 && islower(token[0]) || token == TRUE || token == FALSE)
         {
             // This is a leaf node. It is either a variable or a constant (True or False)
