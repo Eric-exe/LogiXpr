@@ -108,7 +108,7 @@ bool Expression::compare(std::shared_ptr<Expression> other)
     if (this == other.get())
         return false;
 
-    if (this->value != other->value)
+    if (this->getValue() != other->getValue())
         return false;
 
     if (this->hasLeft() != other->hasLeft())
@@ -124,4 +124,20 @@ bool Expression::compare(std::shared_ptr<Expression> other)
         return false;
         
     return true;
+}
+
+std::string Expression::toString()
+{
+    if (this->isVar()) return this->getValue();
+
+    std::string expressionString = "";
+    if (this->getValue() == NOT) {
+        expressionString += "!(" + this->getLeft()->toString() + ")";
+    }
+    else {
+        expressionString += "(" + this->getLeft()->toString() + ")";
+        expressionString += " " + this->getValue() + " ";
+        expressionString += "(" + this->getRight()->toString() + ")";
+    }
+    return expressionString;
 }

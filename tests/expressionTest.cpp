@@ -160,3 +160,22 @@ TEST(ExpressionTest, Compare) {
     expr6->setRight(std::make_shared<Expression>("q"), expr6);
     EXPECT_TRUE(expr5->compare(expr6));
 }
+
+TEST(ExpressionTest, ToString) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
+    EXPECT_EQ("p", expr1->toString());
+
+    std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("&");
+    expr2->setLeft(std::make_shared<Expression>("p"), expr2);
+    expr2->setRight(std::make_shared<Expression>("q"), expr2);
+    EXPECT_EQ("(p) & (q)", expr2->toString());
+
+    std::shared_ptr<Expression> expr3 = std::make_shared<Expression>("!");
+    expr3->setLeft(std::make_shared<Expression>("p"), expr3);
+    EXPECT_EQ("!(p)", expr3->toString());
+
+    std::shared_ptr<Expression> expr4 = std::make_shared<Expression>("->");
+    expr4->setLeft(std::make_shared<Expression>("p"), expr4);
+    expr4->setRight(std::make_shared<Expression>("q"), expr4);
+    EXPECT_EQ("(p) -> (q)", expr4->toString());
+}

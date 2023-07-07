@@ -142,6 +142,13 @@ public:
      */
     bool compare(std::shared_ptr<Expression> other);
 
+    /**
+     * @brief Convert the current expression to a string
+     * 
+     * @return string of the current expression
+     */
+    std::string toString();
+
 private:
     /**
      * @brief The current expression
