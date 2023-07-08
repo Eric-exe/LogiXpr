@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LogiXpr: Main Page</title>
+<title>LogiXpr: LogiXpr</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,10 +62,50 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">LogiXpr Documentation</div>  </div>
+<div class="title">LogiXpr </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> LogiXpr </p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a><img src="https://img.shields.io/github/license/ericlin-jpg/LogiXpr" alt="License" class="inline"/> <a href="https://ericlin-jpg.github.io/LogiXpr/"><img src="https://img.shields.io/badge/docs-read-blue" alt="Static Badge" class="inline"/></a> <img src="https://img.shields.io/github/repo-size/EricLin-jpg/LogiXpr" alt="GitHub repo size" class="inline"/></p>
+<p>LogiXpr is a C++ console application that evaluates boolean expressions. It supports the following operators:</p><ul>
+<li><code>!</code> - not</li>
+<li><code>&amp;</code> - and</li>
+<li><code>|</code> - or</li>
+<li><code>^</code> - xor</li>
+<li><code>-&gt;</code> - implies</li>
+<li><code>&lt;=&gt;</code> - if and only if</li>
+</ul>
+<p>It also supports the following constants:</p><ul>
+<li><code>T</code> - true</li>
+<li><code>F</code> - false</li>
+</ul>
+<p>And variables from <code>a</code> to <code>z</code>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+How it works</h1>
+<p>LogiXpr utilizes the shunting yard algorithm to convert expressions into abstract syntax trees (ASTs). These ASTs are subsequently evaluated to determine their equivalence using a truth table analysis. If an equivalence is detected, LogiXpr proceeds to recursively evaluate the initial AST by testing each node against the possible equivalences defined in the <code>include\<a class="el" href="equivLaws_8h.html" title="Header file for equivalence laws class.">equivLaws.h</a></code> file.</p>
+<p>To find the shortest equivalent expression, LogiXpr employs a breadth-first search algorithm. This search algorithm systematically explores various transformations and evaluates the resulting expressions at each level. By leveraging the breadth-first search approach, LogiXpr efficiently identifies the shortest equivalent expression by considering all possible transformations at each step before delving deeper into the search space.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Preview</h1>
+<div style="display: flex;"> <div style="flex: 50%; padding-right: 5px;"> <img src="preview/preview_1.png" alt="Preview 1" width="100%" class="inline"/> </div> <div style="flex: 50%; padding-left: 5px;"> <img src="preview/preview_2.png" alt="Preview 2" width="100%" class="inline"/> </div> </div><h1><a class="anchor" id="autotoc_md3"></a>
+Installation</h1>
+<p>To build and install LogiXpr, you will need to have CMake installed on your system. You can download CMake from the official website: <a href="https://cmake.org/download/">https://cmake.org/download/</a>.</p>
+<ol type="1">
+<li>Clone the repository <div class="fragment"><div class="line">git clone https://github.com/ericlin-jpg/LogiXpr.git</div>
+</div><!-- fragment --></li>
+<li>Create a build directory <div class="fragment"><div class="line">cd LogiXpr</div>
+<div class="line">mkdir build</div>
+<div class="line">cd build</div>
+</div><!-- fragment --></li>
+<li>Run CMake <div class="fragment"><div class="line">cmake ..</div>
+</div><!-- fragment --></li>
+<li>Build the project <div class="fragment"><div class="line">cmake --build . --config Release</div>
+</div><!-- fragment --></li>
+<li>Go to the <code>bin</code> directory and run the executable <div class="fragment"><div class="line">cd bin</div>
+<div class="line">./LogiXpr</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Running Unit Tests</h1>
+<p>To run the unit tests in <code>tests</code>, run <code>build.sh</code>. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
