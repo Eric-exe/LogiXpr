@@ -93,13 +93,44 @@ std::shared_ptr<Expression> Expression::clone()
 {
     std::shared_ptr<Expression> clonedExpression;
 
-    clonedExpression = std::make_shared<Expression>(this->value);
+    clonedExpression = std::make_shared<Expression>(this->getValue());
     if (this->hasLeft())
         clonedExpression->setLeft(this->getLeft()->clone(), clonedExpression);
     if (this->hasRight())
         clonedExpression->setRight(this->getRight()->clone(), clonedExpression);
 
     return clonedExpression;
+}
+
+std::shared_ptr<Expression> Expression::cloneTree()
+{
+    if (!this->getParent())
+        return this->clone();
+    // keep going up the tree until we find the root
+    std::shared_ptr<Expression> root = this->getParent();
+    while (root->getParent())
+        root = root->getParent();
+    
+    std::shared_ptr<Expression> clonedTree = root->clone();
+
+    // now, go back down the tree and find the node we called from
+    std::stack<std::shared_ptr<Expression>> stack;
+    stack.push(clonedTree);
+
+    while (!stack.empty())
+    {
+        std::shared_ptr<Expression> current = stack.top();
+        stack.pop();
+
+        if (this->compare(current))
+            return current;
+
+        if (current->hasLeft())
+            stack.push(current->getLeft());
+        if (current->hasRight())
+            stack.push(current->getRight());
+    }
+    return nullptr;
 }
 
 bool Expression::compare(std::shared_ptr<Expression> other)
@@ -140,4 +171,15 @@ std::string Expression::toString()
         expressionString += "(" + this->getRight()->toString() + ")";
     }
     return expressionString;
+}
+
+std::string Expression::toStringTree() {
+    if (!this->getParent()) return this->toString();
+
+    std::shared_ptr<Expression> root = this->getParent();
+    while (root->getParent())
+        root = root->getParent();
+
+    std::string treeString = root->toString();
+    return treeString; 
 }

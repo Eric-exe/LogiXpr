@@ -143,6 +143,22 @@ TEST(ExpressionTest, Clone) {
     EXPECT_EQ(expr2->getRight()->getValue(), expr2Clone->getRight()->getValue());
 }
 
+TEST(ExpressionTest, CloneTree) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
+    std::shared_ptr<Expression> expr1Clone = expr1->cloneTree();
+    EXPECT_EQ(expr1->getValue(), expr1Clone->getValue());
+
+    std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("&");
+    expr2->setLeft(std::make_shared<Expression>("p"), expr2);
+    expr2->setRight(std::make_shared<Expression>("q"), expr2);
+    std::shared_ptr<Expression> expr2Clone = expr2->getLeft()->cloneTree();
+    EXPECT_EQ(expr2Clone->getValue(), expr2->getLeft()->getValue());
+    EXPECT_EQ(expr2Clone->getParent()->getValue(), expr2->getValue());
+    EXPECT_EQ(expr2Clone->getLeft(), expr2->getLeft()->getLeft());
+    EXPECT_EQ(expr2Clone->getRight(), expr2->getLeft()->getRight());
+    EXPECT_EQ(expr2Clone->getParent()->getRight()->getValue(), expr2->getRight()->getValue());
+}
+
 TEST(ExpressionTest, Compare) {
     std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
     std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("p");
@@ -178,4 +194,14 @@ TEST(ExpressionTest, ToString) {
     expr4->setLeft(std::make_shared<Expression>("p"), expr4);
     expr4->setRight(std::make_shared<Expression>("q"), expr4);
     EXPECT_EQ("(p) -> (q)", expr4->toString());
+}
+
+TEST(ExpressionTest, ToStringTree) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
+    EXPECT_EQ("p", expr1->toStringTree());
+
+    std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("&");
+    expr2->setLeft(std::make_shared<Expression>("p"), expr2);
+    expr2->setRight(std::make_shared<Expression>("q"), expr2);
+    EXPECT_EQ("(p) & (q)", expr2->getLeft()->toStringTree());
 }

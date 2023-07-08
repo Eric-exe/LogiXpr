@@ -9,6 +9,7 @@
 #include <string>
 #include <memory>
 #include <set>
+#include <stack>
 #include <cctype>
 
 /**
@@ -134,6 +135,14 @@ public:
     std::shared_ptr<Expression> clone();
 
     /**
+     * @brief Create a clone of the whole expression tree and
+     * returns the pointer to the node where it is called.
+     * 
+     * @return pointer to cloned expression
+     */
+    std::shared_ptr<Expression> cloneTree();
+
+    /**
      * @brief Compare the current expression to another expression
      * 
      * @param other pointer to other expression to compare to
@@ -148,6 +157,13 @@ public:
      * @return string of the current expression
      */
     std::string toString();
+
+    /**
+     * @brief Convert the whole expression tree to a string
+     * 
+     * @return string of the whole expression tree
+     */
+    std::string toStringTree();
 
 private:
     /**
