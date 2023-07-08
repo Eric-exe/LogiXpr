@@ -21,6 +21,11 @@ jobs:
     - name: Generate Doxygen documentation
       run: doxygen
 
+    - name: Copy preview images
+      run: |
+        mkdir -p ./docs/html/preview
+        cp -r ./preview ./docs/html/preview
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
