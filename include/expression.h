@@ -186,6 +186,13 @@ public:
      */
     std::string toStringTree();
 
+    /**
+     * @brief Convert the current expression to a string with minimal parentheses
+     * 
+     * @return string of the current expression
+     */
+    std::string toStringMinimal();
+
 private:
     /**
      * @brief The current expression

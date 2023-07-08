@@ -157,9 +157,19 @@ bool Expression::compare(std::shared_ptr<Expression> other)
     return true;
 }
 
+bool Expression::compareTree(std::shared_ptr<Expression> other) {
+    if (!this->getParent()) return this->compare(other);
+
+    std::shared_ptr<Expression> root = this->getParent();
+    while (root->getParent())
+        root = root->getParent();
+    
+    return root->compare(other);
+}
+
 std::string Expression::toString()
 {
-    if (this->isVar()) return this->getValue();
+    if (this->isVar() || this->getValue() == "T" || this->getValue() == "F") return this->getValue();
 
     std::string expressionString = "";
     if (this->getValue() == NOT) {
@@ -182,4 +192,48 @@ std::string Expression::toStringTree() {
 
     std::string treeString = root->toString();
     return treeString; 
+}
+
+std::string Expression::toStringMinimal() {
+    if (this->isVar() || this->getValue() == "T" || this->getValue() == "F") return this->getValue();
+
+    std::string expressionString = "";
+
+    if (this->getValue() == NOT) {
+        // check if the left side is a variable or T or F
+        if (this->getLeft()->isVar() || this->getLeft()->getValue() == "T" || this->getLeft()->getValue() == "F") {
+            expressionString += this->getValue();
+            expressionString += this->getLeft()->toStringMinimal();
+        }
+        else {
+            expressionString += this->getValue();
+            expressionString += "(" + this->getLeft()->toStringMinimal() + ")";
+        }
+    }
+    else {
+        std::string leftMinimal = this->getLeft()->toStringMinimal();
+        std::string op = this->getValue();
+        std::string rightMinimal = this->getRight()->toStringMinimal();
+
+        // check if the left side is a variable or T or F
+        if (!this->getLeft()->isVar() && this->getLeft()->getValue() != "T" && this->getLeft()->getValue() != "F") {
+            // determine operator precedence
+            if (precedence.at(this->getValue()) > precedence.at(this->getLeft()->getValue())) {
+                leftMinimal = "(" + leftMinimal + ")";
+            }
+        }
+
+        // check if the right side is a variable or T or F
+        if (!this->getRight()->isVar() && this->getRight()->getValue() != "T" && this->getRight()->getValue() != "F") {
+            // determine operator precedence
+            if (precedence.at(this->getValue()) > precedence.at(this->getRight()->getValue())) {
+                rightMinimal = "(" + rightMinimal + ")";
+            }
+        }
+
+        expressionString += leftMinimal;
+        expressionString += " " + op + " ";
+        expressionString += rightMinimal;
+    }
+    return expressionString;
 }
