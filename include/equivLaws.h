@@ -25,9 +25,19 @@ public:
     typedef bool (*EquivLaw)(std::shared_ptr<Expression>&);
 
     /**
-     * @brief Array of function pointers to equivalence laws
+     * @brief Map of equivalence laws to their string representations
      */
     static std::unordered_map<EquivLaw, std::string> laws;
+
+    /**
+     * @brief Map of implication equivalences to their string representations
+     */
+    static std::unordered_map<EquivLaw, std::string> implications;
+
+    /**
+     * @brief Map of biimplication equivalences to their string representations
+     */
+    static std::unordered_map<EquivLaw, std::string> bidirectionalImplications;
 
     /**
      * @brief Replace the current expression with the new expression

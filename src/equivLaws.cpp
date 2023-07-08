@@ -19,6 +19,9 @@ std::unordered_map<EquivLaws::EquivLaw, std::string> EquivLaws::laws = {
     {deMorganReversed, "De Morgan's Law"},
     {absorption, "Absorption Law"},
     {negation, "Negation Law"},
+};
+
+std::unordered_map<EquivLaws::EquivLaw, std::string> EquivLaws::implications = {
     {implication0, "Implication Equivalence"},
     {implication0Reversed, "Implication Equivalence"},
     {implication1, "Implication Equivalence"},
@@ -37,6 +40,9 @@ std::unordered_map<EquivLaws::EquivLaw, std::string> EquivLaws::laws = {
     {implication7Reversed, "Implication Equivalence"},
     {implication8, "Implication Equivalence"},
     {implication8Reversed, "Implication Equivalence"},
+};
+
+std::unordered_map<EquivLaws::EquivLaw, std::string> EquivLaws::bidirectionalImplications = {
     {bidirectionalImplication0, "Bidirectional Implication Equivalence"},
     {bidirectionalImplication0Reversed, "Bidirectional Implication Equivalence"},
     {bidirectionalImplication1, "Bidirectional Implication Equivalence"},
@@ -65,6 +71,7 @@ void EquivLaws::replace(std::shared_ptr<Expression> &expression, std::shared_ptr
         parent->setLeft(newExpression, parent);
     else
         parent->setRight(newExpression, parent);
+    expression = newExpression;
 }
 
 bool EquivLaws::identity(std::shared_ptr<Expression> &expression)
@@ -393,11 +400,19 @@ bool EquivLaws::deMorganReversed(std::shared_ptr<Expression> &expression)
 
 bool EquivLaws::absorption(std::shared_ptr<Expression> &expression)
 {
-    // p | (p & q) = p & (p | q) = p
-    if (expression->getValue() == OR && expression->getRight()->getValue() == AND || expression->getValue() == AND && expression->getRight()->getValue() == OR)
+    // p | (p & q) = p, p & (p | q) = p
+    if ((expression->getValue() == OR && expression->getRight()->getValue() == AND) || (expression->getValue() == AND && expression->getRight()->getValue() == OR))
     {
 
-        replace(expression, expression->getLeft());
+        std::shared_ptr<Expression> left1 = expression->getLeft();
+        std::shared_ptr<Expression> left2 = expression->getRight()->getLeft();
+        std::shared_ptr<Expression> right1 = expression->getRight()->getRight();
+
+        // check if left1 == left2
+        if (!left1->compare(left2))
+            return false;
+        
+        replace(expression, left1);
 
         return true;
     }
