@@ -9,6 +9,7 @@
 #include <string>
 #include <memory>
 #include <set>
+#include <unordered_map>
 #include <stack>
 #include <cctype>
 
@@ -28,6 +29,17 @@
 #define TRUE "T"
 #define FALSE "F"
 /** @} */
+
+/**
+ * @brief Precedence of the operators
+ */
+const static std::unordered_map<std::string, int> precedence = {
+    {NOT, 5},
+    {AND, 4},
+    {OR, 3},
+    {XOR, 2},
+    {IMPLIES, 1},
+    {IFF, 0}};
 
 /**
  * @brief Abstract syntax tree for logic expressions
@@ -150,6 +162,15 @@ public:
      * @return bool of whether the current expression is equal to the other expression
      */
     bool compare(std::shared_ptr<Expression> other);
+
+    /**
+     * @brief Compare the entire expression tree to another expression tree
+     * 
+     * @param other pointer to other expression to compare to
+     * 
+     * @return bool of whether the current expression tree is equal to the other expression tree
+     */
+    bool compareTree(std::shared_ptr<Expression> other);
 
     /**
      * @brief Convert the current expression to a string

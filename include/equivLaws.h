@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <unordered_map>
 #include "expression.h"
 
 /**
@@ -13,6 +14,21 @@
 class EquivLaws
 {
 public:
+
+    /**
+     * @brief Function pointer type for an equivalence law
+     * 
+     * @param expr the expression to apply the law to
+     * 
+     * @return bool of whether the law was applied
+     */
+    typedef bool (*EquivLaw)(std::shared_ptr<Expression>&);
+
+    /**
+     * @brief Array of function pointers to equivalence laws
+     */
+    static std::unordered_map<EquivLaw, std::string> laws;
+
     /**
      * @brief Replace the current expression with the new expression
      * 
