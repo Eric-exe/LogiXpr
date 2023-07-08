@@ -177,6 +177,32 @@ TEST(ExpressionTest, Compare) {
     EXPECT_TRUE(expr5->compare(expr6));
 }
 
+TEST(ExpressionTest, CompareTree) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
+    std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("p");
+    EXPECT_TRUE(expr1->compareTree(expr2));
+
+    std::shared_ptr<Expression> expr3 = std::make_shared<Expression>("p");
+    std::shared_ptr<Expression> expr4 = std::make_shared<Expression>("q");
+    EXPECT_FALSE(expr3->compareTree(expr4));
+
+    std::shared_ptr<Expression> expr5 = std::make_shared<Expression>("&");
+    expr5->setLeft(std::make_shared<Expression>("p"), expr5);
+    expr5->setRight(std::make_shared<Expression>("q"), expr5);
+    std::shared_ptr<Expression> expr6 = std::make_shared<Expression>("&");
+    expr6->setLeft(std::make_shared<Expression>("p"), expr6);
+    expr6->setRight(std::make_shared<Expression>("q"), expr6);
+    EXPECT_TRUE(expr5->getLeft()->compareTree(expr6));
+
+    std::shared_ptr<Expression> expr7 = std::make_shared<Expression>("&");
+    expr7->setLeft(std::make_shared<Expression>("p"), expr7);
+    expr7->setRight(std::make_shared<Expression>("q"), expr7);
+    std::shared_ptr<Expression> expr8 = std::make_shared<Expression>("&");
+    expr8->setLeft(std::make_shared<Expression>("p"), expr8);
+    expr8->setRight(std::make_shared<Expression>("r"), expr8);
+    EXPECT_FALSE(expr7->getRight()->compareTree(expr8));
+}
+
 TEST(ExpressionTest, ToString) {
     std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
     EXPECT_EQ("p", expr1->toString());
@@ -204,4 +230,23 @@ TEST(ExpressionTest, ToStringTree) {
     expr2->setLeft(std::make_shared<Expression>("p"), expr2);
     expr2->setRight(std::make_shared<Expression>("q"), expr2);
     EXPECT_EQ("(p) & (q)", expr2->getLeft()->toStringTree());
+}
+
+TEST(ExpressionTest, ToStringMinimal) {
+    std::shared_ptr<Expression> expr1 = std::make_shared<Expression>("p");
+    EXPECT_EQ("p", expr1->toStringMinimal());
+
+    std::shared_ptr<Expression> expr2 = std::make_shared<Expression>("&");
+    expr2->setLeft(std::make_shared<Expression>("p"), expr2);
+    expr2->setRight(std::make_shared<Expression>("q"), expr2);
+    EXPECT_EQ("p & q", expr2->toStringMinimal());
+
+    std::shared_ptr<Expression> expr3 = std::make_shared<Expression>("!");
+    expr3->setLeft(std::make_shared<Expression>("p"), expr3);
+    EXPECT_EQ("!p", expr3->toStringMinimal());
+
+    std::shared_ptr<Expression> expr4 = std::make_shared<Expression>("->");
+    expr4->setLeft(std::make_shared<Expression>("p"), expr4);
+    expr4->setRight(std::make_shared<Expression>("q"), expr4);
+    EXPECT_EQ("p -> q", expr4->toStringMinimal());
 }
