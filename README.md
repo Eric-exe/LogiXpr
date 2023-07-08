@@ -23,14 +23,10 @@ LogiXpr utilizes the shunting yard algorithm to convert expressions into abstrac
 To find the shortest equivalent expression, LogiXpr employs a breadth-first search algorithm. This search algorithm systematically explores various transformations and evaluates the resulting expressions at each level. By leveraging the breadth-first search approach, LogiXpr efficiently identifies the shortest equivalent expression by considering all possible transformations at each step before delving deeper into the search space.
 
 ## Preview
-<div style="display: flex;">
-    <div style="flex: 50%; padding-right: 5px;">
-        <img src="preview/preview_1.png" alt="Preview 1" width="100%">
-    </div>
-    <div style="flex: 50%; padding-left: 5px;">
-        <img src="preview/preview_2.png" alt="Preview 2" width="100%">
-    </div>
-</div>
+<p align="center" width="100%">
+  <img src="preview/preview_1.png" width="48%"/>
+  <img src="preview/preview_2.png" width="48%"/>
+</p>
 
 ## Installation
 To build and install LogiXpr, you will need to have CMake installed on your system. You can download CMake from the official website: https://cmake.org/download/.
