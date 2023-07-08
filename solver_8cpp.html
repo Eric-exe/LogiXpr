@@ -65,6 +65,9 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">solver.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -72,8 +75,28 @@ $(function() {
 
 <p>Implementation file for solver functions.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &quot;<a class="el" href="solver_8h_source.html">../include/solver.h</a>&quot;</code><br />
+</div>
 <p><a href="solver_8cpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaf7935087118c246c6765e386c49a2f00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">preprocess</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; lhs, std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; rhs)</td></tr>
+<tr class="memdesc:gaf7935087118c246c6765e386c49a2f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the map of equivalences to be applied to the expressions. Must be called before any other functions in this file.  <a href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">More...</a><br /></td></tr>
+<tr class="separator:gaf7935087118c246c6765e386c49a2f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab854492a6d115d58b907a18a7301e9cc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">proveEquivalence</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; lhs, std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; rhs)</td></tr>
+<tr class="memdesc:gab854492a6d115d58b907a18a7301e9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prove the expressions are equivalence using equivalence laws by solving the left hand side to the right hand side. Required that the expressions are actually equivalent for this to work.  <a href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">More...</a><br /></td></tr>
+<tr class="separator:gab854492a6d115d58b907a18a7301e9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12a9f577fbc43c3bac000826c300398a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; expr, std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; end, bool &amp;found, std::queue&lt; std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&gt; &amp;queue, std::unordered_map&lt; std::string, std::pair&lt; std::string, std::string &gt;&gt; &amp;visited)</td></tr>
+<tr class="memdesc:ga12a9f577fbc43c3bac000826c300398a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the next expressions from the current expression. Creates a new expression for each law that can be applied to the current expression and adds it to the queue of steps to be processed if the expression has not already been visited.  <a href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">More...</a><br /></td></tr>
+<tr class="separator:ga12a9f577fbc43c3bac000826c300398a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga4d7c8f771b1ec198b19413faa95bdcab"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaws::EquivLaw</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a> = {}</td></tr>
+<tr class="memdesc:ga4d7c8f771b1ec198b19413faa95bdcab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of equivalences to be applied to the expressions.  <a href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">More...</a><br /></td></tr>
+<tr class="separator:ga4d7c8f771b1ec198b19413faa95bdcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementation file for solver functions. </p>
 

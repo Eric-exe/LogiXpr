@@ -62,7 +62,9 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classEquivLaws-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">EquivLaws Class Reference</div>  </div>
@@ -74,6 +76,12 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ac6831e0f19653f5d9565b83d979927da"><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaw</a>) (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;)</td></tr>
+<tr class="memdesc:ac6831e0f19653f5d9565b83d979927da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer type for an equivalence law.  <a href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">More...</a><br /></td></tr>
+<tr class="separator:ac6831e0f19653f5d9565b83d979927da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a464b315e2ce4946447041066e69d1e05"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a464b315e2ce4946447041066e69d1e05">replace</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;expression, std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; newExpression)</td></tr>
@@ -225,12 +233,50 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r)  <a href="classEquivLaws.html#a9305c
 <tr class="memdesc:ac9b31f5118e554eb3232314806d45d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies <a class="el" href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> but reversed <br  />
 p &lt;-&gt; !q = !(p &lt;-&gt; q)  <a href="classEquivLaws.html#ac9b31f5118e554eb3232314806d45d90">More...</a><br /></td></tr>
 <tr class="separator:ac9b31f5118e554eb3232314806d45d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a2cedb4157e4f9bdce82bb14138d10459"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaw</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459">laws</a></td></tr>
+<tr class="memdesc:a2cedb4157e4f9bdce82bb14138d10459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of equivalence laws to their string representations.  <a href="classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459">More...</a><br /></td></tr>
+<tr class="separator:a2cedb4157e4f9bdce82bb14138d10459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01125a23881bf97835317589159441e2"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaw</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#a01125a23881bf97835317589159441e2">implications</a></td></tr>
+<tr class="memdesc:a01125a23881bf97835317589159441e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of implication equivalences to their string representations.  <a href="classEquivLaws.html#a01125a23881bf97835317589159441e2">More...</a><br /></td></tr>
+<tr class="separator:a01125a23881bf97835317589159441e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7e24eb33fedfe7f01e7e19d7a46ebb4"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaw</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4">bidirectionalImplications</a></td></tr>
+<tr class="memdesc:aa7e24eb33fedfe7f01e7e19d7a46ebb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of biimplication equivalences to their string representations.  <a href="classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4">More...</a><br /></td></tr>
+<tr class="separator:aa7e24eb33fedfe7f01e7e19d7a46ebb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that handles equivalence laws. </p>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8h_source.html#l00013">13</a> of file <a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8h_source.html#l00014">14</a> of file <a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ac6831e0f19653f5d9565b83d979927da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6831e0f19653f5d9565b83d979927da">&#9670;&nbsp;</a></span>EquivLaw</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bool(* EquivLaws::EquivLaw) (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; &amp;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function pointer type for an equivalence law. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expr</td><td>the expression to apply the law to</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool of whether the law was applied </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8h_source.html#l00025">25</a> of file <a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a688085551abdc907ade11ca45da406cb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a688085551abdc907ade11ca45da406cb">&#9670;&nbsp;</a></span>absorption()</h2>
 
@@ -265,7 +311,7 @@ p | (p &amp; q) = p, p &amp; (p | q) = p. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the absorption law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00394">394</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00401">401</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +349,7 @@ p | (p &amp; q) = p, p &amp; (p | q) = p. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the associative law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00177">177</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00184">184</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +388,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the associative law was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc" title="Applies the associative law  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)">associative()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00200">200</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00207">207</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +425,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00857">857</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00872">872</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -418,7 +464,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b" title="Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)">bidirectionalImplication0()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00881">881</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00896">896</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -455,7 +501,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00907">907</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00922">922</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -492,7 +538,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00927">927</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00942">942</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -531,7 +577,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5" title="Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.">bidirectionalImplication2()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00949">949</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00964">964</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -568,7 +614,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00969">969</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00984">984</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -607,7 +653,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d" title="Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)">bidirectionalImplication3()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00995">995</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l01010">1010</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -644,7 +690,7 @@ p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l01017">1017</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l01032">1032</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -683,7 +729,7 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc" title="Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.">bidirectionalImplication4()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l01038">1038</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l01053">1053</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -721,7 +767,7 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the commutative law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00157">157</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00164">164</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -759,7 +805,7 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether De Morgan's law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00317">317</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00324">324</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -798,7 +844,7 @@ p &lt;-&gt; !q = !(p &lt;-&gt; q) </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether De Morgan's law was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889" title="Applies De Morgan&#39;s law  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.">deMorgan()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00358">358</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00365">365</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -836,7 +882,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the distributive law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00223">223</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00230">230</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -875,7 +921,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the distributive law was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5" title="Applies distributive law  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)">distributive()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00267">267</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00274">274</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -913,7 +959,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the domination law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00093">93</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00100">100</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -951,7 +997,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the double negation law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00141">141</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00148">148</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -989,7 +1035,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the idempotence law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00119">119</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00126">126</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1027,7 +1073,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the identity law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00070">70</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00077">77</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1064,7 +1110,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00437">437</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00452">452</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1103,7 +1149,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c" title="Applies implication: p -&gt; q = !p | q.">implication0()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00458">458</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00473">473</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1140,7 +1186,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00478">478</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00493">493</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1178,7 +1224,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00500">500</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00515">515</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1215,7 +1261,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00520">520</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00535">535</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1254,7 +1300,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe" title="Applies implication: p | q = !p -&gt; q.">implication2()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00541">541</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00556">556</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1291,7 +1337,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00561">561</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00576">576</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1330,7 +1376,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84" title="Applies implication: p &amp; q = !(p -&gt; !q)">implication3()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00583">583</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00598">598</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1367,7 +1413,7 @@ p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00603">603</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00618">618</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1406,7 +1452,7 @@ p &amp; !q = !(p -&gt; q) </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a" title="Applies implication: !(p -&gt; q) = p &amp; !q.">implication4()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00624">624</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00639">639</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1443,7 +1489,7 @@ p &amp; !q = !(p -&gt; q) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00645">645</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00660">660</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1482,7 +1528,7 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15" title="Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)">implication5()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00673">673</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00688">688</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1519,7 +1565,7 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00698">698</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00713">713</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1558,7 +1604,7 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a" title="Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.">implication6()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00726">726</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00741">741</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1595,7 +1641,7 @@ p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00751">751</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00766">766</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1634,7 +1680,7 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543" title="Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)">implication7()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00779">779</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00794">794</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1671,7 +1717,7 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00804">804</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00819">819</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1710,7 +1756,7 @@ p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r) </p>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether implication was applied</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04" title="Applies implication: (p -&gt; q) | (q -&gt; r) = (p &amp; q) -&gt; r.">implication8()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00832">832</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00847">847</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1748,7 +1794,7 @@ p | !p = T, p &amp; !p = F. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the negation law was applied </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00407">407</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00422">422</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
 
 </div>
 </div>
@@ -1795,7 +1841,172 @@ p | !p = T, p &amp; !p = F. </p>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00051">51</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="equivLaws_8cpp_source.html#l00057">57</a> of file <a class="el" href="equivLaws_8cpp_source.html">equivLaws.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa7e24eb33fedfe7f01e7e19d7a46ebb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7e24eb33fedfe7f01e7e19d7a46ebb4">&#9670;&nbsp;</a></span>bidirectionalImplications</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaws::EquivLaw</a>, std::string &gt; EquivLaws::bidirectionalImplications</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b">bidirectionalImplication0</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ae478888f9d88af1e7a332ec094b50240">bidirectionalImplication0Reversed</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ac215fdf1005eb0e68e02aec0a944f9e2">bidirectionalImplication1</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5">bidirectionalImplication2</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a2d4f6a5c6ef8b0a77a9db644e3f5a5dc">bidirectionalImplication2Reversed</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d">bidirectionalImplication3</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#adda0d2f3195397f28b85c8e8b7a2fd46">bidirectionalImplication3Reversed</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc">bidirectionalImplication4</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ac9b31f5118e554eb3232314806d45d90">bidirectionalImplication4Reversed</a>, <span class="stringliteral">&quot;Bidirectional Implication Equivalence&quot;</span>},</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassEquivLaws_html_a0a674a082136e812b2534a6dc41e3b2b"><div class="ttname"><a href="classEquivLaws.html#a0a674a082136e812b2534a6dc41e3b2b">EquivLaws::bidirectionalImplication0</a></div><div class="ttdeci">static bool bidirectionalImplication0(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectional implication: p &lt;-&gt; q = (p -&gt; q) &amp; (q -&gt; p)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00872">equivLaws.cpp:872</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a2b060a607ed9ce4fd1bedbf9eba2774d"><div class="ttname"><a href="classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d">EquivLaws::bidirectionalImplication3</a></div><div class="ttdeci">static bool bidirectionalImplication3(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectional implication: p &lt;-&gt; q = (p &amp; q) | (!p &amp; !q)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00984">equivLaws.cpp:984</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a2d4f6a5c6ef8b0a77a9db644e3f5a5dc"><div class="ttname"><a href="classEquivLaws.html#a2d4f6a5c6ef8b0a77a9db644e3f5a5dc">EquivLaws::bidirectionalImplication2Reversed</a></div><div class="ttdeci">static bool bidirectionalImplication2Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectionalImplication2() but reversed  !p &lt;-&gt; !q = p &lt;-&gt; q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00964">equivLaws.cpp:964</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a8d89920dfe378458c815f9984b917ce5"><div class="ttname"><a href="classEquivLaws.html#a8d89920dfe378458c815f9984b917ce5">EquivLaws::bidirectionalImplication2</a></div><div class="ttdeci">static bool bidirectionalImplication2(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectional implication: p &lt;-&gt; q = !p &lt;-&gt; !q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00942">equivLaws.cpp:942</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ac215fdf1005eb0e68e02aec0a944f9e2"><div class="ttname"><a href="classEquivLaws.html#ac215fdf1005eb0e68e02aec0a944f9e2">EquivLaws::bidirectionalImplication1</a></div><div class="ttdeci">static bool bidirectionalImplication1(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectional implication: p &lt;-&gt; q = q &lt;-&gt; p.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00922">equivLaws.cpp:922</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ac9b31f5118e554eb3232314806d45d90"><div class="ttname"><a href="classEquivLaws.html#ac9b31f5118e554eb3232314806d45d90">EquivLaws::bidirectionalImplication4Reversed</a></div><div class="ttdeci">static bool bidirectionalImplication4Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectionalImplication4() but reversed  p &lt;-&gt; !q = !(p &lt;-&gt; q)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l01053">equivLaws.cpp:1053</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_adda0d2f3195397f28b85c8e8b7a2fd46"><div class="ttname"><a href="classEquivLaws.html#adda0d2f3195397f28b85c8e8b7a2fd46">EquivLaws::bidirectionalImplication3Reversed</a></div><div class="ttdeci">static bool bidirectionalImplication3Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectionalImplication3() but reversed  (p &amp; q) | (!p &amp; !q) = p &lt;-&gt; q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l01010">equivLaws.cpp:1010</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ae478888f9d88af1e7a332ec094b50240"><div class="ttname"><a href="classEquivLaws.html#ae478888f9d88af1e7a332ec094b50240">EquivLaws::bidirectionalImplication0Reversed</a></div><div class="ttdeci">static bool bidirectionalImplication0Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectionalImplication0() but reversed  (p -&gt; q) &amp; (q -&gt; p) = p &lt;-&gt; q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00896">equivLaws.cpp:896</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_af6a98182da383e73e51d32cecd92fedc"><div class="ttname"><a href="classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc">EquivLaws::bidirectionalImplication4</a></div><div class="ttdeci">static bool bidirectionalImplication4(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies bidirectional implication: !(p &lt;-&gt; q) = p &lt;-&gt; !q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l01032">equivLaws.cpp:1032</a></div></div>
+</div><!-- fragment -->
+<p>Map of biimplication equivalences to their string representations. </p>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8h_source.html#l00040">40</a> of file <a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>.</p>
+
+</div>
+</div>
+<a id="a01125a23881bf97835317589159441e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01125a23881bf97835317589159441e2">&#9670;&nbsp;</a></span>implications</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaws::EquivLaw</a>, std::string &gt; EquivLaws::implications</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c">implication0</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a4b5cfd12754d50e7a7e2bfe8367bebbd">implication0Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a71b924ea01234a15280bf5948b938501">implication1</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#aaad48c77875ad72dd01bfd5a31c9b55a">implication1Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe">implication2</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a0dfc0d93a740d6c9b63bd456f18180dd">implication2Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84">implication3</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a19e61c5201c539dc4de6bbe475c2c356">implication3Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a">implication4</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ab3ee3fd4eea23e696b921d2b4cef2480">implication4Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15">implication5</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#aaf24ebc09788086fc15a193f460cd01e">implication5Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a">implication6</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a55d21a8f2f6a62d87d968cb5c8919641">implication6Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543">implication7</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a9305cf9bc21c077c680e1167d5dafe61">implication7Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04">implication8</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a2ef503b8c4fba3034403252ccc6573cb">implication8Reversed</a>, <span class="stringliteral">&quot;Implication Equivalence&quot;</span>},</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassEquivLaws_html_a091c224a0cc483e3613c48f0e4a3b74a"><div class="ttname"><a href="classEquivLaws.html#a091c224a0cc483e3613c48f0e4a3b74a">EquivLaws::implication6</a></div><div class="ttdeci">static bool implication6(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: (p -&gt; q) &amp; (q -&gt; r) = (p | q) -&gt; r.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00713">equivLaws.cpp:713</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a0dfc0d93a740d6c9b63bd456f18180dd"><div class="ttname"><a href="classEquivLaws.html#a0dfc0d93a740d6c9b63bd456f18180dd">EquivLaws::implication2Reversed</a></div><div class="ttdeci">static bool implication2Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication2() but reversed  !p -&gt; q = p | q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00556">equivLaws.cpp:556</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a19e61c5201c539dc4de6bbe475c2c356"><div class="ttname"><a href="classEquivLaws.html#a19e61c5201c539dc4de6bbe475c2c356">EquivLaws::implication3Reversed</a></div><div class="ttdeci">static bool implication3Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication3() but reversed  !(p -&gt; !q) = p &amp; q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00598">equivLaws.cpp:598</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a2ef503b8c4fba3034403252ccc6573cb"><div class="ttname"><a href="classEquivLaws.html#a2ef503b8c4fba3034403252ccc6573cb">EquivLaws::implication8Reversed</a></div><div class="ttdeci">static bool implication8Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication8() but reversed  (p &amp; q) -&gt; r = (p -&gt; q) | (q -&gt; r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00847">equivLaws.cpp:847</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a35aa6b370d187bf59dcad977cc890543"><div class="ttname"><a href="classEquivLaws.html#a35aa6b370d187bf59dcad977cc890543">EquivLaws::implication7</a></div><div class="ttdeci">static bool implication7(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: (p -&gt; q) | (p -&gt; r) = p -&gt; (q | r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00766">equivLaws.cpp:766</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a4b5cfd12754d50e7a7e2bfe8367bebbd"><div class="ttname"><a href="classEquivLaws.html#a4b5cfd12754d50e7a7e2bfe8367bebbd">EquivLaws::implication0Reversed</a></div><div class="ttdeci">static bool implication0Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication0() but reversed  !p | q = p -&gt; q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00473">equivLaws.cpp:473</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a4d05eb35e2b70dd9b65881977ca17c1c"><div class="ttname"><a href="classEquivLaws.html#a4d05eb35e2b70dd9b65881977ca17c1c">EquivLaws::implication0</a></div><div class="ttdeci">static bool implication0(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: p -&gt; q = !p | q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00452">equivLaws.cpp:452</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a550b101e4f8db9304fb68d80c75eae15"><div class="ttname"><a href="classEquivLaws.html#a550b101e4f8db9304fb68d80c75eae15">EquivLaws::implication5</a></div><div class="ttdeci">static bool implication5(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: (p -&gt; q) &amp; (p -&gt; r) = p -&gt; (q &amp; r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00660">equivLaws.cpp:660</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a55d21a8f2f6a62d87d968cb5c8919641"><div class="ttname"><a href="classEquivLaws.html#a55d21a8f2f6a62d87d968cb5c8919641">EquivLaws::implication6Reversed</a></div><div class="ttdeci">static bool implication6Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication6() but reversed  (p | q) -&gt; r = (p -&gt; q) &amp; (q -&gt; r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00741">equivLaws.cpp:741</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a71b924ea01234a15280bf5948b938501"><div class="ttname"><a href="classEquivLaws.html#a71b924ea01234a15280bf5948b938501">EquivLaws::implication1</a></div><div class="ttdeci">static bool implication1(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: p -&gt; q = !q -&gt; !p.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00493">equivLaws.cpp:493</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a86f066c8379b7d5292635729f50ceb84"><div class="ttname"><a href="classEquivLaws.html#a86f066c8379b7d5292635729f50ceb84">EquivLaws::implication3</a></div><div class="ttdeci">static bool implication3(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: p &amp; q = !(p -&gt; !q)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00576">equivLaws.cpp:576</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a9305cf9bc21c077c680e1167d5dafe61"><div class="ttname"><a href="classEquivLaws.html#a9305cf9bc21c077c680e1167d5dafe61">EquivLaws::implication7Reversed</a></div><div class="ttdeci">static bool implication7Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication7() but reversed  p -&gt; (q | r) = (p -&gt; q) | (p -&gt; r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00794">equivLaws.cpp:794</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_aa767b0e1e5b451ea8ffd34f5b0d2bfbe"><div class="ttname"><a href="classEquivLaws.html#aa767b0e1e5b451ea8ffd34f5b0d2bfbe">EquivLaws::implication2</a></div><div class="ttdeci">static bool implication2(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: p | q = !p -&gt; q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00535">equivLaws.cpp:535</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_aaad48c77875ad72dd01bfd5a31c9b55a"><div class="ttname"><a href="classEquivLaws.html#aaad48c77875ad72dd01bfd5a31c9b55a">EquivLaws::implication1Reversed</a></div><div class="ttdeci">static bool implication1Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication1() but reversed  !q -&gt; !p = p -&gt; q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00515">equivLaws.cpp:515</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_aaf24ebc09788086fc15a193f460cd01e"><div class="ttname"><a href="classEquivLaws.html#aaf24ebc09788086fc15a193f460cd01e">EquivLaws::implication5Reversed</a></div><div class="ttdeci">static bool implication5Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication5() but reversed  p -&gt; (q &amp; r) = (p -&gt; q) &amp; (p -&gt; r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00688">equivLaws.cpp:688</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ab3ee3fd4eea23e696b921d2b4cef2480"><div class="ttname"><a href="classEquivLaws.html#ab3ee3fd4eea23e696b921d2b4cef2480">EquivLaws::implication4Reversed</a></div><div class="ttdeci">static bool implication4Reversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication4() but reversed  p &amp; !q = !(p -&gt; q)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00639">equivLaws.cpp:639</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ab991de51dfa047cd1a7b286d12ea557a"><div class="ttname"><a href="classEquivLaws.html#ab991de51dfa047cd1a7b286d12ea557a">EquivLaws::implication4</a></div><div class="ttdeci">static bool implication4(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: !(p -&gt; q) = p &amp; !q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00618">equivLaws.cpp:618</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ad84c2226a9998c6380b595180e9cca04"><div class="ttname"><a href="classEquivLaws.html#ad84c2226a9998c6380b595180e9cca04">EquivLaws::implication8</a></div><div class="ttdeci">static bool implication8(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies implication: (p -&gt; q) | (q -&gt; r) = (p &amp; q) -&gt; r.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00819">equivLaws.cpp:819</a></div></div>
+</div><!-- fragment -->
+<p>Map of implication equivalences to their string representations. </p>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8h_source.html#l00035">35</a> of file <a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>.</p>
+
+</div>
+</div>
+<a id="a2cedb4157e4f9bdce82bb14138d10459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cedb4157e4f9bdce82bb14138d10459">&#9670;&nbsp;</a></span>laws</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaws::EquivLaw</a>, std::string &gt; EquivLaws::laws</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#aa958ef68733e755352500b3797ad5b72">identity</a>, <span class="stringliteral">&quot;Identity Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a411e741a9c5b20c3be9e3ae5b6a235ce">domination</a>, <span class="stringliteral">&quot;Domination Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a6c775a7ad9ef0112bde9310c0b3f816c">idempotent</a>, <span class="stringliteral">&quot;Idempotent Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#afe97f1d782ffda7851bec85d041e5c8f">doubleNegation</a>, <span class="stringliteral">&quot;Double Negation Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a39a8514b3383a434a5586075c07166e1">commutative</a>, <span class="stringliteral">&quot;Commutative Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc">associative</a>, <span class="stringliteral">&quot;Associative Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ab3ac59b7e474af1558614859a423c162">associativeReversed</a>, <span class="stringliteral">&quot;Associative Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5">distributive</a>, <span class="stringliteral">&quot;Distributive Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a6e376cdb40a0d09cf11062f0b3a0190b">distributiveReversed</a>, <span class="stringliteral">&quot;Distributive Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889">deMorgan</a>, <span class="stringliteral">&quot;De Morgan&#39;s Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#aae3cff16cab37a2203cd9c91ff9a119c">deMorganReversed</a>, <span class="stringliteral">&quot;De Morgan&#39;s Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#a688085551abdc907ade11ca45da406cb">absorption</a>, <span class="stringliteral">&quot;Absorption Law&quot;</span>},</div>
+<div class="line">    {<a class="code" href="classEquivLaws.html#ad98580eb9e0a31f095de0c32d8413437">negation</a>, <span class="stringliteral">&quot;Negation Law&quot;</span>},</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassEquivLaws_html_a307508c734eadb5d9bcfb936818b0bb5"><div class="ttname"><a href="classEquivLaws.html#a307508c734eadb5d9bcfb936818b0bb5">EquivLaws::distributive</a></div><div class="ttdeci">static bool distributive(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies distributive law  p | (q &amp; r) = (p | q) &amp; (p | r), p &amp; (q | r) = (p &amp; q) | (p &amp; r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00230">equivLaws.cpp:230</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a39a8514b3383a434a5586075c07166e1"><div class="ttname"><a href="classEquivLaws.html#a39a8514b3383a434a5586075c07166e1">EquivLaws::commutative</a></div><div class="ttdeci">static bool commutative(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the commutative law  (p | q) = (q | p), (p &amp; q) = (q &amp; p)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00164">equivLaws.cpp:164</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a411e741a9c5b20c3be9e3ae5b6a235ce"><div class="ttname"><a href="classEquivLaws.html#a411e741a9c5b20c3be9e3ae5b6a235ce">EquivLaws::domination</a></div><div class="ttdeci">static bool domination(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the domination law  (p | T) = T, (p &amp; F) = F.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00100">equivLaws.cpp:100</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a49aed8dae1a6e850bd976c02873401bc"><div class="ttname"><a href="classEquivLaws.html#a49aed8dae1a6e850bd976c02873401bc">EquivLaws::associative</a></div><div class="ttdeci">static bool associative(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the associative law  (p | q) | r = p | (q | r), (p &amp; q) &amp; r = p &amp; (q &amp; r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00184">equivLaws.cpp:184</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a688085551abdc907ade11ca45da406cb"><div class="ttname"><a href="classEquivLaws.html#a688085551abdc907ade11ca45da406cb">EquivLaws::absorption</a></div><div class="ttdeci">static bool absorption(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the absorption law  p | (p &amp; q) = p, p &amp; (p | q) = p.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00401">equivLaws.cpp:401</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a6c775a7ad9ef0112bde9310c0b3f816c"><div class="ttname"><a href="classEquivLaws.html#a6c775a7ad9ef0112bde9310c0b3f816c">EquivLaws::idempotent</a></div><div class="ttdeci">static bool idempotent(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the idempotent law  (p | p) = p, (p &amp; p) = p.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00126">equivLaws.cpp:126</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_a6e376cdb40a0d09cf11062f0b3a0190b"><div class="ttname"><a href="classEquivLaws.html#a6e376cdb40a0d09cf11062f0b3a0190b">EquivLaws::distributiveReversed</a></div><div class="ttdeci">static bool distributiveReversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies distributive() but reversed  (p | q) &amp; (p | r) = p | (q &amp; r), (p &amp; q) | (p &amp; r) = p &amp; (q | r)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00274">equivLaws.cpp:274</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_aa958ef68733e755352500b3797ad5b72"><div class="ttname"><a href="classEquivLaws.html#aa958ef68733e755352500b3797ad5b72">EquivLaws::identity</a></div><div class="ttdeci">static bool identity(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the identity law  (p &amp; T) = p, (p | F) = p.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00077">equivLaws.cpp:77</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_aae3cff16cab37a2203cd9c91ff9a119c"><div class="ttname"><a href="classEquivLaws.html#aae3cff16cab37a2203cd9c91ff9a119c">EquivLaws::deMorganReversed</a></div><div class="ttdeci">static bool deMorganReversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies deMorgan() but reversed  !p &amp; !q = !(p | q), !p | !q = !(p &amp; q)</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00365">equivLaws.cpp:365</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ab3ac59b7e474af1558614859a423c162"><div class="ttname"><a href="classEquivLaws.html#ab3ac59b7e474af1558614859a423c162">EquivLaws::associativeReversed</a></div><div class="ttdeci">static bool associativeReversed(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies associative() but reversed  p | (q | r) = (p | q) | r, p &amp; (q &amp; r) = (p &amp; q) &amp; r.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00207">equivLaws.cpp:207</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ad14007b64daf53cbbb86f2ec11364889"><div class="ttname"><a href="classEquivLaws.html#ad14007b64daf53cbbb86f2ec11364889">EquivLaws::deMorgan</a></div><div class="ttdeci">static bool deMorgan(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies De Morgan's law  !(p | q) = !p &amp; !q, !(p &amp; q) = !p | !q.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00324">equivLaws.cpp:324</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_ad98580eb9e0a31f095de0c32d8413437"><div class="ttname"><a href="classEquivLaws.html#ad98580eb9e0a31f095de0c32d8413437">EquivLaws::negation</a></div><div class="ttdeci">static bool negation(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the negation law  p | !p = T, p &amp; !p = F.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00422">equivLaws.cpp:422</a></div></div>
+<div class="ttc" id="aclassEquivLaws_html_afe97f1d782ffda7851bec85d041e5c8f"><div class="ttname"><a href="classEquivLaws.html#afe97f1d782ffda7851bec85d041e5c8f">EquivLaws::doubleNegation</a></div><div class="ttdeci">static bool doubleNegation(std::shared_ptr&lt; Expression &gt; &amp;expression)</div><div class="ttdoc">Applies the double negation law  !!p = p.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8cpp_source.html#l00148">equivLaws.cpp:148</a></div></div>
+</div><!-- fragment -->
+<p>Map of equivalence laws to their string representations. </p>
+
+<p class="definition">Definition at line <a class="el" href="equivLaws_8h_source.html#l00030">30</a> of file <a class="el" href="equivLaws_8h_source.html">equivLaws.h</a>.</p>
 
 </div>
 </div>

@@ -8,5 +8,6 @@ var searchData=
   ['bidirectionalimplication3_9',['bidirectionalImplication3',['../classEquivLaws.html#a2b060a607ed9ce4fd1bedbf9eba2774d',1,'EquivLaws']]],
   ['bidirectionalimplication3reversed_10',['bidirectionalImplication3Reversed',['../classEquivLaws.html#adda0d2f3195397f28b85c8e8b7a2fd46',1,'EquivLaws']]],
   ['bidirectionalimplication4_11',['bidirectionalImplication4',['../classEquivLaws.html#af6a98182da383e73e51d32cecd92fedc',1,'EquivLaws']]],
-  ['bidirectionalimplication4reversed_12',['bidirectionalImplication4Reversed',['../classEquivLaws.html#ac9b31f5118e554eb3232314806d45d90',1,'EquivLaws']]]
+  ['bidirectionalimplication4reversed_12',['bidirectionalImplication4Reversed',['../classEquivLaws.html#ac9b31f5118e554eb3232314806d45d90',1,'EquivLaws']]],
+  ['bidirectionalimplications_13',['bidirectionalImplications',['../classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4',1,'EquivLaws']]]
 ];

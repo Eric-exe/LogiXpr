@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['right_177',['right',['../classExpression.html#a0156954da1ef8ecbde7994ba001fc265',1,'Expression']]]
+  ['implications_192',['implications',['../classEquivLaws.html#a01125a23881bf97835317589159441e2',1,'EquivLaws']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parent_176',['parent',['../classExpression.html#afcbaac896b3d7619794c9e3eefd8d4e2',1,'Expression']]]
+  ['equivalences_191',['equivalences',['../group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab',1,'equivalences():&#160;solver.cpp'],['../group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab',1,'equivalences():&#160;solver.cpp']]]
 ];

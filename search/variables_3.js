@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['value_178',['value',['../classExpression.html#adda79355b3caba02c27fe815c3f81769',1,'Expression']]]
+  ['laws_193',['laws',['../classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459',1,'EquivLaws']]],
+  ['left_194',['left',['../classExpression.html#a77cb37b491d271a0e61f6144fb81e382',1,'Expression']]]
 ];
