@@ -18,6 +18,17 @@
  */
 
 /**
+ * @brief Map of equivalences to be applied to the expressions
+ */
+extern std::unordered_map<EquivLaws::EquivLaw, std::string> equivalences;
+
+/**
+ * @brief Fill the map of equivalences to be applied to the expressions. 
+ * Must be called before any other functions in this file.
+ */
+void preprocess(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs);
+
+/**
  * @brief Prove the expressions are equivalence using equivalence laws by solving the left hand side to the right hand side.
  * Required that the expressions are actually equivalent for this to work.
  * 
