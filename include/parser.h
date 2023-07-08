@@ -5,8 +5,9 @@
 
 #pragma once
 
-#include <vector>
 #include "expression.h"
+#include <vector>
+
 
 /**
  * @defgroup parser Parser functions
