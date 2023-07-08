@@ -5,6 +5,49 @@
 
 #include "../include/equivLaws.h"
 
+std::unordered_map<EquivLaws::EquivLaw, std::string> EquivLaws::laws = {
+    {identity, "Identity Law"},
+    {domination, "Domination Law"},
+    {idempotent, "Idempotent Law"},
+    {doubleNegation, "Double Negation Law"},
+    {commutative, "Commutative Law"},
+    {associative, "Associative Law"},
+    {associativeReversed, "Associative Law"},
+    {distributive, "Distributive Law"},
+    {distributiveReversed, "Distributive Law"},
+    {deMorgan, "De Morgan's Law"},
+    {deMorganReversed, "De Morgan's Law"},
+    {absorption, "Absorption Law"},
+    {negation, "Negation Law"},
+    {implication0, "Implication Equivalence"},
+    {implication0Reversed, "Implication Equivalence"},
+    {implication1, "Implication Equivalence"},
+    {implication1Reversed, "Implication Equivalence"},
+    {implication2, "Implication Equivalence"},
+    {implication2Reversed, "Implication Equivalence"},
+    {implication3, "Implication Equivalence"},
+    {implication3Reversed, "Implication Equivalence"},
+    {implication4, "Implication Equivalence"},
+    {implication4Reversed, "Implication Equivalence"},
+    {implication5, "Implication Equivalence"},
+    {implication5Reversed, "Implication Equivalence"},
+    {implication6, "Implication Equivalence"},
+    {implication6Reversed, "Implication Equivalence"},
+    {implication7, "Implication Equivalence"},
+    {implication7Reversed, "Implication Equivalence"},
+    {implication8, "Implication Equivalence"},
+    {implication8Reversed, "Implication Equivalence"},
+    {bidirectionalImplication0, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication0Reversed, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication1, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication2, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication2Reversed, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication3, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication3Reversed, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication4, "Bidirectional Implication Equivalence"},
+    {bidirectionalImplication4Reversed, "Bidirectional Implication Equivalence"},
+};
+
 void EquivLaws::replace(std::shared_ptr<Expression> &expression, std::shared_ptr<Expression> newExpression)
 {
     std::shared_ptr<Expression> parent = expression->getParent();
@@ -134,7 +177,7 @@ bool EquivLaws::commutative(std::shared_ptr<Expression> &expression)
 bool EquivLaws::associative(std::shared_ptr<Expression> &expression)
 {
     // (p | q) | r = p | (q | r), (p & q) & r = p & (q & r)
-    if (expression->getValue() == AND || expression->getValue() == OR && expression->getLeft()->getValue() == expression->getValue())
+    if ((expression->getValue() == AND || expression->getValue() == OR) && expression->getLeft()->getValue() == expression->getValue())
     {
         std::shared_ptr<Expression> left1 = expression->getLeft()->getLeft();
         std::shared_ptr<Expression> left2 = expression->getLeft()->getRight();
@@ -157,7 +200,7 @@ bool EquivLaws::associative(std::shared_ptr<Expression> &expression)
 bool EquivLaws::associativeReversed(std::shared_ptr<Expression> &expression)
 {
     // p | (q | r) = (p | q) | r, p & (q & r) = (p & q) & r
-    if (expression->getValue() == AND || expression->getValue() == OR && expression->getRight()->getValue() == expression->getValue())
+    if ((expression->getValue() == AND || expression->getValue() == OR) && expression->getRight()->getValue() == expression->getValue())
     {
         std::shared_ptr<Expression> left = expression->getLeft();
         std::shared_ptr<Expression> right1 = expression->getRight()->getLeft();

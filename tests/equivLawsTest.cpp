@@ -406,7 +406,7 @@ TEST(EquivsLawTest, AssociativeReversedComplex) {
     std::shared_ptr<Expression> expr;
     std::shared_ptr<Expression> expected;
 
-    parse("(p|q)&(r|s)", expr);
+    parse("(p|q)&(r&s)", expr);
     EXPECT_TRUE(EquivLaws::associativeReversed(expr));
     parse("((p|q)&r)&s", expected);
     EXPECT_TRUE(expr->compare(expected));
