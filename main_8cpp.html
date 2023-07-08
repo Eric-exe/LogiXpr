@@ -62,6 +62,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.cpp File Reference</div>  </div>
@@ -72,12 +73,21 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &quot;<a class="el" href="expression_8h_source.html">include/expression.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="parser_8h_source.html">include/parser.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="evaluator_8h_source.html">include/evaluator.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="solver_8h_source.html">include/solver.h</a>&quot;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aa90cac659d18e8ef6294c7ae337f6b58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>&#160;&#160;&#160;&quot;[\033[32m+\033[0m] &quot;</td></tr>
+<tr class="separator:aa90cac659d18e8ef6294c7ae337f6b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d58f9ac447476b4e084d7ca383f5183"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a>&#160;&#160;&#160;&quot;[\033[31m-\033[0m] &quot;</td></tr>
+<tr class="separator:a6d58f9ac447476b4e084d7ca383f5183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada3f1f3fa9b684d837200490fbb07c26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ada3f1f3fa9b684d837200490fbb07c26">ALERT</a>&#160;&#160;&#160;&quot;[\033[33m!\033[0m] &quot;</td></tr>
+<tr class="separator:ada3f1f3fa9b684d837200490fbb07c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
@@ -87,7 +97,56 @@ Functions</h2></td></tr>
 <div class="textblock"><p>Main file. </p>
 
 <p class="definition">Definition in file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ada3f1f3fa9b684d837200490fbb07c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada3f1f3fa9b684d837200490fbb07c26">&#9670;&nbsp;</a></span>ALERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALERT&#160;&#160;&#160;&quot;[\033[33m!\033[0m] &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00037">37</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6d58f9ac447476b4e084d7ca383f5183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d58f9ac447476b4e084d7ca383f5183">&#9670;&nbsp;</a></span>FAILURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FAILURE&#160;&#160;&#160;&quot;[\033[31m-\033[0m] &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00036">36</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa90cac659d18e8ef6294c7ae337f6b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90cac659d18e8ef6294c7ae337f6b58">&#9670;&nbsp;</a></span>SUCCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUCCESS&#160;&#160;&#160;&quot;[\033[32m+\033[0m] &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00035">35</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -103,7 +162,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00013">13</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00039">39</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

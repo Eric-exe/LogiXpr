@@ -6,7 +6,8 @@ var indexSectionsWithContent =
   3: "abcdeghimnprst",
   4: "beilprv",
   5: "e",
-  6: "eps"
+  6: "afs",
+  7: "eps"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "groups"
+  6: "defines",
+  7: "groups"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Typedefs",
-  6: "Modules"
+  6: "Macros",
+  7: "Modules"
 };
 
