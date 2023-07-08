@@ -119,9 +119,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad307c4a066b114d506a53ad61bc1691d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExpression.html#ad307c4a066b114d506a53ad61bc1691d">clone</a> ()</td></tr>
 <tr class="memdesc:ad307c4a066b114d506a53ad61bc1691d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a clone of the current expression and subexpressions.  <a href="classExpression.html#ad307c4a066b114d506a53ad61bc1691d">More...</a><br /></td></tr>
 <tr class="separator:ad307c4a066b114d506a53ad61bc1691d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999fa1aabafdfca3178177259211bc88"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExpression.html#a999fa1aabafdfca3178177259211bc88">cloneTree</a> ()</td></tr>
+<tr class="memdesc:a999fa1aabafdfca3178177259211bc88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a clone of the whole expression tree and returns the pointer to the node where it is called.  <a href="classExpression.html#a999fa1aabafdfca3178177259211bc88">More...</a><br /></td></tr>
+<tr class="separator:a999fa1aabafdfca3178177259211bc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aca4814f95328919d9d0be996ba0010"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExpression.html#a3aca4814f95328919d9d0be996ba0010">compare</a> (std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; other)</td></tr>
 <tr class="memdesc:a3aca4814f95328919d9d0be996ba0010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare the current expression to another expression.  <a href="classExpression.html#a3aca4814f95328919d9d0be996ba0010">More...</a><br /></td></tr>
 <tr class="separator:a3aca4814f95328919d9d0be996ba0010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c01eb2a04250284ec1562f4830e0b68"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExpression.html#a6c01eb2a04250284ec1562f4830e0b68">toString</a> ()</td></tr>
+<tr class="memdesc:a6c01eb2a04250284ec1562f4830e0b68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the current expression to a string.  <a href="classExpression.html#a6c01eb2a04250284ec1562f4830e0b68">More...</a><br /></td></tr>
+<tr class="separator:a6c01eb2a04250284ec1562f4830e0b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72d091fe31b94dec8bcb6a359ccedafb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classExpression.html#a72d091fe31b94dec8bcb6a359ccedafb">toStringTree</a> ()</td></tr>
+<tr class="memdesc:a72d091fe31b94dec8bcb6a359ccedafb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the whole expression tree to a string.  <a href="classExpression.html#a72d091fe31b94dec8bcb6a359ccedafb">More...</a><br /></td></tr>
+<tr class="separator:a72d091fe31b94dec8bcb6a359ccedafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -141,7 +150,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract syntax tree for logic expressions. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00034">34</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00035">35</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5be1ed392532e3862ab3479b4719d7a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5be1ed392532e3862ab3479b4719d7a4">&#9670;&nbsp;</a></span>Expression()</h2>
@@ -194,6 +203,28 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a999fa1aabafdfca3178177259211bc88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a999fa1aabafdfca3178177259211bc88">&#9670;&nbsp;</a></span>cloneTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="classExpression.html">Expression</a> &gt; Expression::cloneTree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a clone of the whole expression tree and returns the pointer to the node where it is called. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to cloned expression </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="expression_8cpp_source.html#l00105">105</a> of file <a class="el" href="expression_8cpp_source.html">expression.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a3aca4814f95328919d9d0be996ba0010"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3aca4814f95328919d9d0be996ba0010">&#9670;&nbsp;</a></span>compare()</h2>
 
@@ -219,7 +250,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool of whether the current expression is equal to the other expression </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="expression_8cpp_source.html#l00105">105</a> of file <a class="el" href="expression_8cpp_source.html">expression.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression_8cpp_source.html#l00136">136</a> of file <a class="el" href="expression_8cpp_source.html">expression.cpp</a>.</p>
 
 </div>
 </div>
@@ -527,6 +558,50 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6c01eb2a04250284ec1562f4830e0b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c01eb2a04250284ec1562f4830e0b68">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Expression::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert the current expression to a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>string of the current expression </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="expression_8cpp_source.html#l00160">160</a> of file <a class="el" href="expression_8cpp_source.html">expression.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a72d091fe31b94dec8bcb6a359ccedafb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72d091fe31b94dec8bcb6a359ccedafb">&#9670;&nbsp;</a></span>toStringTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Expression::toStringTree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert the whole expression tree to a string. </p>
+<dl class="section return"><dt>Returns</dt><dd>string of the whole expression tree </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="expression_8cpp_source.html#l00176">176</a> of file <a class="el" href="expression_8cpp_source.html">expression.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a77cb37b491d271a0e61f6144fb81e382"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a77cb37b491d271a0e61f6144fb81e382">&#9670;&nbsp;</a></span>left</h2>
@@ -550,7 +625,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to left subexpression. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00159">159</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00182">182</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
 
 </div>
 </div>
@@ -576,7 +651,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to parent expression. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00154">154</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00177">177</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
 
 </div>
 </div>
@@ -602,7 +677,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointer to right subexpression. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00164">164</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00187">187</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
 
 </div>
 </div>
@@ -628,7 +703,7 @@ Private Attributes</h2></td></tr>
 
 <p>The current expression. </p>
 
-<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00149">149</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="expression_8h_source.html#l00172">172</a> of file <a class="el" href="expression_8h_source.html">expression.h</a>.</p>
 
 </div>
 </div>
