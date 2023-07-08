@@ -72,15 +72,16 @@ $(function() {
 <a href="parser_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="expression_8h.html">expression.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="expression_8h.html">expression.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;std::vector&lt;std::string&gt; <a class="code" href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a>(std::string expression);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a>(std::string expression, std::shared_ptr&lt;Expression&gt; &amp;root);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;std::vector&lt;std::string&gt; <a class="code" href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a>(std::string expression);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a>(std::string expression, std::shared_ptr&lt;Expression&gt; &amp;root);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="ttc" id="aexpression_8h_html"><div class="ttname"><a href="expression_8h.html">expression.h</a></div><div class="ttdoc">Header file for expression class.</div></div>
-<div class="ttc" id="agroup__parser_html_ga31d1a69dc8ed9d81edfffba6d280a5a0"><div class="ttname"><a href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a></div><div class="ttdeci">bool parse(std::string expression, std::shared_ptr&lt; Expression &gt; &amp;root)</div><div class="ttdoc">Parse the expression and convert it to an abstract syntax tree.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8cpp_source.html#l00031">parser.cpp:31</a></div></div>
+<div class="ttc" id="agroup__parser_html_ga31d1a69dc8ed9d81edfffba6d280a5a0"><div class="ttname"><a href="group__parser.html#ga31d1a69dc8ed9d81edfffba6d280a5a0">parse</a></div><div class="ttdeci">bool parse(std::string expression, std::shared_ptr&lt; Expression &gt; &amp;root)</div><div class="ttdoc">Parse the expression and convert it to an abstract syntax tree.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8cpp_source.html#l00024">parser.cpp:24</a></div></div>
 <div class="ttc" id="agroup__parser_html_ga8432bd0a0fa24dbd96290cbefd1ad628"><div class="ttname"><a href="group__parser.html#ga8432bd0a0fa24dbd96290cbefd1ad628">tokenize</a></div><div class="ttdeci">std::vector&lt; std::string &gt; tokenize(std::string expression)</div><div class="ttdoc">Tokenize the expression.</div><div class="ttdef"><b>Definition:</b> <a href="parser_8cpp_source.html#l00008">parser.cpp:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
