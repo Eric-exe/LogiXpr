@@ -82,7 +82,7 @@ void generateNextSteps(
 
     if (funct(newExpr)) {
       std::string newExprString = newExpr->toStringTree();
-      if (newExprString.length() > 100)
+      if (newExprString.length() > 50)
         continue;
       // ignore extremely long expressions
 
