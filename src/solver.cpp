@@ -47,6 +47,11 @@ proveEquivalence(std::shared_ptr<Expression> lhs,
   bool found = false;
 
   while (!queue.empty()) {
+    // if queue is too long, stop
+    if (queue.size() > 2500) {
+      steps.push_back({"", "Too many steps :("});
+      break;
+    }
     std::shared_ptr<Expression> expr = queue.front();
     queue.pop();
 
