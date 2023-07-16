@@ -27,8 +27,7 @@ extern std::unordered_map<EquivLaws::EquivLaw, std::string> equivalences;
  * @brief Fill the map of equivalences to be applied to the expressions.
  * Must be called before any other functions in this file.
  */
-void preprocess(std::shared_ptr<Expression> lhs,
-                std::shared_ptr<Expression> rhs);
+void preprocess(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs);
 
 /**
  * @brief Prove the expressions are equivalence using equivalence laws by
@@ -43,9 +42,7 @@ void preprocess(std::shared_ptr<Expression> lhs,
  *
  * @see isEquivalent
  */
-std::vector<std::vector<std::string>>
-proveEquivalence(std::shared_ptr<Expression> lhs,
-                 std::shared_ptr<Expression> rhs);
+std::vector<std::vector<std::string>> proveEquivalence(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs);
 
 /**
  * @brief Generate the next expressions from the current expression.
@@ -65,9 +62,5 @@ proveEquivalence(std::shared_ptr<Expression> lhs,
  * pair of the string expression derived from and the law used to get to the
  * expression
  */
-void generateNextSteps(
-    std::shared_ptr<Expression> expr, std::shared_ptr<Expression> end,
-    bool &found, std::queue<std::shared_ptr<Expression>> &queue,
-    std::unordered_map<std::string, std::pair<std::string, std::string>>
-        &visited);
+void generateNextSteps(std::shared_ptr<Expression> expr, std::shared_ptr<Expression> end, bool &found, std::queue<std::shared_ptr<Expression>> &queue, std::unordered_map<std::string, std::pair<std::string, std::string>> &visited);
 /** @} */

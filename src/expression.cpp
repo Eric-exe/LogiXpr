@@ -5,54 +5,83 @@
 
 #include "../include/expression.h"
 
-Expression::Expression(std::string value) { this->value = value; }
+Expression::Expression(std::string value)
+{
+  this->value = value;
+}
 
-std::string Expression::getValue() { return this->value; }
+std::string Expression::getValue()
+{
+  return this->value;
+}
 
-bool Expression::hasLeft() { return this->left != nullptr; }
+bool Expression::hasLeft()
+{
+  return this->left != nullptr;
+}
 
-bool Expression::hasRight() { return this->right != nullptr; }
+bool Expression::hasRight()
+{
+  return this->right != nullptr;
+}
 
-bool Expression::isBinary() { return this->hasLeft() && this->hasRight(); }
+bool Expression::isBinary()
+{
+  return this->hasLeft() && this->hasRight();
+}
 
-bool Expression::isVar() {
+bool Expression::isVar()
+{
   // if the expression is a variable, it will be a single character from a-z
   return this->value.length() == 1 && std::islower(this->value[0]);
 }
 
-std::shared_ptr<Expression> Expression::getParent() { return this->parent; }
+std::shared_ptr<Expression> Expression::getParent()
+{
+  return this->parent;
+}
 
-std::shared_ptr<Expression> Expression::getLeft() { return this->left; }
+std::shared_ptr<Expression> Expression::getLeft()
+{
+  return this->left;
+}
 
-std::shared_ptr<Expression> Expression::getRight() { return this->right; }
+std::shared_ptr<Expression> Expression::getRight()
+{
+  return this->right;
+}
 
-void Expression::setLeft(std::shared_ptr<Expression> left,
-                         std::shared_ptr<Expression> parent) {
+void Expression::setLeft(std::shared_ptr<Expression> left, std::shared_ptr<Expression> parent)
+{
   this->left = left;
   this->left->setParent(parent);
 }
 
-void Expression::setRight(std::shared_ptr<Expression> right,
-                          std::shared_ptr<Expression> parent) {
+void Expression::setRight(std::shared_ptr<Expression> right, std::shared_ptr<Expression> parent)
+{
   this->right = right;
   this->right->setParent(parent);
 }
 
-void Expression::setParent(std::shared_ptr<Expression> parent) {
+void Expression::setParent(std::shared_ptr<Expression> parent)
+{
   this->parent = parent;
 }
 
-std::set<std::string> Expression::getVariables() {
+std::set<std::string> Expression::getVariables()
+{
   std::set<std::string> variables;
   if (this->isVar())
     variables.insert(this->value);
 
-  if (this->hasLeft()) {
+  if (this->hasLeft())
+  {
     std::set<std::string> leftVariables = this->getLeft()->getVariables();
     variables.insert(leftVariables.begin(), leftVariables.end());
   }
 
-  if (this->hasRight()) {
+  if (this->hasRight())
+  {
     std::set<std::string> rightVariables = this->getRight()->getVariables();
     variables.insert(rightVariables.begin(), rightVariables.end());
   }
@@ -60,7 +89,8 @@ std::set<std::string> Expression::getVariables() {
   return variables;
 }
 
-std::shared_ptr<Expression> Expression::clone() {
+std::shared_ptr<Expression> Expression::clone()
+{
   std::shared_ptr<Expression> clonedExpression;
 
   clonedExpression = std::make_shared<Expression>(this->getValue());
@@ -72,7 +102,8 @@ std::shared_ptr<Expression> Expression::clone() {
   return clonedExpression;
 }
 
-std::shared_ptr<Expression> Expression::cloneTree() {
+std::shared_ptr<Expression> Expression::cloneTree()
+{
   if (!this->getParent())
     return this->clone();
   // keep going up the tree until we find the root
@@ -86,7 +117,8 @@ std::shared_ptr<Expression> Expression::cloneTree() {
   std::stack<std::shared_ptr<Expression>> stack;
   stack.push(clonedTree);
 
-  while (!stack.empty()) {
+  while (!stack.empty())
+  {
     std::shared_ptr<Expression> current = stack.top();
     stack.pop();
 
@@ -101,7 +133,8 @@ std::shared_ptr<Expression> Expression::cloneTree() {
   return nullptr;
 }
 
-bool Expression::compare(std::shared_ptr<Expression> other) {
+bool Expression::compare(std::shared_ptr<Expression> other)
+{
   // make sure the expressions don't have the same address
   if (this == other.get())
     return false;
@@ -124,7 +157,8 @@ bool Expression::compare(std::shared_ptr<Expression> other) {
   return true;
 }
 
-bool Expression::compareTree(std::shared_ptr<Expression> other) {
+bool Expression::compareTree(std::shared_ptr<Expression> other)
+{
   if (!this->getParent())
     return this->compare(other);
 
@@ -135,14 +169,18 @@ bool Expression::compareTree(std::shared_ptr<Expression> other) {
   return root->compare(other);
 }
 
-std::string Expression::toString() {
+std::string Expression::toString()
+{
   if (this->isVar() || this->getValue() == "T" || this->getValue() == "F")
     return this->getValue();
 
   std::string expressionString = "";
-  if (this->getValue() == NOT) {
+  if (this->getValue() == NOT)
+  {
     expressionString += "!(" + this->getLeft()->toString() + ")";
-  } else {
+  }
+  else
+  {
     expressionString += "(" + this->getLeft()->toString() + ")";
     expressionString += " " + this->getValue() + " ";
     expressionString += "(" + this->getRight()->toString() + ")";
@@ -150,7 +188,8 @@ std::string Expression::toString() {
   return expressionString;
 }
 
-std::string Expression::toStringTree() {
+std::string Expression::toStringTree()
+{
   if (!this->getParent())
     return this->toString();
 
@@ -162,43 +201,54 @@ std::string Expression::toStringTree() {
   return treeString;
 }
 
-std::string Expression::toStringMinimal() {
+std::string Expression::toStringMinimal()
+{
   if (this->isVar() || this->getValue() == "T" || this->getValue() == "F")
     return this->getValue();
 
   std::string expressionString = "";
 
-  if (this->getValue() == NOT) {
+  if (this->getValue() == NOT)
+  {
     // check if the left side is a variable or T or F
     if (this->getLeft()->isVar() || this->getLeft()->getValue() == "T" ||
-        this->getLeft()->getValue() == "F") {
+        this->getLeft()->getValue() == "F")
+    {
       expressionString += this->getValue();
       expressionString += this->getLeft()->toStringMinimal();
-    } else {
+    }
+    else
+    {
       expressionString += this->getValue();
       expressionString += "(" + this->getLeft()->toStringMinimal() + ")";
     }
-  } else {
+  }
+  else
+  {
     std::string leftMinimal = this->getLeft()->toStringMinimal();
     std::string op = this->getValue();
     std::string rightMinimal = this->getRight()->toStringMinimal();
 
     // check if the left side is a variable or T or F
     if (!this->getLeft()->isVar() && this->getLeft()->getValue() != "T" &&
-        this->getLeft()->getValue() != "F") {
+        this->getLeft()->getValue() != "F")
+    {
       // determine operator precedence
       if (precedence.at(this->getValue()) >
-          precedence.at(this->getLeft()->getValue())) {
+          precedence.at(this->getLeft()->getValue()))
+      {
         leftMinimal = "(" + leftMinimal + ")";
       }
     }
 
     // check if the right side is a variable or T or F
     if (!this->getRight()->isVar() && this->getRight()->getValue() != "T" &&
-        this->getRight()->getValue() != "F") {
+        this->getRight()->getValue() != "F")
+    {
       // determine operator precedence
       if (precedence.at(this->getValue()) >
-          precedence.at(this->getRight()->getValue())) {
+          precedence.at(this->getRight()->getValue()))
+      {
         rightMinimal = "(" + rightMinimal + ")";
       }
     }

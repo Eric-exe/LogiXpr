@@ -117,10 +117,8 @@ TEST(ParserTest, ParsedMultipleNOTs) {
   EXPECT_EQ("!", root->getLeft()->getLeft()->getLeft()->getValue());
   EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getRight());
   EXPECT_EQ("p", root->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
 
   EXPECT_TRUE(parse("!!!(p & q)", root));
   EXPECT_EQ("!", root->getValue());
@@ -131,15 +129,11 @@ TEST(ParserTest, ParsedMultipleNOTs) {
   EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getRight());
   EXPECT_EQ("&", root->getLeft()->getLeft()->getLeft()->getValue());
   EXPECT_EQ("p", root->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
   EXPECT_EQ("q", root->getLeft()->getLeft()->getLeft()->getRight()->getValue());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getRight()->getLeft());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getRight()->getRight());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getRight()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getRight()->getRight());
 
   EXPECT_TRUE(parse("(!(!!p & !!q))", root));
   EXPECT_EQ("!", root->getValue());
@@ -152,17 +146,13 @@ TEST(ParserTest, ParsedMultipleNOTs) {
   EXPECT_EQ("!", root->getLeft()->getLeft()->getLeft()->getValue());
   EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getRight());
   EXPECT_EQ("p", root->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
   EXPECT_EQ("!", root->getLeft()->getRight()->getLeft()->getValue());
   EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getRight());
   EXPECT_EQ("q", root->getLeft()->getRight()->getLeft()->getLeft()->getValue());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getRight()->getLeft()->getLeft()->getLeft());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getRight()->getLeft()->getLeft()->getRight());
+  EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getLeft()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getLeft()->getRight());
 
   EXPECT_TRUE(parse("!!(!p | q) & (!(r | !s)) & !t", root));
   EXPECT_EQ("&", root->getValue());
@@ -172,69 +162,25 @@ TEST(ParserTest, ParsedMultipleNOTs) {
   EXPECT_EQ("!", root->getLeft()->getLeft()->getLeft()->getValue());
   EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getRight());
   EXPECT_EQ("|", root->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
-  EXPECT_EQ(
-      "!",
-      root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
-  EXPECT_EQ(
-      nullptr,
-      root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
-  EXPECT_EQ("p", root->getLeft()
-                     ->getLeft()
-                     ->getLeft()
-                     ->getLeft()
-                     ->getLeft()
-                     ->getLeft()
-                     ->getValue());
-  EXPECT_EQ(nullptr, root->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getLeft());
-  EXPECT_EQ(nullptr, root->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getLeft()
-                         ->getRight());
-  EXPECT_EQ(
-      "q",
-      root->getLeft()->getLeft()->getLeft()->getLeft()->getRight()->getValue());
-  EXPECT_EQ(
-      nullptr,
-      root->getLeft()->getLeft()->getLeft()->getLeft()->getRight()->getLeft());
-  EXPECT_EQ(
-      nullptr,
-      root->getLeft()->getLeft()->getLeft()->getLeft()->getRight()->getRight());
+  EXPECT_EQ("!", root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
+  EXPECT_EQ("p", root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getValue());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getLeft()->getRight());
+  EXPECT_EQ("q", root->getLeft()->getLeft()->getLeft()->getLeft()->getRight()->getValue());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getRight()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getLeft()->getLeft()->getLeft()->getRight()->getRight());
   EXPECT_EQ("!", root->getLeft()->getRight()->getValue());
   EXPECT_EQ(nullptr, root->getLeft()->getRight()->getRight());
   EXPECT_EQ("|", root->getLeft()->getRight()->getLeft()->getValue());
   EXPECT_EQ("r", root->getLeft()->getRight()->getLeft()->getLeft()->getValue());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getRight()->getLeft()->getLeft()->getLeft());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getRight()->getLeft()->getLeft()->getRight());
-  EXPECT_EQ("!",
-            root->getLeft()->getRight()->getLeft()->getRight()->getValue());
-  EXPECT_EQ(nullptr,
-            root->getLeft()->getRight()->getLeft()->getRight()->getRight());
-  EXPECT_EQ("s", root->getLeft()
-                     ->getRight()
-                     ->getLeft()
-                     ->getRight()
-                     ->getLeft()
-                     ->getValue());
-  EXPECT_EQ(
-      nullptr,
-      root->getLeft()->getRight()->getLeft()->getRight()->getLeft()->getLeft());
-  EXPECT_EQ(nullptr, root->getLeft()
-                         ->getRight()
-                         ->getLeft()
-                         ->getRight()
-                         ->getLeft()
-                         ->getRight());
+  EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getLeft()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getLeft()->getRight());
+  EXPECT_EQ("!", root->getLeft()->getRight()->getLeft()->getRight()->getValue());
+  EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getRight()->getRight());
+  EXPECT_EQ("s", root->getLeft()->getRight()->getLeft()->getRight()->getLeft()->getValue());
+  EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getRight()->getLeft()->getLeft());
+  EXPECT_EQ(nullptr, root->getLeft()->getRight()->getLeft()->getRight()->getLeft()->getRight());
   EXPECT_EQ("!", root->getRight()->getValue());
   EXPECT_EQ(nullptr, root->getRight()->getRight());
   EXPECT_EQ("t", root->getRight()->getLeft()->getValue());

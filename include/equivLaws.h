@@ -44,8 +44,7 @@ public:
    * @param expression pointer to original expression
    * @param newExpression pointer to expression to replace with
    */
-  static void replace(std::shared_ptr<Expression> &expression,
-                      std::shared_ptr<Expression> newExpression);
+  static void replace(std::shared_ptr<Expression> &expression, std::shared_ptr<Expression> newExpression);
 
   /**
    * @brief Applies the identity law \n
@@ -377,8 +376,7 @@ public:
    *
    * @return bool of whether implication was applied
    */
-  static bool
-  bidirectionalImplication0(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication0(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectionalImplication0() but reversed \n
@@ -390,8 +388,7 @@ public:
    *
    * @see bidirectionalImplication0()
    */
-  static bool
-  bidirectionalImplication0Reversed(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication0Reversed(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectional implication: p <-> q = q <-> p
@@ -400,8 +397,7 @@ public:
    *
    * @return bool of whether implication was applied
    */
-  static bool
-  bidirectionalImplication1(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication1(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectional implication: p <-> q = !p <-> !q
@@ -410,8 +406,7 @@ public:
    *
    * @return bool of whether implication was applied
    */
-  static bool
-  bidirectionalImplication2(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication2(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectionalImplication2() but reversed \n
@@ -423,8 +418,7 @@ public:
    *
    * @see bidirectionalImplication2()
    */
-  static bool
-  bidirectionalImplication2Reversed(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication2Reversed(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectional implication: p <-> q = (p & q) | (!p & !q)
@@ -433,8 +427,7 @@ public:
    *
    * @return bool of whether implication was applied
    */
-  static bool
-  bidirectionalImplication3(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication3(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectionalImplication3() but reversed \n
@@ -446,8 +439,7 @@ public:
    *
    * @see bidirectionalImplication3()
    */
-  static bool
-  bidirectionalImplication3Reversed(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication3Reversed(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectional implication: !(p <-> q) = p <-> !q
@@ -456,8 +448,7 @@ public:
    *
    * @return bool of whether implication was applied
    */
-  static bool
-  bidirectionalImplication4(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication4(std::shared_ptr<Expression> &expression);
 
   /**
    * @brief Applies bidirectionalImplication4() but reversed \n
@@ -469,6 +460,5 @@ public:
    *
    * @see bidirectionalImplication4()
    */
-  static bool
-  bidirectionalImplication4Reversed(std::shared_ptr<Expression> &expression);
+  static bool bidirectionalImplication4Reversed(std::shared_ptr<Expression> &expression);
 };

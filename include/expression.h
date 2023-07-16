@@ -110,16 +110,14 @@ public:
    * @param left pointer to expression to be set as the left child
    * @param parent pointer to current expression
    */
-  void setLeft(std::shared_ptr<Expression> left,
-               std::shared_ptr<Expression> parent);
+  void setLeft(std::shared_ptr<Expression> left, std::shared_ptr<Expression> parent);
 
   /**
   @brief Sets the right child expression of this expression
   @param right pointer to expression to be set as the right child
   @param parent pointer to current expression
   */
-  void setRight(std::shared_ptr<Expression> right,
-                std::shared_ptr<Expression> parent);
+  void setRight(std::shared_ptr<Expression> right, std::shared_ptr<Expression> parent);
 
   /**
    * @brief Sets the parent node expression of this expression

@@ -8,7 +8,6 @@
 #include "expression.h"
 #include <vector>
 
-
 /**
  * @defgroup parser Parser functions
  * @brief Functions for parsing expressions
