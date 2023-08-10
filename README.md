@@ -1,7 +1,7 @@
 # LogiXpr
-![License](https://img.shields.io/github/license/ericlin-jpg/LogiXpr)
-[![Static Badge](https://img.shields.io/badge/docs-read-blue)](https://ericlin-jpg.github.io/LogiXpr/)
-![GitHub repo size](https://img.shields.io/github/repo-size/EricLin-jpg/LogiXpr)
+![License](https://img.shields.io/github/license/eric-exe/LogiXpr)
+[![Static Badge](https://img.shields.io/badge/docs-read-blue)](https://eric-exe.github.io/LogiXpr/)
+![GitHub repo size](https://img.shields.io/github/repo-size/eric-exe/LogiXpr)
 
 LogiXpr is a C++ console application that evaluates boolean expressions. It supports the following operators:
 - `!` - not
