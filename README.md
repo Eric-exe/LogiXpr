@@ -22,6 +22,11 @@ LogiXpr utilizes the shunting yard algorithm to convert expressions into abstrac
 
 To find the shortest equivalent expression, LogiXpr employs a breadth-first search algorithm. This search algorithm systematically explores various transformations and evaluates the resulting expressions at each level. By leveraging the breadth-first search approach, LogiXpr efficiently identifies the shortest equivalent expression by considering all possible transformations at each step before delving deeper into the search space.
 
+## config.ini
+If the application cannot generate a proof:
+- `Couldn't find a solution :(`: Increase the max expression length in your config file.
+- `Too many in queue :(`: Increase the max queue size depending on your RAM or alternatively, if you know each expression in the proof is short, decrease the max expression length.
+Alternatively, if you believe that each expression in the proof is short, it may be better to decrease the max expression length.
 ## Preview
 <p align="center" width="100%">
   <img src="preview/preview_1.png" width="48%"/>
