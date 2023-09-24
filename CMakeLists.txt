@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 project(LogiXpr)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
 # Google C++ Testing Framework
 cmake_policy(SET CMP0135 NEW)
@@ -39,3 +39,20 @@ target_link_libraries(
 
 include(GoogleTest)
 gtest_discover_tests(tests)
+
+# copy config file to build directory
+# check if debug or release folder exists
+message("Copying config file...")
+if(NOT EXISTS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Debug)
+  file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Debug)
+  configure_file(config.ini ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Debug/config.ini COPYONLY)
+else()
+  configure_file(config.ini ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Debug/config.ini COPYONLY)
+endif()
+
+if(NOT EXISTS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release)
+  file(MAKE_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release)
+  configure_file(config.ini ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release/config.ini COPYONLY)
+else()
+  configure_file(config.ini ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/Release/config.ini COPYONLY)
+endif()

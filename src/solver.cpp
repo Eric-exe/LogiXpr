@@ -7,6 +7,9 @@
 
 std::unordered_map<EquivLaws::EquivLaw, std::string> equivalences = {};
 
+int MAX_QUEUE_SIZE = 2500;
+int MAX_EXPRESSION_LENGTH = 50;
+
 void preprocess(std::shared_ptr<Expression> lhs, std::shared_ptr<Expression> rhs)
 {
   // include laws
@@ -42,14 +45,14 @@ std::vector<std::vector<std::string>> proveEquivalence(std::shared_ptr<Expressio
   visited[lhs->toStringTree()] = {"", "Given"};
 
   bool found = false;
-
+  
   while (!queue.empty())
   {
     // if queue is too long, stop
-    if (queue.size() > 2500)
+    if (queue.size() > MAX_QUEUE_SIZE)
     {
       steps.push_back({"", "Too many steps :("});
-      break;
+      return steps;
     }
     std::shared_ptr<Expression> expr = queue.front();
     queue.pop();
@@ -64,12 +67,12 @@ std::vector<std::vector<std::string>> proveEquivalence(std::shared_ptr<Expressio
         currentExprString = visited[currentExprString].first;
       }
       std::reverse(steps.begin(), steps.end());
-      break;
+      return steps;
     }
 
     generateNextSteps(expr, rhs, found, queue, visited);
   }
-  return steps;
+  return {{"", "Couldn't find a solution :("}};
 }
 
 void generateNextSteps(std::shared_ptr<Expression> expr, std::shared_ptr<Expression> end, bool &found, std::queue<std::shared_ptr<Expression>> &queue, std::unordered_map<std::string, std::pair<std::string, std::string>> &visited)
@@ -87,7 +90,7 @@ void generateNextSteps(std::shared_ptr<Expression> expr, std::shared_ptr<Express
     if (funct(newExpr))
     {
       std::string newExprString = newExpr->toStringTree();
-      if (newExprString.length() > 50)
+      if (newExprString.length() > MAX_EXPRESSION_LENGTH)
         continue;
       // ignore extremely long expressions
 

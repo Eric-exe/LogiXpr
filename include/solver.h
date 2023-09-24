@@ -24,6 +24,16 @@
 extern std::unordered_map<EquivLaws::EquivLaw, std::string> equivalences;
 
 /**
+ * @brief Maximum size of the queue of expressions to be processed
+ */
+extern int MAX_QUEUE_SIZE;
+
+/**
+ * @brief Maximum length of the expressions in the queue 
+ */
+extern int MAX_EXPRESSION_LENGTH;
+
+/**
  * @brief Fill the map of equivalences to be applied to the expressions.
  * Must be called before any other functions in this file.
  */

@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 #include "include/evaluator.h"
 #include "include/parser.h"
@@ -22,6 +23,39 @@ int main() {
            |___/       |_|       
 ====================================================================)"
             << std::endl;
+
+  std::cout << ALERT << "Reading config.ini..." << std::endl;
+  // check if config.ini exists
+  std::ifstream configFile("config.ini");
+  if (!configFile.good()) {
+    std::cout << FAILURE << "config.ini not found :(" << std::endl;
+    return 1;
+  }
+
+  // read config.ini
+  std::string line;
+  int maxQueueSize = 0;
+  int maxExprLength = 0;
+  while (std::getline(configFile, line)) {
+    if (line.find("MAX_QUEUE_SIZE") != std::string::npos) {
+      maxQueueSize = std::stoi(line.substr(line.find("=") + 1));
+    } else if (line.find("MAX_EXPRESSION_LENGTH") != std::string::npos) {
+      maxExprLength = std::stoi(line.substr(line.find("=") + 1));
+    }
+  }
+
+  // check if config.ini is valid
+  if (maxQueueSize <= 0 || maxExprLength <= 0) {
+    std::cout << FAILURE << "config.ini has bad values!" << std::endl;
+    return 1;
+  }
+
+  std::cout << SUCCESS << "Read config.ini successfully!" << std::endl;
+  std::cout << ALERT << "Setting config values... " << std::endl;
+
+  // set config values
+  MAX_QUEUE_SIZE = maxQueueSize;
+  MAX_EXPRESSION_LENGTH = maxExprLength;
 
   std::string lhs;
   std::string rhs;
@@ -103,7 +137,24 @@ int main() {
   // process the steps to make it aesthetically pleasing
   std::vector<std::vector<std::string>> processedSteps;
   int longestStrLen = 0;
-  for (auto step : steps) {
+  // check if the last step is not "Too many steps :("
+  if (steps.back()[1] == "Too many steps :(") {
+    std::cout << FAILURE << "Too many in queue :(. " << std::endl;
+    std::cout << ALERT << "Tweak config ini by reducing logical expression length or increasing queue size" << std::endl;
+    std::cout << ALERT << "Press any key to exit..." << std::endl;
+    std::cin.get();
+    return 1;
+  }
+  else if (steps.back()[1] == "Couldn't find a solution :(") {
+    // check if the last step is not "Couldn't find a solution :("
+    std::cout << FAILURE << "Couldn't find a solution :(. " << std::endl;
+    std::cout << ALERT << "Tweak config ini by reducing logical expression length or increasing queue size" << std::endl;
+    std::cout << ALERT << "Press any key to exit..." << std::endl;
+    std::cin.get();
+    return 1;
+  }
+  else {
+    for (auto step : steps) {
     std::shared_ptr<Expression> currentStep;
     parse(step[0], currentStep);
     std::string processedStr = currentStep->toStringMinimal();
@@ -118,6 +169,7 @@ int main() {
     else if (processedSteps.size() > 0 &&
              processedSteps.back()[0] != processedStr)
       processedSteps.push_back({processedStr, step[1]});
+    }
   }
 
   // now add padding to the right side of the string to make it look nice
