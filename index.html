@@ -84,9 +84,15 @@ How it works</h1>
 <p>LogiXpr utilizes the shunting yard algorithm to convert expressions into abstract syntax trees (ASTs). These ASTs are subsequently evaluated to determine their equivalence using a truth table analysis. If an equivalence is detected, LogiXpr proceeds to recursively evaluate the initial AST by testing each node against the possible equivalences defined in the <code>include\<a class="el" href="equivLaws_8h.html" title="Header file for equivalence laws class.">equivLaws.h</a></code> file.</p>
 <p>To find the shortest equivalent expression, LogiXpr employs a breadth-first search algorithm. This search algorithm systematically explores various transformations and evaluates the resulting expressions at each level. By leveraging the breadth-first search approach, LogiXpr efficiently identifies the shortest equivalent expression by considering all possible transformations at each step before delving deeper into the search space.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+config.ini</h1>
+<p>If the application cannot generate a proof:</p><ul>
+<li><code>Couldn't find a solution :(</code>: Increase the max expression length in your config file.</li>
+<li><code>Too many in queue :(</code>: Increase the max queue size depending on your RAM or alternatively, if you know each expression in the proof is short, decrease the max expression length. Alternatively, if you believe that each expression in the proof is short, it may be better to decrease the max expression length. </li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Preview</h1>
 <p><img src="preview/preview_1.png" alt="" width="48%" class="inline"/> <img src="preview/preview_2.png" alt="" width="48%" class="inline"/> </p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Installation</h1>
 <p>To build and install LogiXpr, you will need to have CMake installed on your system. You can download CMake from the official website: <a href="https://cmake.org/download/">https://cmake.org/download/</a>.</p>
 <ol type="1">
@@ -104,7 +110,7 @@ Installation</h1>
 <div class="line">./LogiXpr</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md4"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Running Unit Tests</h1>
 <p>To run the unit tests in <code>tests</code>, run <code>build.sh</code>. </p>
 </div></div><!-- PageDoc -->
