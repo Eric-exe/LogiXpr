@@ -89,6 +89,12 @@ Variables</h2></td></tr>
 <tr class="memitem:ga4d7c8f771b1ec198b19413faa95bdcab"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="classEquivLaws.html#ac6831e0f19653f5d9565b83d979927da">EquivLaws::EquivLaw</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a></td></tr>
 <tr class="memdesc:ga4d7c8f771b1ec198b19413faa95bdcab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map of equivalences to be applied to the expressions.  <a href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">More...</a><br /></td></tr>
 <tr class="separator:ga4d7c8f771b1ec198b19413faa95bdcab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade64fd32242d8c42493b27ac682b5d5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__solver.html#gade64fd32242d8c42493b27ac682b5d5e">MAX_QUEUE_SIZE</a></td></tr>
+<tr class="memdesc:gade64fd32242d8c42493b27ac682b5d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum size of the queue of expressions to be processed.  <a href="group__solver.html#gade64fd32242d8c42493b27ac682b5d5e">More...</a><br /></td></tr>
+<tr class="separator:gade64fd32242d8c42493b27ac682b5d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1186c52451f0805f037762a7a5f17b9e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__solver.html#ga1186c52451f0805f037762a7a5f17b9e">MAX_EXPRESSION_LENGTH</a></td></tr>
+<tr class="memdesc:ga1186c52451f0805f037762a7a5f17b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of the expressions in the queue.  <a href="group__solver.html#ga1186c52451f0805f037762a7a5f17b9e">More...</a><br /></td></tr>
+<tr class="separator:ga1186c52451f0805f037762a7a5f17b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Functions for solving expressions. </p>
@@ -149,7 +155,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00075">75</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00078">78</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
 </div>
 </div>
@@ -181,7 +187,7 @@ Variables</h2></td></tr>
 
 <p>Fill the map of equivalences to be applied to the expressions. Must be called before any other functions in this file. </p>
 
-<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00010">10</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00013">13</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
 </div>
 </div>
@@ -222,7 +228,7 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>vector of vector of strings of the steps to prove the equivalence: {{lhs, law},...}</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__evaluator.html#gab79b552763289fa4a9c806705e27c669" title="Check if two expressions are equivalent.">isEquivalent</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00031">31</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00034">34</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
 </div>
 </div>
@@ -250,6 +256,58 @@ Variables</h2></td></tr>
 <p>Map of equivalences to be applied to the expressions. </p>
 
 <p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00008">8</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1186c52451f0805f037762a7a5f17b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1186c52451f0805f037762a7a5f17b9e">&#9670;&nbsp;</a></span>MAX_EXPRESSION_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MAX_EXPRESSION_LENGTH</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum length of the expressions in the queue. </p>
+
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00011">11</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
+
+</div>
+</div>
+<a id="gade64fd32242d8c42493b27ac682b5d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade64fd32242d8c42493b27ac682b5d5e">&#9670;&nbsp;</a></span>MAX_QUEUE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MAX_QUEUE_SIZE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maximum size of the queue of expressions to be processed. </p>
+
+<p class="definition">Definition at line <a class="el" href="solver_8cpp_source.html#l00010">10</a> of file <a class="el" href="solver_8cpp_source.html">solver.cpp</a>.</p>
 
 </div>
 </div>

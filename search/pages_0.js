@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logixpr_210',['LogiXpr',['../index.html',1,'']]]
+  ['logixpr_214',['LogiXpr',['../index.html',1,'']]]
 ];

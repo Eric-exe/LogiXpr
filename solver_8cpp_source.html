@@ -74,117 +74,122 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">    8</a></span>&#160;std::unordered_map&lt;EquivLaws::EquivLaw, std::string&gt; <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a> = {};</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">preprocess</a>(std::shared_ptr&lt;Expression&gt; lhs, std::shared_ptr&lt;Expression&gt; rhs)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="comment">// include laws</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.clear();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.insert(<a class="code" href="classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459">EquivLaws::laws</a>.begin(), <a class="code" href="classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459">EquivLaws::laws</a>.end());</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="comment">// convert lhs and rhs to strings</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  std::string lhsString = lhs-&gt;toStringTree();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  std::string rhsString = rhs-&gt;toStringTree();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">if</span> (lhsString.find(<span class="stringliteral">&quot;-&gt;&quot;</span>) != std::string::npos || rhsString.find(<span class="stringliteral">&quot;-&gt;&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.insert(<a class="code" href="classEquivLaws.html#a01125a23881bf97835317589159441e2">EquivLaws::implications</a>.begin(), <a class="code" href="classEquivLaws.html#a01125a23881bf97835317589159441e2">EquivLaws::implications</a>.end());</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span> (lhsString.find(<span class="stringliteral">&quot;&lt;=&gt;&quot;</span>) != std::string::npos || rhsString.find(<span class="stringliteral">&quot;&lt;=&gt;&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.insert(<a class="code" href="classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4">EquivLaws::bidirectionalImplications</a>.begin(), <a class="code" href="classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4">EquivLaws::bidirectionalImplications</a>.end());</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">   31</a></span>&#160;std::vector&lt;std::vector&lt;std::string&gt;&gt; <a class="code" href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">proveEquivalence</a>(std::shared_ptr&lt;Expression&gt; lhs, std::shared_ptr&lt;Expression&gt; rhs)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">if</span> (lhs-&gt;compare(rhs))</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> {{<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Given&quot;</span>}};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  std::vector&lt;std::vector&lt;std::string&gt;&gt; steps;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::queue&lt;std::shared_ptr&lt;Expression&gt;&gt; queue;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  std::unordered_map&lt;std::string, std::pair&lt;std::string, std::string&gt;&gt; visited;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="group__solver.html#gade64fd32242d8c42493b27ac682b5d5e">   10</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__solver.html#gade64fd32242d8c42493b27ac682b5d5e">MAX_QUEUE_SIZE</a> = 2500;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="group__solver.html#ga1186c52451f0805f037762a7a5f17b9e">   11</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__solver.html#ga1186c52451f0805f037762a7a5f17b9e">MAX_EXPRESSION_LENGTH</a> = 50;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">preprocess</a>(std::shared_ptr&lt;Expression&gt; lhs, std::shared_ptr&lt;Expression&gt; rhs)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="comment">// include laws</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.clear();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.insert(<a class="code" href="classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459">EquivLaws::laws</a>.begin(), <a class="code" href="classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459">EquivLaws::laws</a>.end());</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">// convert lhs and rhs to strings</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  std::string lhsString = lhs-&gt;toStringTree();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  std::string rhsString = rhs-&gt;toStringTree();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> (lhsString.find(<span class="stringliteral">&quot;-&gt;&quot;</span>) != std::string::npos || rhsString.find(<span class="stringliteral">&quot;-&gt;&quot;</span>) != std::string::npos)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.insert(<a class="code" href="classEquivLaws.html#a01125a23881bf97835317589159441e2">EquivLaws::implications</a>.begin(), <a class="code" href="classEquivLaws.html#a01125a23881bf97835317589159441e2">EquivLaws::implications</a>.end());</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">if</span> (lhsString.find(<span class="stringliteral">&quot;&lt;=&gt;&quot;</span>) != std::string::npos || rhsString.find(<span class="stringliteral">&quot;&lt;=&gt;&quot;</span>) != std::string::npos)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>.insert(<a class="code" href="classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4">EquivLaws::bidirectionalImplications</a>.begin(), <a class="code" href="classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4">EquivLaws::bidirectionalImplications</a>.end());</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">   34</a></span>&#160;std::vector&lt;std::vector&lt;std::string&gt;&gt; <a class="code" href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">proveEquivalence</a>(std::shared_ptr&lt;Expression&gt; lhs, std::shared_ptr&lt;Expression&gt; rhs)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> (lhs-&gt;compare(rhs))</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> {{<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Given&quot;</span>}};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  std::vector&lt;std::vector&lt;std::string&gt;&gt; steps;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  queue.push(lhs);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  visited[lhs-&gt;toStringTree()] = {<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Given&quot;</span>};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  std::queue&lt;std::shared_ptr&lt;Expression&gt;&gt; queue;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  std::unordered_map&lt;std::string, std::pair&lt;std::string, std::string&gt;&gt; visited;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">while</span> (!queue.empty())</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// if queue is too long, stop</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (queue.size() &gt; 2500)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      steps.push_back({<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Too many steps :(&quot;</span>});</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::shared_ptr&lt;Expression&gt; expr = queue.front();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    queue.pop();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (expr-&gt;compare(rhs))</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="comment">// found the rhs, now backtrack the visited map to get the steps</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      std::string currentExprString = expr-&gt;toStringTree();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordflow">while</span> (currentExprString != <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        steps.push_back({currentExprString, visited[currentExprString].second});</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        currentExprString = visited[currentExprString].first;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      std::reverse(steps.begin(), steps.end());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(expr, rhs, found, queue, visited);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> steps;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(std::shared_ptr&lt;Expression&gt; expr, std::shared_ptr&lt;Expression&gt; end, <span class="keywordtype">bool</span> &amp;found, std::queue&lt;std::shared_ptr&lt;Expression&gt;&gt; &amp;queue, std::unordered_map&lt;std::string, std::pair&lt;std::string, std::string&gt;&gt; &amp;visited)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> equiv : <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (found)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">auto</span> funct = equiv.first;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">auto</span> lawName = equiv.second;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  queue.push(lhs);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  visited[lhs-&gt;toStringTree()] = {<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Given&quot;</span>};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">while</span> (!queue.empty())</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// if queue is too long, stop</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (queue.size() &gt; <a class="code" href="group__solver.html#gade64fd32242d8c42493b27ac682b5d5e">MAX_QUEUE_SIZE</a>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      steps.push_back({<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Too many steps :(&quot;</span>});</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">return</span> steps;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::shared_ptr&lt;Expression&gt; expr = queue.front();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    queue.pop();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span> (expr-&gt;compare(rhs))</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="comment">// found the rhs, now backtrack the visited map to get the steps</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      std::string currentExprString = expr-&gt;toStringTree();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="keywordflow">while</span> (currentExprString != <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        steps.push_back({currentExprString, visited[currentExprString].second});</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        currentExprString = visited[currentExprString].first;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      std::reverse(steps.begin(), steps.end());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="keywordflow">return</span> steps;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(expr, rhs, found, queue, visited);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> {{<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;Couldn&#39;t find a solution :(&quot;</span>}};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(std::shared_ptr&lt;Expression&gt; expr, std::shared_ptr&lt;Expression&gt; end, <span class="keywordtype">bool</span> &amp;found, std::queue&lt;std::shared_ptr&lt;Expression&gt;&gt; &amp;queue, std::unordered_map&lt;std::string, std::pair&lt;std::string, std::string&gt;&gt; &amp;visited)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> equiv : <a class="code" href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a>)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (found)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::shared_ptr&lt;Expression&gt; newExpr = expr-&gt;cloneTree();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (funct(newExpr))</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      std::string newExprString = newExpr-&gt;toStringTree();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">if</span> (newExprString.length() &gt; 50)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="comment">// ignore extremely long expressions</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">if</span> (visited.find(newExprString) == visited.end())</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        visited[newExprString] = {expr-&gt;toStringTree(), lawName};</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (newExpr-&gt;compareTree(end))</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          found = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">while</span> (newExpr-&gt;getParent())</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          newExpr = newExpr-&gt;getParent();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        queue.push(newExpr);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordflow">if</span> (!found)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (expr-&gt;getLeft() &amp;&amp; !expr-&gt;getLeft()-&gt;isVar())</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(expr-&gt;getLeft(), end, found, queue, visited);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (expr-&gt;getRight() &amp;&amp; !expr-&gt;getRight()-&gt;isVar())</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(expr-&gt;getRight(), end, found, queue, visited);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">auto</span> funct = equiv.first;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">auto</span> lawName = equiv.second;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::shared_ptr&lt;Expression&gt; newExpr = expr-&gt;cloneTree();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (funct(newExpr))</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      std::string newExprString = newExpr-&gt;toStringTree();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="keywordflow">if</span> (newExprString.length() &gt; <a class="code" href="group__solver.html#ga1186c52451f0805f037762a7a5f17b9e">MAX_EXPRESSION_LENGTH</a>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="comment">// ignore extremely long expressions</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keywordflow">if</span> (visited.find(newExprString) == visited.end())</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        visited[newExprString] = {expr-&gt;toStringTree(), lawName};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (newExpr-&gt;compareTree(end))</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          found = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">while</span> (newExpr-&gt;getParent())</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          newExpr = newExpr-&gt;getParent();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        queue.push(newExpr);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (!found)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (expr-&gt;getLeft() &amp;&amp; !expr-&gt;getLeft()-&gt;isVar())</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(expr-&gt;getLeft(), end, found, queue, visited);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (expr-&gt;getRight() &amp;&amp; !expr-&gt;getRight()-&gt;isVar())</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <a class="code" href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a>(expr-&gt;getRight(), end, found, queue, visited);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 <div class="ttc" id="aclassEquivLaws_html_a01125a23881bf97835317589159441e2"><div class="ttname"><a href="classEquivLaws.html#a01125a23881bf97835317589159441e2">EquivLaws::implications</a></div><div class="ttdeci">static std::unordered_map&lt; EquivLaw, std::string &gt; implications</div><div class="ttdoc">Map of implication equivalences to their string representations.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8h_source.html#l00034">equivLaws.h:34</a></div></div>
 <div class="ttc" id="aclassEquivLaws_html_a2cedb4157e4f9bdce82bb14138d10459"><div class="ttname"><a href="classEquivLaws.html#a2cedb4157e4f9bdce82bb14138d10459">EquivLaws::laws</a></div><div class="ttdeci">static std::unordered_map&lt; EquivLaw, std::string &gt; laws</div><div class="ttdoc">Map of equivalence laws to their string representations.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8h_source.html#l00029">equivLaws.h:29</a></div></div>
 <div class="ttc" id="aclassEquivLaws_html_aa7e24eb33fedfe7f01e7e19d7a46ebb4"><div class="ttname"><a href="classEquivLaws.html#aa7e24eb33fedfe7f01e7e19d7a46ebb4">EquivLaws::bidirectionalImplications</a></div><div class="ttdeci">static std::unordered_map&lt; EquivLaw, std::string &gt; bidirectionalImplications</div><div class="ttdoc">Map of biimplication equivalences to their string representations.</div><div class="ttdef"><b>Definition:</b> <a href="equivLaws_8h_source.html#l00039">equivLaws.h:39</a></div></div>
-<div class="ttc" id="agroup__solver_html_ga12a9f577fbc43c3bac000826c300398a"><div class="ttname"><a href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a></div><div class="ttdeci">void generateNextSteps(std::shared_ptr&lt; Expression &gt; expr, std::shared_ptr&lt; Expression &gt; end, bool &amp;found, std::queue&lt; std::shared_ptr&lt; Expression &gt;&gt; &amp;queue, std::unordered_map&lt; std::string, std::pair&lt; std::string, std::string &gt;&gt; &amp;visited)</div><div class="ttdoc">Generate the next expressions from the current expression. Creates a new expression for each law that...</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00075">solver.cpp:75</a></div></div>
+<div class="ttc" id="agroup__solver_html_ga1186c52451f0805f037762a7a5f17b9e"><div class="ttname"><a href="group__solver.html#ga1186c52451f0805f037762a7a5f17b9e">MAX_EXPRESSION_LENGTH</a></div><div class="ttdeci">int MAX_EXPRESSION_LENGTH</div><div class="ttdoc">Maximum length of the expressions in the queue.</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00011">solver.cpp:11</a></div></div>
+<div class="ttc" id="agroup__solver_html_ga12a9f577fbc43c3bac000826c300398a"><div class="ttname"><a href="group__solver.html#ga12a9f577fbc43c3bac000826c300398a">generateNextSteps</a></div><div class="ttdeci">void generateNextSteps(std::shared_ptr&lt; Expression &gt; expr, std::shared_ptr&lt; Expression &gt; end, bool &amp;found, std::queue&lt; std::shared_ptr&lt; Expression &gt;&gt; &amp;queue, std::unordered_map&lt; std::string, std::pair&lt; std::string, std::string &gt;&gt; &amp;visited)</div><div class="ttdoc">Generate the next expressions from the current expression. Creates a new expression for each law that...</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00078">solver.cpp:78</a></div></div>
 <div class="ttc" id="agroup__solver_html_ga4d7c8f771b1ec198b19413faa95bdcab"><div class="ttname"><a href="group__solver.html#ga4d7c8f771b1ec198b19413faa95bdcab">equivalences</a></div><div class="ttdeci">std::unordered_map&lt; EquivLaws::EquivLaw, std::string &gt; equivalences</div><div class="ttdoc">Map of equivalences to be applied to the expressions.</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00008">solver.cpp:8</a></div></div>
-<div class="ttc" id="agroup__solver_html_gab854492a6d115d58b907a18a7301e9cc"><div class="ttname"><a href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">proveEquivalence</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; std::string &gt; &gt; proveEquivalence(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs)</div><div class="ttdoc">Prove the expressions are equivalence using equivalence laws by solving the left hand side to the rig...</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00031">solver.cpp:31</a></div></div>
-<div class="ttc" id="agroup__solver_html_gaf7935087118c246c6765e386c49a2f00"><div class="ttname"><a href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">preprocess</a></div><div class="ttdeci">void preprocess(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs)</div><div class="ttdoc">Fill the map of equivalences to be applied to the expressions. Must be called before any other functi...</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00010">solver.cpp:10</a></div></div>
+<div class="ttc" id="agroup__solver_html_gab854492a6d115d58b907a18a7301e9cc"><div class="ttname"><a href="group__solver.html#gab854492a6d115d58b907a18a7301e9cc">proveEquivalence</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; std::string &gt; &gt; proveEquivalence(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs)</div><div class="ttdoc">Prove the expressions are equivalence using equivalence laws by solving the left hand side to the rig...</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00034">solver.cpp:34</a></div></div>
+<div class="ttc" id="agroup__solver_html_gade64fd32242d8c42493b27ac682b5d5e"><div class="ttname"><a href="group__solver.html#gade64fd32242d8c42493b27ac682b5d5e">MAX_QUEUE_SIZE</a></div><div class="ttdeci">int MAX_QUEUE_SIZE</div><div class="ttdoc">Maximum size of the queue of expressions to be processed.</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00010">solver.cpp:10</a></div></div>
+<div class="ttc" id="agroup__solver_html_gaf7935087118c246c6765e386c49a2f00"><div class="ttname"><a href="group__solver.html#gaf7935087118c246c6765e386c49a2f00">preprocess</a></div><div class="ttdeci">void preprocess(std::shared_ptr&lt; Expression &gt; lhs, std::shared_ptr&lt; Expression &gt; rhs)</div><div class="ttdoc">Fill the map of equivalences to be applied to the expressions. Must be called before any other functi...</div><div class="ttdef"><b>Definition:</b> <a href="solver_8cpp_source.html#l00013">solver.cpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
