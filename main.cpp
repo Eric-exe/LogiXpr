@@ -51,7 +51,7 @@ int main() {
   }
 
   std::cout << SUCCESS << "Read config.ini successfully!" << std::endl;
-  std::cout << ALERT << "Setting config values... " << std::endl;
+  std::cout << ALERT << "Setting config values... (" << maxQueueSize << "," << maxExprLength << ")" << std::endl;
 
   // set config values
   MAX_QUEUE_SIZE = maxQueueSize;
@@ -141,16 +141,12 @@ int main() {
   if (steps.back()[1] == "Too many steps :(") {
     std::cout << FAILURE << "Too many in queue :(. " << std::endl;
     std::cout << ALERT << "Tweak config ini by reducing logical expression length or increasing queue size" << std::endl;
-    std::cout << ALERT << "Press any key to exit..." << std::endl;
-    std::cin.get();
     return 1;
   }
   else if (steps.back()[1] == "Couldn't find a solution :(") {
     // check if the last step is not "Couldn't find a solution :("
     std::cout << FAILURE << "Couldn't find a solution :(. " << std::endl;
     std::cout << ALERT << "Tweak config ini by reducing logical expression length or increasing queue size" << std::endl;
-    std::cout << ALERT << "Press any key to exit..." << std::endl;
-    std::cin.get();
     return 1;
   }
   else {
@@ -189,12 +185,9 @@ int main() {
     std::cout << step[0] << step[1] << std::endl;
   }
 
-  // wait for user to press to press any key to exit
   std::cout
       << "===================================================================="
       << std::endl;
-  std::cout << ALERT << "Press any key to exit..." << std::endl;
-  std::cin.get();
 
   return 0;
 }
