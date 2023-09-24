@@ -53,9 +53,9 @@ cmake ..
 cmake --build . --config Release
 ```
 
-5. Go to the `bin\Release` directory and run the executable
+5. Go to the `..bin\Release` directory and run the executable
 ```bash
-cd bin\Release
+cd ..\bin\Release
 ./LogiXpr
 ```
 
