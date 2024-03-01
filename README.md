@@ -25,7 +25,7 @@ To find the shortest equivalent expression, LogiXpr employs a breadth-first sear
 ## config.ini
 If the application cannot generate a proof:
 - `Couldn't find a solution :(`: Increase the max expression length in your config file.
-- `Too many in queue :(`: Increase the max queue size depending on your RAM or alternatively, if you know each expression in the proof is short, decrease the max expression length.
+- `Too many in queue :(`: Increase the max queue size depending on your RAM.
 Alternatively, if you believe that each expression in the proof is short, it may be better to decrease the max expression length.
 ## Preview
 <p align="center" width="100%">
