@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xor_111',['XOR',['../group__stringMacros.html#ga45cd11034d1a7d86c3a88d36f5e7f1ab',1,'expression.h']]]
+  ['value_0',['value',['../classExpression.html#adda79355b3caba02c27fe815c3f81769',1,'Expression']]]
 ];

@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['clone_15',['clone',['../classExpression.html#ad307c4a066b114d506a53ad61bc1691d',1,'Expression']]],
-  ['clonetree_16',['cloneTree',['../classExpression.html#a999fa1aabafdfca3178177259211bc88',1,'Expression']]],
-  ['close_17',['CLOSE',['../group__stringMacros.html#ga0e29f488071372aa0530842e60b64511',1,'expression.h']]],
-  ['commutative_18',['commutative',['../classEquivLaws.html#a39a8514b3383a434a5586075c07166e1',1,'EquivLaws']]],
-  ['compare_19',['compare',['../classExpression.html#a3aca4814f95328919d9d0be996ba0010',1,'Expression']]],
-  ['comparetree_20',['compareTree',['../classExpression.html#a0c0c508b8b26b4182df600e0ecc360f1',1,'Expression']]]
+  ['clone_0',['clone',['../classExpression.html#ad307c4a066b114d506a53ad61bc1691d',1,'Expression']]],
+  ['clonetree_1',['cloneTree',['../classExpression.html#a999fa1aabafdfca3178177259211bc88',1,'Expression']]],
+  ['close_2',['CLOSE',['../group__stringMacros.html#ga0e29f488071372aa0530842e60b64511',1,'expression.h']]],
+  ['commutative_3',['commutative',['../classEquivLaws.html#a39a8514b3383a434a5586075c07166e1',1,'EquivLaws']]],
+  ['compare_4',['compare',['../classExpression.html#a3aca4814f95328919d9d0be996ba0010',1,'Expression']]],
+  ['comparetree_5',['compareTree',['../classExpression.html#a0c0c508b8b26b4182df600e0ecc360f1',1,'Expression']]],
+  ['config_20ini_6',['config.ini',['../index.html#autotoc_md2',1,'']]]
 ];
