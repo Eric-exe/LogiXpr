@@ -7,6 +7,7 @@
 
 #include "expression.h"
 #include <vector>
+#include <cmath>
 
 
 /**

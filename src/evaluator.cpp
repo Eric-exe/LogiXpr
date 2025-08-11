@@ -13,7 +13,7 @@ std::vector<std::unordered_map<std::string, bool>> getTruthTableInputs(std::shar
 
   std::vector<std::unordered_map<std::string, bool>> inputs;
 
-  for (int i = 0; i < pow(2, variables.size()); i++)
+  for (int i = 0; i < std::pow(2, variables.size()); i++)
   {
     std::unordered_map<std::string, bool> input;
     int state = i;

@@ -38,14 +38,13 @@ To build and install LogiXpr, you will need to have CMake installed on your syst
 
 1. Clone the repository
 ```bash
-git clone https://github.com/ericlin-jpg/LogiXpr.git
+git clone https://github.com/eric-exe/LogiXpr.git
 ```
 
 2. Create a build directory
 ```bash
 cd LogiXpr
 mkdir build
-cd build
 ```
 
 3. Run CMake
@@ -55,12 +54,13 @@ cmake ..
 
 4. Build the project
 ```bash
+cd build
 cmake --build . --config Release
 ```
 
-5. Go to the `..\bin\Release` directory and run the executable
+5. Go to the `../bin/Release` directory and run the executable
 ```bash
-cd ..\bin\Release
+cd bin/Release
 ./LogiXpr
 ```
 

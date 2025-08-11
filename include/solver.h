@@ -10,7 +10,7 @@
 #include <queue>
 #include <utility>
 #include <vector>
-
+#include <algorithm>
 
 /**
  * @defgroup solver Solver functions

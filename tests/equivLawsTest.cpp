@@ -46,11 +46,17 @@ TEST(EquivLawsTest, IdentityComplex) {
 
   parse("(p & T) | (q | F)", expr);
   EXPECT_FALSE(EquivLaws::identity(expr));
-  EXPECT_TRUE(EquivLaws::identity(expr->getLeft()));
+
+  std::shared_ptr<Expression> left = expr->getLeft();
+  EXPECT_TRUE(EquivLaws::identity(left));
+
   parse("p | (q | F)", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_FALSE(EquivLaws::identity(expr));
-  EXPECT_TRUE(EquivLaws::identity(expr->getRight()));
+
+  std::shared_ptr<Expression> right = expr->getRight();
+  EXPECT_TRUE(EquivLaws::identity(right));
+
   parse("p | q", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_FALSE(EquivLaws::identity(expr));
@@ -121,11 +127,16 @@ TEST(EquivLawsTest, DominationComplex) {
 
   parse("(p|T)&(q&F)", expr);
   EXPECT_FALSE(EquivLaws::domination(expr));
-  EXPECT_TRUE(EquivLaws::domination(expr->getLeft()));
+
+  std::shared_ptr<Expression> left = expr->getLeft();
+  EXPECT_TRUE(EquivLaws::domination(left));
+
   parse("T&(q&F)", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_FALSE(EquivLaws::domination(expr));
-  EXPECT_TRUE(EquivLaws::domination(expr->getRight()));
+
+  std::shared_ptr<Expression> right = expr->getRight();
+  EXPECT_TRUE(EquivLaws::domination(right));
   parse("T&F", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_TRUE(EquivLaws::domination(expr));
@@ -185,22 +196,33 @@ TEST(EquivLawsTest, IdempotentComplex) {
 
   parse("(p|p)&(r&r)", expr);
   EXPECT_FALSE(EquivLaws::idempotent(expr));
-  EXPECT_TRUE(EquivLaws::idempotent(expr->getLeft()));
+
+  std::shared_ptr<Expression> left = expr->getLeft();
+  EXPECT_TRUE(EquivLaws::idempotent(left));
   parse("p&(r&r)", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_FALSE(EquivLaws::idempotent(expr));
-  EXPECT_TRUE(EquivLaws::idempotent(expr->getRight()));
+
+  std::shared_ptr<Expression> right = expr->getRight();
+  EXPECT_TRUE(EquivLaws::idempotent(right));
+
   parse("p&r", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_FALSE(EquivLaws::idempotent(expr));
 
   parse("(p|p)&(p&p)", expr);
   EXPECT_FALSE(EquivLaws::idempotent(expr));
-  EXPECT_TRUE(EquivLaws::idempotent(expr->getLeft()));
+
+  std::shared_ptr<Expression> left2 = expr->getLeft();
+  EXPECT_TRUE(EquivLaws::idempotent(left2));
+
   parse("p&(p&p)", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_FALSE(EquivLaws::idempotent(expr));
-  EXPECT_TRUE(EquivLaws::idempotent(expr->getRight()));
+
+  std::shared_ptr<Expression> right2 = expr->getRight();
+  EXPECT_TRUE(EquivLaws::idempotent(right2));
+
   parse("p&p", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_TRUE(EquivLaws::idempotent(expr));
@@ -267,7 +289,8 @@ TEST(EquivLawsTest, DoubleNegationComplex) {
   EXPECT_TRUE(expr->compare(expected));
 
   parse("(!!(!!p))", expr);
-  EXPECT_TRUE(EquivLaws::doubleNegation(expr->getLeft()));
+  std::shared_ptr<Expression> left = expr->getLeft();
+  EXPECT_TRUE(EquivLaws::doubleNegation(left));
   parse("!!p", expected);
   EXPECT_TRUE(expr->compare(expected));
   EXPECT_TRUE(EquivLaws::doubleNegation(expr));
@@ -321,7 +344,8 @@ TEST(EquivsLawTest, CommutativeComplex) {
   EXPECT_TRUE(expr->compare(expected));
 
   parse("(p|q)&(q&r)", expr);
-  EXPECT_TRUE(EquivLaws::commutative(expr->getLeft()));
+  std::shared_ptr<Expression> left = expr->getLeft();
+  EXPECT_TRUE(EquivLaws::commutative(left));
   parse("(q|p)&(q&r)", expected);
   EXPECT_TRUE(expr->compare(expected));
 }
