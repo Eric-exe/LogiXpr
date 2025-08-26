@@ -45,6 +45,7 @@ git clone https://github.com/eric-exe/LogiXpr.git
 ```bash
 cd LogiXpr
 mkdir build
+cd build
 ```
 
 3. Run CMake
