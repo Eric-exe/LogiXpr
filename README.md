@@ -55,7 +55,6 @@ cmake ..
 
 4. Build the project
 ```bash
-cd build
 cmake --build . --config Release
 ```
 
